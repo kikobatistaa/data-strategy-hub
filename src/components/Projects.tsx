@@ -48,7 +48,7 @@ const Projects = () => {
               return (
                 <Card 
                   key={index}
-                  className="group border-0 shadow-lg hover:shadow-hover hover:-translate-y-2 transition-all duration-500 relative overflow-hidden bg-background rounded-2xl"
+                  className="group border border-white/10 shadow-card hover:shadow-hover hover:-translate-y-2 transition-all duration-500 relative overflow-hidden bg-card/50 backdrop-blur-md hover:border-accent/50 rounded-2xl"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   {/* Decorative gradient blob */}
@@ -67,7 +67,7 @@ const Projects = () => {
                   </CardHeader>
                   
                   <CardContent className="space-y-6 relative z-10">
-                    <div className="flex items-center gap-2 text-muted-foreground bg-secondary/50 px-4 py-3 rounded-lg">
+                    <div className="flex items-center gap-2 text-accent bg-accent/10 px-4 py-3 rounded-lg border border-accent/20">
                       <Construction className="h-4 w-4" />
                       <span className="text-sm font-medium">Coming Soon</span>
                     </div>

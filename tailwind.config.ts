@@ -58,10 +58,15 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-cta': 'var(--gradient-cta)',
       },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'hover': 'var(--shadow-hover)',
+        'glow': 'var(--shadow-glow)',
+      },
+      fontFamily: {
+        sans: ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',

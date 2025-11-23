@@ -5,96 +5,87 @@
 
 @layer base {
   :root {
-    /* Base: Clean White */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Dark Mode Premium - Almost Black Background */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
 
-    /* Card: White with subtle tint */
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    /* Card: Dark with transparency for glassmorphism */
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Primary: Deep Black/Charcoal for strong contrast */
-    --primary: 240 5.9% 10%;
+    /* Primary: Electric Purple */
+    --primary: 270 91% 65%;
     --primary-foreground: 0 0% 98%;
 
-    /* Secondary: Light Gray for backgrounds */
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    /* Secondary: Dark gray for subtle backgrounds */
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    /* Muted: Subtler grays */
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    /* Muted: Medium dark grays */
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
 
-    /* Accent: Electric Purple (Vibrant & Modern) */
-    --accent: 270 95% 60%;
+    /* Accent: Vibrant Electric Purple */
+    --accent: 270 91% 65%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 270 95% 60%; /* Ring matches accent */
+    --border: 0 0% 100% / 0.1;
+    --input: 240 5% 15%;
+    --ring: 270 91% 65%;
 
-    --radius: 0.75rem; /* Slightly more rounded for modern feel */
+    --radius: 1rem;
 
-    /* Mapping old 'executive' vars to new palette to maintain compatibility */
-    --executive-navy: 240 5.9% 10%; /* Now Black */
-    --executive-light: 240 4.8% 95.9%;
-    --executive-accent: 270 95% 60%; /* Now Purple */
-    --executive-text: 240 10% 3.9%;
-    --executive-muted: 240 3.8% 46.1%;
-
-    /* New Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(240 5.9% 10%) 0%, hsl(270 95% 60% / 0.2) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(240 4.8% 98%) 100%);
+    /* Purple Gradient for Hero and CTAs */
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(270 91% 65% / 0.15) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(240 10% 4%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 4%) 0%, hsl(240 8% 6%) 100%);
     
-    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.08);
-    --shadow-hover: 0 20px 40px -10px rgba(124, 58, 237, 0.15); /* Purple glow on hover */
+    /* Shadows with purple glow */
+    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.5);
+    --shadow-hover: 0 20px 60px -10px rgba(139, 92, 246, 0.4);
+    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.2);
 
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 240 8% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 8% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 270 91% 65%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 240 6% 12%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 270 95% 60%;
+    --accent: 270 91% 65%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 270 95% 60%;
-    
-    --executive-navy: 0 0% 98%;
-    --executive-light: 240 3.7% 15.9%;
-    --executive-accent: 270 95% 60%;
-    --executive-text: 0 0% 98%;
-    --executive-muted: 240 5% 64.9%;
+    --border: 0 0% 100% / 0.1;
+    --input: 240 5% 15%;
+    --ring: 270 91% 65%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(270 95% 15%));
-    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 10% 5%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(270 91% 65% / 0.15) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(240 10% 4%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 4%) 0%, hsl(240 8% 6%) 100%);
   }
 }
 

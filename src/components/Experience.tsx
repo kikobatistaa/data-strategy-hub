@@ -65,13 +65,13 @@ const Experience = () => {
               return (
                 <Card 
                   key={index}
-                  className="border-0 shadow-sm hover:shadow-lg transition-all duration-300 bg-secondary/20 hover:bg-secondary/40"
+                  className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 group"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <CardHeader className="pb-4">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div className="flex items-start gap-5">
-                        <div className="p-3 rounded-xl bg-white shadow-sm border border-border/50">
+                        <div className="p-3 rounded-xl bg-accent/10 shadow-glow border border-accent/20 group-hover:bg-accent/20 transition-colors duration-300">
                           <Icon className="h-6 w-6 text-accent" />
                         </div>
                         <div>
@@ -81,7 +81,7 @@ const Experience = () => {
                           </CardDescription>
                         </div>
                       </div>
-                      <Badge variant="outline" className="w-fit px-4 py-1 text-sm border-accent/20 text-accent bg-accent/5">
+                      <Badge variant="outline" className="w-fit px-4 py-1 text-sm border-accent/30 text-accent bg-accent/10">
                         {exp.period}
                       </Badge>
                     </div>
