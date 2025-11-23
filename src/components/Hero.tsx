@@ -16,21 +16,21 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
+          <h1 className="text-6xl md:text-8xl font-black text-foreground leading-tight tracking-tight">
             Bridging Data Science &{" "}
-            <span className="bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent via-purple-400 to-accent bg-clip-text text-transparent">
               Business Strategy
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Transforming complex data into actionable insights that drive strategic business decisions and measurable impact.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             <Button 
               size="lg" 
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg group"
+              className="bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg font-bold group border border-white/20"
             >
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download CV
@@ -38,7 +38,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm px-8 py-6 text-lg"
+              className="border-2 border-foreground/80 bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent backdrop-blur-sm px-8 py-6 text-lg font-semibold transition-all duration-300"
             >
               <Mail className="mr-2 h-5 w-5" />
               Contact Me
