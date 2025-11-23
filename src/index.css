@@ -16,7 +16,7 @@
     --popover: 240 8% 8%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary: Electric Purple */
+    /* Primary: Electric Purple (Used for buttons, rings, highlights) */
     --primary: 270 91% 65%;
     --primary-foreground: 0 0% 98%;
 
@@ -28,64 +28,29 @@
     --muted: 240 5% 15%;
     --muted-foreground: 240 5% 65%;
 
-    /* Accent: Vibrant Electric Purple */
+    /* Accent: Vibrant Electric Purple (Matching primary for consistency) */
     --accent: 270 91% 65%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 100% / 0.1;
+    --border: 0 0% 100% / 0.1; /* White with 10% opacity for dark mode borders */
     --input: 240 5% 15%;
     --ring: 270 91% 65%;
 
     --radius: 1rem;
 
-    /* Purple Gradient for Hero and CTAs */
+    /* New Gradients and Shadows */
     --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(270 91% 65% / 0.15) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(240 10% 4%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(240 10% 4%) 100%); /* Purple-to-Black Gradient */
     --gradient-subtle: linear-gradient(180deg, hsl(240 10% 4%) 0%, hsl(240 8% 6%) 100%);
     
-    /* Shadows with purple glow */
-    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.5);
-    --shadow-hover: 0 20px 60px -10px rgba(139, 92, 246, 0.4);
-    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.2);
+    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.5); /* Stronger shadow in dark mode */
+    --shadow-hover: 0 20px 60px -10px rgba(139, 92, 246, 0.4); /* Purple glow on hover */
+    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.2); /* Internal glow for icons/elements */
 
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .dark {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 8% 8%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 8% 8%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 270 91% 65%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 240 6% 12%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 270 91% 65%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 100% / 0.1;
-    --input: 240 5% 15%;
-    --ring: 270 91% 65%;
-
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(270 91% 65% / 0.15) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(240 10% 4%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 4%) 0%, hsl(240 8% 6%) 100%);
   }
 }
 

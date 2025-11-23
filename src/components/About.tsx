@@ -1,9 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Globe, Brain } from "lucide-react";
+import { Globe, Brain } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-subtle">
+    <section id="about" className="py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -12,18 +12,16 @@ const About = () => {
             </h2>
           </div>
           
-          <Card className="shadow-card border-border/50 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <Card className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <CardContent className="pt-8 space-y-6">
-              <div className="prose prose-lg max-w-none text-foreground/80 leading-relaxed">
+              <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
                 <p className="text-lg">
                   I'm a data-driven strategist bridging the gap between technical analytics and business impact. 
-                  My journey began with a <span className="font-semibold text-foreground">BSc in Data Science from NOVA IMS</span>, 
-                  where I developed a strong foundation in statistical modeling, machine learning, and programming.
+                  My journey began with strong foundation in statistical modeling, machine learning, and programming.
                 </p>
                 
                 <p className="text-lg">
-                  Currently pursuing a <span className="font-semibold text-foreground">Master in Management at Universidad Carlos III de Madrid (UC3M)</span>, 
-                  I'm expanding my strategic toolkit to translate complex quantitative insights into actionable business strategies 
+                  I specialize in translating complex quantitative insights into actionable business strategies 
                   that drive measurable results.
                 </p>
                 
@@ -35,35 +33,37 @@ const About = () => {
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 pt-4">
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border/30">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <GraduationCap className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Education</h3>
-                    <p className="text-sm text-muted-foreground">NOVA IMS + UC3M</p>
-                  </div>
-                </div>
                 
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border/30">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <Brain className="h-5 w-5 text-primary" />
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                    <Brain className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Expertise</h3>
-                    <p className="text-sm text-muted-foreground">Data + Strategy</p>
+                    <p className="text-sm text-muted-foreground">Data Science & Strategy</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border border-border/30">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <Globe className="h-5 w-5 text-primary" />
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                    <Globe className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Languages</h3>
-                    <p className="text-sm text-muted-foreground">PT, ES, EN</p>
+                    <p className="text-sm text-muted-foreground">PT, ES, EN (Fluent)</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                    <Brain className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Experience</h3>
+                    <p className="text-sm text-muted-foreground">Analyst & Entrepreneur</p>
+                  </div>
+                </div>
+                
               </div>
             </CardContent>
           </Card>

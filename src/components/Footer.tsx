@@ -2,13 +2,13 @@ import { Linkedin, Github, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-secondary text-primary-foreground py-12 border-t border-border/50">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-2">Francisco Cordeiro Batista</h3>
-              <p className="text-primary-foreground/80 text-sm">
+              <h3 className="text-xl font-bold mb-2 text-foreground">Francisco Cordeiro Batista</h3>
+              <p className="text-muted-foreground text-sm">
                 Data Science • Business Strategy • International Mindset
               </p>
             </div>
@@ -18,34 +18,34 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/kikobatistaa/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 group"
+                className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" />
               </a>
               
               <a 
                 href="https://github.com/kikobatistaa" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 group"
+                className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
                 aria-label="GitHub"
               >
-                <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                <Github className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" />
               </a>
               
               <a 
                 href="mailto:kiko.2205@hotmail.com"
-                className="p-3 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 group"
+                className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
                 aria-label="Email"
               >
-                <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
           
-          <div className="border-t border-primary-foreground/10 mt-8 pt-8 text-center">
-            <p className="text-primary-foreground/70 text-sm">
+          <div className="border-t border-border/50 mt-8 pt-8 text-center">
+            <p className="text-muted-foreground text-sm">
               © 2025 Francisco Cordeiro Batista. All rights reserved.
             </p>
           </div>

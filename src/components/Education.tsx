@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Award, BookOpen } from "lucide-react";
+import { GraduationCap, Award, BookOpen, Clock } from "lucide-react";
 
 const education = [
   {
@@ -10,7 +10,8 @@ const education = [
     location: "Madrid, Spain",
     icon: GraduationCap,
     focus: ["Corporate Finance", "Accountability", "Strategy", "Marketing", "Innovation"],
-    highlight: null
+    highlight: null,
+    details: ""
   },
   {
     school: "NOVA Information Management School",
@@ -19,26 +20,23 @@ const education = [
     location: "Lisbon, Portugal",
     icon: Award,
     focus: ["Statistics", "Machine Learning", "Deep Learning", "Business Intelligence"],
-    highlight: "Grade: 15/20 • Co-Founded NOVAe Entrepreneurship Hub"
+    highlight: "Grade: 15/20 • Co-Founded NOVAe Entrepreneurship Hub & Directed Marketing",
+    details: "Relevant coursework: Strategy, Finance, Machine Learning, Statistics, Econometrics, Marketing, Accountability"
   }
 ];
 
-const coursework = [
-  "Strategy",
-  "Finance", 
-  "Machine Learning",
-  "Statistics",
-  "Econometrics",
-  "Marketing",
-  "Accountability"
-];
-
 const Education = () => {
+  // Extracting all unique coursework items for the bottom section
+  const allCoursework = education.flatMap(edu => {
+    // This is a temporary manual parsing, should be done cleaner if data source changes.
+    if (edu.details.includes("Relevant coursework:")) {
+        return edu.details.replace("Relevant coursework: ", "").split(', ').map(item => item.trim());
+    }
+    return [];
+  }).filter((value, index, self) => self.indexOf(value) === index); // Unique list
+
   return (
     <section id="education" className="py-32 bg-background relative overflow-hidden">
-      {/* Decorative background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none" />
-      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -52,7 +50,7 @@ const Education = () => {
           
           {/* Timeline Layout */}
           <div className="relative">
-            {/* Vertical line */}
+            {/* Vertical line with gradient */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-accent/50 to-transparent md:-translate-x-1/2 hidden md:block" />
             
             <div className="space-y-12">
@@ -71,7 +69,7 @@ const Education = () => {
                     {/* Timeline dot */}
                     <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-glow md:-translate-x-1/2 z-10 hidden md:block" />
                     
-                    {/* Spacer for even items */}
+                    {/* Spacer for two-column layout alignment */}
                     <div className="hidden md:block md:w-1/2" />
                     
                     {/* Content Card */}
@@ -91,6 +89,7 @@ const Education = () => {
                               </div>
                             </div>
                             <div className="flex items-center gap-3 mt-2 text-sm text-muted-foreground">
+                              <Clock className="h-4 w-4 text-accent" />
                               <Badge variant="outline" className="border-accent/30 text-accent bg-accent/10">
                                 {edu.period}
                               </Badge>
@@ -140,7 +139,7 @@ const Education = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {coursework.map((course, idx) => (
+                  {allCoursework.map((course, idx) => (
                     <Badge 
                       key={idx}
                       variant="outline"
