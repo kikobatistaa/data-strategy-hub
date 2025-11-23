@@ -19,7 +19,7 @@ const experiences = [
   {
     company: "NOVAe",
     role: "Co-Founder & Head of Marketing",
-    period: "2023 - Present",
+    period: "2023 - 2024",
     icon: Users,
     achievements: [
       "Co-founded the university's first entrepreneurship hub",
@@ -29,9 +29,9 @@ const experiences = [
     skills: ["Entrepreneurship", "Strategic Marketing", "Community Building", "Leadership"]
   },
   {
-    company: "Happy Code Oriente",
+    company: "Happy Code Oriente and Colégio Francisco São Xavier",
     role: "Tech Educator",
-    period: "2022 - 2023",
+    period: "2022 - 2024",
     icon: Code,
     achievements: [
       "Taught Python & Algorithms to 50+ students aged 8-16",
