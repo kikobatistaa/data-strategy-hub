@@ -29,19 +29,17 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             <Button 
+              asChild /* Renders the component as its child (the <a> tag) */
               size="lg" 
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg group"
+              className="bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg font-bold group border border-white/20"
             >
-              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-              Download CV
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm px-8 py-6 text-lg"
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              Contact Me
+              <a 
+                href="/CV.pdf" /* Points to your file in the public folder */
+                download="Francisco_Batista_CV.pdf" /* Forces the browser to download the file */
+              >
+                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+                Download CV
+              </a>
             </Button>
           </div>
           
