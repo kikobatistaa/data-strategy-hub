@@ -25,7 +25,7 @@ const Footer = () => {
               </a>
               
               <a 
-                href="https://github.com" 
+                href="https://github.com/kikobatistaa" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 group"
@@ -35,7 +35,7 @@ const Footer = () => {
               </a>
               
               <a 
-                href="mailto:contact@franciscobatista.com"
+                href="mailto:kiko.2205@hotmail.com"
                 className="p-3 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-all duration-300 group"
                 aria-label="Email"
               >
