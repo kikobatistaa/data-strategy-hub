@@ -1,3 +1,4 @@
+/* src/components/Projects.tsx */
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Construction, LineChart, LayoutDashboard, Target } from "lucide-react";
@@ -25,11 +26,11 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-background">
+    <section id="projects" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
               Featured Projects
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
@@ -41,41 +42,42 @@ const Projects = () => {
             </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => {
               const Icon = project.icon;
               return (
                 <Card 
                   key={index}
-                  className="shadow-card hover:shadow-hover transition-all duration-300 border-border/50 hover:border-accent/30 relative overflow-hidden animate-in fade-in slide-in-from-bottom-4"
+                  className="group border-0 shadow-lg hover:shadow-hover hover:-translate-y-2 transition-all duration-500 relative overflow-hidden bg-background rounded-2xl"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -translate-y-16 translate-x-16" />
+                  {/* Decorative gradient blob */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/3 group-hover:bg-accent/10 transition-colors duration-500 blur-3xl" />
                   
-                  <CardHeader className="pb-4">
-                    <div className="mb-3">
-                      <div className="p-3 rounded-lg bg-primary/10 inline-block">
-                        <Icon className="h-6 w-6 text-primary" />
+                  <CardHeader className="pb-4 relative z-10">
+                    <div className="mb-4">
+                      <div className="p-3 rounded-xl bg-accent/10 inline-block group-hover:bg-accent/20 transition-colors duration-300">
+                        <Icon className="h-7 w-7 text-accent" />
                       </div>
                     </div>
-                    <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardTitle className="text-2xl mb-2 font-bold">{project.title}</CardTitle>
+                    <CardDescription className="text-base font-medium text-muted-foreground/80">
                       {project.category}
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center gap-2 text-muted-foreground bg-muted/50 px-4 py-3 rounded-lg border border-border/30">
+                  <CardContent className="space-y-6 relative z-10">
+                    <div className="flex items-center gap-2 text-muted-foreground bg-secondary/50 px-4 py-3 rounded-lg">
                       <Construction className="h-4 w-4" />
-                      <span className="text-sm font-medium">🚧 Coming Soon / In Development</span>
+                      <span className="text-sm font-medium">Coming Soon</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, idx) => (
                         <Badge 
                           key={idx} 
-                          variant="outline"
-                          className="border-border/50 text-muted-foreground"
+                          variant="secondary"
+                          className="bg-secondary text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                         >
                           {tag}
                         </Badge>
