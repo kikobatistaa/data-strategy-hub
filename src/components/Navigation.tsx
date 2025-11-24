@@ -31,7 +31,8 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 80; // Account for sticky nav height
@@ -66,8 +67,9 @@ const Navigation = () => {
           <ul className="flex items-center gap-8 md:gap-12">
             {navItems.map((item) => (
               <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => scrollToSection(e, item.id)}
                   className={`relative text-sm md:text-base font-medium transition-colors duration-300 group ${
                     activeSection === item.id
                       ? "text-accent"
@@ -83,7 +85,7 @@ const Navigation = () => {
                         : "w-0 group-hover:w-full"
                     }`}
                   />
-                </button>
+                </a>
               </li>
             ))}
           </ul>

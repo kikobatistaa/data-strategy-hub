@@ -1,37 +1,17 @@
 /* src/components/Skills.tsx */
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, TrendingUp, Wrench } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { useOnScreen } from "@/hooks/useOnScreen";
 
 const Skills = () => {
   const { language } = useLanguage();
   const t = translations[language].skills;
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
   const skillCategories = [
     {
