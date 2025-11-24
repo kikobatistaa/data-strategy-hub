@@ -1,5 +1,9 @@
 export const translations = {
   en: {
+    warning: {
+      title: "⚠️ Under Development",
+      message: "This website is currently under development and may contain mistakes or inaccurate information."
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Data Scientist | MiM | Business Intelligence",
@@ -108,6 +112,10 @@ export const translations = {
     }
   },
   "pt-pt": {
+    warning: {
+      title: "⚠️ Em Desenvolvimento",
+      message: "Este website está atualmente em desenvolvimento e pode conter erros ou informações imprecisas."
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Cientista de Dados | MiM | Business Intelligence",
@@ -216,6 +224,10 @@ export const translations = {
     }
   },
   "pt-br": {
+    warning: {
+      title: "⚠️ Em Desenvolvimento",
+      message: "Este site está atualmente em desenvolvimento e pode conter erros ou informações imprecisas."
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Cientista de Dados | MiM | Business Intelligence",
@@ -324,6 +336,10 @@ export const translations = {
     }
   },
   es: {
+    warning: {
+      title: "⚠️ En Desarrollo",
+      message: "Este sitio web está actualmente en desarrollo y puede contener errores o información inexacta."
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Científico de Datos | MiM | Business Intelligence",
