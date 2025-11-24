@@ -3,6 +3,7 @@ export const translations = {
     navigation: {
       experience: "Experience",
       education: "Education",
+      skills: "Skills",
       projects: "Projects",
       about: "About"
     },
@@ -108,6 +109,29 @@ export const translations = {
         tags: ["Data Analysis", "Strategy", "Insights"]
       }
     },
+    skills: {
+      title: "Skills & Competencies",
+      subtitle: "Technical expertise and business acumen to drive data-driven decisions",
+      categories: {
+        technical: "Technical Skills",
+        business: "Business & Strategy",
+        tools: "Tools & Platforms"
+      },
+      items: {
+        python: { name: "Python", level: 90 },
+        sql: { name: "SQL", level: 85 },
+        machineLearning: { name: "Machine Learning", level: 80 },
+        statistics: { name: "Statistics", level: 85 },
+        businessIntelligence: { name: "Business Intelligence", level: 90 },
+        dataVisualization: { name: "Data Visualization", level: 85 },
+        strategy: { name: "Strategic Analysis", level: 85 },
+        finance: { name: "Corporate Finance", level: 75 },
+        marketing: { name: "Marketing Strategy", level: 80 },
+        powerBI: { name: "Power BI", level: 85 },
+        excel: { name: "Excel", level: 90 },
+        tableau: { name: "Tableau", level: 75 }
+      }
+    },
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
       copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved."
@@ -121,6 +145,7 @@ export const translations = {
     navigation: {
       experience: "Experiência",
       education: "Educação",
+      skills: "Competências",
       projects: "Projetos",
       about: "Sobre"
     },
@@ -226,6 +251,29 @@ export const translations = {
         tags: ["Análise de Dados", "Estratégia", "Insights"]
       }
     },
+    skills: {
+      title: "Competências & Habilidades",
+      subtitle: "Expertise técnica e visão de negócio para impulsionar decisões baseadas em dados",
+      categories: {
+        technical: "Competências Técnicas",
+        business: "Negócios & Estratégia",
+        tools: "Ferramentas & Plataformas"
+      },
+      items: {
+        python: { name: "Python", level: 90 },
+        sql: { name: "SQL", level: 85 },
+        machineLearning: { name: "Machine Learning", level: 80 },
+        statistics: { name: "Estatística", level: 85 },
+        businessIntelligence: { name: "Business Intelligence", level: 90 },
+        dataVisualization: { name: "Visualização de Dados", level: 85 },
+        strategy: { name: "Análise Estratégica", level: 85 },
+        finance: { name: "Finanças Corporativas", level: 75 },
+        marketing: { name: "Estratégia de Marketing", level: 80 },
+        powerBI: { name: "Power BI", level: 85 },
+        excel: { name: "Excel", level: 90 },
+        tableau: { name: "Tableau", level: 75 }
+      }
+    },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
@@ -239,6 +287,7 @@ export const translations = {
     navigation: {
       experience: "Experiência",
       education: "Educação",
+      skills: "Competências",
       projects: "Projetos",
       about: "Sobre"
     },
@@ -344,6 +393,29 @@ export const translations = {
         tags: ["Análise de Dados", "Estratégia", "Insights"]
       }
     },
+    skills: {
+      title: "Competências & Habilidades",
+      subtitle: "Expertise técnica e visão de negócio para impulsionar decisões baseadas em dados",
+      categories: {
+        technical: "Competências Técnicas",
+        business: "Negócios & Estratégia",
+        tools: "Ferramentas & Plataformas"
+      },
+      items: {
+        python: { name: "Python", level: 90 },
+        sql: { name: "SQL", level: 85 },
+        machineLearning: { name: "Machine Learning", level: 80 },
+        statistics: { name: "Estatística", level: 85 },
+        businessIntelligence: { name: "Business Intelligence", level: 90 },
+        dataVisualization: { name: "Visualização de Dados", level: 85 },
+        strategy: { name: "Análise Estratégica", level: 85 },
+        finance: { name: "Finanças Corporativas", level: 75 },
+        marketing: { name: "Estratégia de Marketing", level: 80 },
+        powerBI: { name: "Power BI", level: 85 },
+        excel: { name: "Excel", level: 90 },
+        tableau: { name: "Tableau", level: 75 }
+      }
+    },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
@@ -357,6 +429,7 @@ export const translations = {
     navigation: {
       experience: "Experiencia",
       education: "Educación",
+      skills: "Competencias",
       projects: "Proyectos",
       about: "Acerca"
     },
@@ -460,6 +533,29 @@ export const translations = {
         title: "Análisis de Estrategia de Mercado",
         category: "Consultoría Estratégica",
         tags: ["Análisis de Datos", "Estrategia", "Insights"]
+      }
+    },
+    skills: {
+      title: "Competencias & Habilidades",
+      subtitle: "Experiencia técnica y visión empresarial para impulsar decisiones basadas en datos",
+      categories: {
+        technical: "Competencias Técnicas",
+        business: "Negocios & Estrategia",
+        tools: "Herramientas & Plataformas"
+      },
+      items: {
+        python: { name: "Python", level: 90 },
+        sql: { name: "SQL", level: 85 },
+        machineLearning: { name: "Machine Learning", level: 80 },
+        statistics: { name: "Estadística", level: 85 },
+        businessIntelligence: { name: "Business Intelligence", level: 90 },
+        dataVisualization: { name: "Visualización de Datos", level: 85 },
+        strategy: { name: "Análisis Estratégico", level: 85 },
+        finance: { name: "Finanzas Corporativas", level: 75 },
+        marketing: { name: "Estrategia de Marketing", level: 80 },
+        powerBI: { name: "Power BI", level: 85 },
+        excel: { name: "Excel", level: 90 },
+        tableau: { name: "Tableau", level: 75 }
       }
     },
     footer: {
