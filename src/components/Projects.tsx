@@ -2,43 +2,48 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Construction, LineChart, LayoutDashboard, Target } from "lucide-react";
-
-const projects = [
-  {
-    title: "Revenue Prediction Model",
-    category: "Machine Learning & Econometrics",
-    icon: LineChart,
-    tags: ["Python", "ML", "Forecasting"]
-  },
-  {
-    title: "Executive Dashboard",
-    category: "Business Intelligence",
-    icon: LayoutDashboard,
-    tags: ["SQL", "Visualization", "KPIs"]
-  },
-  {
-    title: "Market Strategy Analysis",
-    category: "Strategic Consulting",
-    icon: Target,
-    tags: ["Data Analysis", "Strategy", "Insights"]
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 const Projects = () => {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+
+  const projects = [
+    {
+      title: t.revenue.title,
+      category: t.revenue.category,
+      icon: LineChart,
+      tags: t.revenue.tags
+    },
+    {
+      title: t.dashboard.title,
+      category: t.dashboard.category,
+      icon: LayoutDashboard,
+      tags: t.dashboard.tags
+    },
+    {
+      title: t.strategy.title,
+      category: t.strategy.category,
+      icon: Target,
+      tags: t.strategy.tags
+    }
+  ];
+
   return (
     <section id="projects" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
-              Featured Projects
+              {t.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
-              Applying advanced ML & Econometrics to business cases
+              {t.subtitle}
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
               <Construction className="h-4 w-4 text-accent" />
-              <span className="text-sm font-medium text-accent">Portfolio Under Construction</span>
+              <span className="text-sm font-medium text-accent">{t.construction}</span>
             </div>
           </div>
           
@@ -69,7 +74,7 @@ const Projects = () => {
                   <CardContent className="space-y-6 relative z-10">
                     <div className="flex items-center gap-2 text-accent bg-accent/10 px-4 py-3 rounded-lg border border-accent/20">
                       <Construction className="h-4 w-4" />
-                      <span className="text-sm font-medium">Coming Soon</span>
+                      <span className="text-sm font-medium">{t.comingSoon}</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-2">

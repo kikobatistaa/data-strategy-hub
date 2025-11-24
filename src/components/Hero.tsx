@@ -1,11 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Linkedin } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
+import LanguageSelector from "./LanguageSelector";
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-hero overflow-hidden py-32">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItaDJWMzZoMnYtMmgtMnYtMmgtMnYyaC0ydjJoMnptLTQgMHYyaC0ydjJoLTJ2MmgydjJoMnYiaDJ2LTJoMnYtMmgydi0yaC0ydi0yaC0ydi0yaC0yem0wIDBoMnYtMmgydi0iaC0ydi0iaC0ydjJoLTJ2MmgydjJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" />
+      
+      {/* Language Selector - Top Right */}
+      <div className="absolute top-8 right-8 z-20">
+        <LanguageSelector />
+      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -23,7 +34,7 @@ const Hero = () => {
           {/* Name Section */}
           <div className="space-y-2">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-              Francisco Cordeiro Batista
+              {t.name}
             </h1>
           </div>
 
@@ -31,20 +42,20 @@ const Hero = () => {
           <div className="inline-block mb-4">
             <div className="px-6 py-2.5 bg-accent/10 backdrop-blur-md rounded-full border border-accent/20 shadow-glow transition-all duration-300 hover:bg-accent/15 hover:border-accent/30 hover:scale-105 cursor-default">
               <p className="text-accent text-sm md:text-base font-semibold tracking-wide uppercase">
-                Data Scientist <span className="mx-2 text-accent/50">|</span> MiM <span className="mx-2 text-accent/50">|</span> Business Intelligence
+                {t.role}
               </p>
             </div>
           </div>
           
           <h2 className="text-5xl md:text-7xl font-black text-foreground leading-tight tracking-tight">
-            Bridging Data Science &{" "}
+            {t.title}{" "}
             <span className="bg-gradient-to-r from-accent via-purple-400 to-accent bg-clip-text text-transparent">
-              Business Strategy
+              {t.titleAccent}
             </span>
           </h2>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Transforming complex data into actionable insights that drive strategic business decisions and measurable impact.
+            {t.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
@@ -56,7 +67,7 @@ const Hero = () => {
             >
               <a href="/CV.pdf" download="Francisco_Batista_CV.pdf">
                 <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                Download CV
+                {t.downloadCV}
               </a>
             </Button>
             
@@ -69,7 +80,7 @@ const Hero = () => {
             >
               <a href="mailto:kiko.2205@hotmail.com">
                 <Mail className="mr-2 h-5 w-5" />
-                Contact Me
+                {t.contactMe}
               </a>
             </Button>
           </div>

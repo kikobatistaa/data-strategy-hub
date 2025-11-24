@@ -1,48 +1,41 @@
 /* src/components/Experience.tsx */
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, TrendingUp, Users, Code } from "lucide-react";
-
-const experiences = [
-  {
-    company: "NetJets Europe",
-    role: "Business Analyst Intern",
-    period: "2024",
-    icon: Briefcase,
-    achievements: [
-      "Analyzed sales data to identify significant revenue leakage opportunities",
-      "Automated manual inventory reconciliation using SQL & Python, saving ~10 hours/week",
-      "Developed client segmentation for targeted marketing initiatives"
-    ],
-    skills: ["SQL", "Python", "Data Analysis", "Revenue Optimization"]
-  },
-  {
-    company: "NOVAe",
-    role: "Co-Founder & Head of Marketing",
-    period: "2023 - 2024",
-    icon: Users,
-    achievements: [
-      "Co-founded the university's first entrepreneurship hub",
-      "Grew membership to 20+ active members and secured industry speakers in Year 1",
-      "Developed strategic partnerships with leading tech companies"
-    ],
-    skills: ["Entrepreneurship", "Strategic Marketing", "Community Building", "Leadership"]
-  },
-  {
-    company: "Happy Code Oriente and Colégio Francisco São Xavier",
-    role: "Tech Educator",
-    period: "2022 - 2024",
-    icon: Code,
-    achievements: [
-      "Taught Python & Algorithms to 50+ students aged 8-16",
-      "Designed curriculum combining computational thinking with practical applications",
-      "Achieved 95% student satisfaction rate across all courses"
-    ],
-    skills: ["Python", "Teaching", "Curriculum Design", "Communication"]
-  }
-];
+import { Briefcase, Users, Code } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 const Experience = () => {
+  const { language } = useLanguage();
+  const t = translations[language].experience;
+
+  const experiences = [
+    {
+      company: t.netjets.company,
+      role: t.netjets.role,
+      period: t.netjets.period,
+      icon: Briefcase,
+      achievements: t.netjets.achievements,
+      skills: t.netjets.skills
+    },
+    {
+      company: t.novae.company,
+      role: t.novae.role,
+      period: t.novae.period,
+      icon: Users,
+      achievements: t.novae.achievements,
+      skills: t.novae.skills
+    },
+    {
+      company: t.happycode.company,
+      role: t.happycode.role,
+      period: t.happycode.period,
+      icon: Code,
+      achievements: t.happycode.achievements,
+      skills: t.happycode.skills
+    }
+  ];
+
   return (
     <section id="experience" className="py-24 bg-background relative overflow-hidden">
       {/* Abstract Background Element */}
@@ -52,10 +45,10 @@ const Experience = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Professional Experience
+              {t.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Driving impact through data-driven insights and strategic execution
+              {t.subtitle}
             </p>
           </div>
           
