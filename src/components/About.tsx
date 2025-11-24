@@ -7,6 +7,22 @@ const About = () => {
   const { language } = useLanguage();
   const t = translations[language].about;
 
+  // Helper function to render text with <strong> tags
+  const renderText = (text: string) => {
+    const parts = text.split(/<strong>|<\/strong>/);
+    return parts.map((part, index) => {
+      // Odd indices are the content inside <strong> tags
+      if (index % 2 === 1) {
+        return (
+          <strong key={index} className="font-semibold text-foreground">
+            {part}
+          </strong>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <section id="about" className="py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
@@ -19,13 +35,12 @@ const About = () => {
           
           <Card className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <CardContent className="pt-8 space-y-6">
-              {/* Updated to display 5 distinct paragraphs and allow for bold/strong formatting */}
               <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
-                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p1 }} />
-                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p2 }} />
-                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p3 }} />
-                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p4 }} />
-                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p5 }} />
+                <p className="text-lg">{renderText(t.p1)}</p>
+                <p className="text-lg">{renderText(t.p2)}</p>
+                <p className="text-lg">{renderText(t.p3)}</p>
+                <p className="text-lg">{renderText(t.p4)}</p>
+                <p className="text-lg">{renderText(t.p5)}</p>
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 pt-4">

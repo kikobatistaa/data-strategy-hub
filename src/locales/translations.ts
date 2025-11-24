@@ -135,10 +135,6 @@ export const translations = {
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
       copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved."
-    },
-    // New key for the warning banner
-    banner: {
-      developmentWarning: "⚠️ This website is under active development. The projects portfolio will be updated shortly."
     }
   },
   "pt-pt": {
@@ -277,10 +273,6 @@ export const translations = {
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
-    },
-    // New key for the warning banner
-    banner: {
-      developmentWarning: "⚠️ Este site está em desenvolvimento ativo. O portfólio de projetos será atualizado brevemente."
     }
   },
   "pt-br": {
@@ -419,10 +411,6 @@ export const translations = {
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
-    },
-    // New key for the warning banner
-    banner: {
-      developmentWarning: "⚠️ Este site está em desenvolvimento ativo. O portfólio de projetos será atualizado brevemente."
     }
   },
   es: {
@@ -561,10 +549,6 @@ export const translations = {
     footer: {
       tagline: "Ciencia de Datos • Estrategia Empresarial • Mentalidad Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos los derechos reservados."
-    },
-    // New key for the warning banner
-    banner: {
-      developmentWarning: "⚠️ Este sitio está en desarrollo activo. El portafolio de proyectos se actualizará próximamente."
     }
   }
 };

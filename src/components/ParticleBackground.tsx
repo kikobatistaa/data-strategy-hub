@@ -46,7 +46,7 @@ const ParticleBackground = () => {
 
     // Create particles
     const particles: Particle[] = [];
-    const particleCount = 80;
+    const particleCount = 40;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -62,7 +62,7 @@ const ParticleBackground = () => {
 
     // Create geometric shapes
     const shapes: Shape[] = [];
-    const shapeCount = 12;
+    const shapeCount = 6;
     const shapeTypes: Array<'triangle' | 'square' | 'hexagon'> = ['triangle', 'square', 'hexagon'];
 
     for (let i = 0; i < shapeCount; i++) {
@@ -103,7 +103,7 @@ const ParticleBackground = () => {
 
     // Animation loop
     const animate = () => {
-      ctx.fillStyle = "rgba(10, 10, 10, 0.05)";
+      ctx.fillStyle = "rgba(10, 10, 10, 0.03)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw and update particles
