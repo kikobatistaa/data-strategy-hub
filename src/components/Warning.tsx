@@ -1,8 +1,10 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 import { AlertTriangle } from "lucide-react";
 
 const Warning = () => {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
+  const t = translations[language].warning;
 
   return (
     <div className="bg-gradient-to-r from-amber-600/20 to-orange-600/20 border-b border-amber-500/30 backdrop-blur-sm">
