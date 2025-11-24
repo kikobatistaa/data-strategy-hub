@@ -11,15 +11,15 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      intro: "I'm a data-driven strategist bridging the gap between technical analytics and business impact. My journey began with strong foundation in statistical modeling, machine learning, and programming.",
-      specialty: "I specialize in translating complex quantitative insights into actionable business strategies that drive measurable results.",
-      international: "My international mindset, shaped by fluency in",
-      languages: "Portuguese, Spanish, and English",
-      collaboration: ", enables me to collaborate effectively across diverse teams and markets. I thrive at the intersection of data science and strategy, where analytical rigor meets business intuition.",
+      p1: "I am a <strong>Business Intelligence and Strategy Analyst</strong> passionate about finding the \"story\" hidden within the data. My unique value is bridging the gap between deep technical analysis and strategic business objectives.",
+      p2: "In my recent role at <strong>NetJets</strong>, I put this into practice: I analyzed revenue losses, presenting actionable solutions directly to senior stakeholders. I don't just build dashboards; my goal is to deliver answers.",
+      p3: "My <strong>hybrid approach</strong> is built on two pillars. The first is my Data Science (BSc) background, which provides my technical toolkit. I manage the full data lifecycle, from complex <strong>SQL</strong> queries and <strong>Python</strong> automation to building <strong>BI and ML Algorithms</strong>. The second pillar is my Management (MSc) training, which provides my business acumen. This gives me the insight to know which questions to ask and how the answers will impact the <strong>P&L (Profit & Loss)</strong>.",
+      p4: "Beyond my analytical work, I am a <strong>builder</strong>. I <strong>co-founded NOVAe</strong>, my university's first entrepreneurship hub, and led its marketing strategy from the ground up. This experience taught me how to lead teams and build a strategic vision.",
+      p5: "My <strong>trilingual fluency</strong> (English, Spanish, and Portuguese) allows me to work effectively in international and multicultural environments. I am always open to connecting with professionals in the data, strategy, and aviation fields.",
       expertise: "Expertise",
       expertiseDesc: "Data Science & Strategy",
       languagesTitle: "Languages",
-      languagesDesc: "PT, ES, EN (Fluent)",
+      languagesDesc: "PT, ES (C1), EN (Fluent)",
       experience: "Experience",
       experienceDesc: "Analyst & Entrepreneur"
     },
@@ -105,6 +105,10 @@ export const translations = {
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
       copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved."
+    },
+    // New key for the warning banner
+    banner: {
+      developmentWarning: "⚠️ This website is under active development. The projects portfolio will be updated shortly."
     }
   },
   "pt-pt": {
@@ -112,36 +116,36 @@ export const translations = {
       name: "Francisco Cordeiro Batista",
       role: "Cientista de Dados | MiM | Business Intelligence",
       title: "Conectando Ciência de Dados &",
-      titleAccent: "Estratégia de Negócio",
-      subtitle: "Transformando dados complexos em insights acionáveis que impulsionam decisões estratégicas e impacto mensurável.",
+      titleAccent: "Estratégia Empresarial",
+      subtitle: "Transformando dados complexos em insights acionáveis que informam decisões estratégicas e impacto mensurável.",
       downloadCV: "Descarregar CV",
-      contactMe: "Contactar"
+      contactMe: "Contacte-me"
     },
     about: {
       title: "Sobre Mim",
-      intro: "Sou um estratega orientado por dados que conecta análise técnica e impacto empresarial. A minha jornada começou com uma base sólida em modelação estatística, aprendizagem automática e programação.",
-      specialty: "Especializo-me em traduzir insights quantitativos complexos em estratégias de negócio acionáveis que geram resultados mensuráveis.",
-      international: "A minha mentalidade internacional, moldada pela fluência em",
-      languages: "Português, Espanhol e Inglês",
-      collaboration: ", permite-me colaborar eficazmente com equipas e mercados diversos. Destaco-me na interseção entre ciência de dados e estratégia, onde o rigor analítico encontra a intuição empresarial.",
+      p1: "Sou um <strong>Analista de Business Intelligence e Estratégia</strong>, apaixonado por descobrir a \"história\" escondida nos dados. O meu valor único reside em ligar a análise técnica aprofundada com os objetivos estratégicos de negócio.",
+      p2: "No meu papel recente na <strong>NetJets</strong>, pus isto em prática: analisei perdas de receita, apresentando soluções acionáveis diretamente aos stakeholders séniores. Não construo apenas dashboards; o meu objetivo é entregar respostas.",
+      p3: "A minha <strong>abordagem híbrida</strong> assenta em dois pilares. O primeiro é a minha formação em Ciência de Dados (BSc), que fornece o meu kit de ferramentas técnicas. Eu gerencio todo o ciclo de vida dos dados, desde consultas <strong>SQL</strong> complexas e automação em <strong>Python</strong> até à construção de <strong>Algoritmos de BI e ML</strong>. O segundo pilar é a minha formação em Gestão (MSc), que me fornece visão de negócio. Isso permite-me saber quais perguntas fazer e como as respostas impactarão o <strong>P&L (Profit & Loss)</strong>.",
+      p4: "Para além do meu trabalho analítico, sou um <strong>construtor</strong>. <strong>Co-fundei o NOVAe</strong>, o primeiro núcleo de empreendedorismo da minha universidade, e liderei a sua estratégia de marketing desde o início. Esta experiência ensinou-me a liderar equipas e a construir uma visão estratégica.",
+      p5: "A minha <strong>fluência trilingue</strong> (Inglês, Espanhol e Português) permite-me trabalhar eficazmente em ambientes internacionais e multiculturais. Estou sempre aberto a conectar-me com profissionais das áreas de dados, estratégia e aviação.",
       expertise: "Especialização",
       expertiseDesc: "Ciência de Dados & Estratégia",
       languagesTitle: "Idiomas",
-      languagesDesc: "PT, ES, EN (Fluente)",
+      languagesDesc: "PT, ES (C1), EN (Fluência)",
       experience: "Experiência",
       experienceDesc: "Analista & Empreendedor"
     },
     experience: {
       title: "Experiência Profissional",
-      subtitle: "Gerando impacto através de insights orientados por dados e execução estratégica",
+      subtitle: "A gerar impacto através de insights orientados por dados e execução estratégica",
       netjets: {
         company: "NetJets Europe",
         role: "Estagiário de Análise de Negócio",
         period: "2024",
         achievements: [
-          "Analisou dados de vendas para identificar oportunidades significativas de perda de receita",
-          "Automatizou reconciliação manual de inventário usando SQL & Python, poupando ~10 horas/semana",
-          "Desenvolveu segmentação de clientes para iniciativas de marketing direcionadas"
+          "Análise de dados de vendas que identificou oportunidades significativas de recuperação de receita",
+          "Automação da reconciliação de inventário (SQL & Python), resultando numa poupança de ~10 horas/semana",
+          "Desenvolvimento de segmentação de clientes para iniciativas de marketing mais direcionadas"
         ],
         skills: ["SQL", "Python", "Análise de Dados", "Otimização de Receita"]
       },
@@ -150,9 +154,9 @@ export const translations = {
         role: "Co-Fundador & Diretor de Marketing",
         period: "2023 - 2024",
         achievements: [
-          "Co-fundou o primeiro hub de empreendedorismo da universidade",
-          "Aumentou a adesão para mais de 20 membros ativos e garantiu palestrantes da indústria no 1º ano",
-          "Desenvolveu parcerias estratégicas com empresas tecnológicas líderes"
+          "Co-fundação do primeiro núcleo de empreendedorismo da universidade",
+          "Aumento da adesão para +20 membros ativos e angariação de oradores de referência no 1º ano",
+          "Desenvolvimento de parcerias estratégicas com empresas de tecnologia líderes"
         ],
         skills: ["Empreendedorismo", "Marketing Estratégico", "Construção de Comunidade", "Liderança"]
       },
@@ -161,16 +165,16 @@ export const translations = {
         role: "Educador Tecnológico",
         period: "2022 - 2024",
         achievements: [
-          "Ensinou Python & Algoritmos a mais de 50 estudantes entre 8-16 anos",
-          "Desenvolveu currículo combinando pensamento computacional com aplicações práticas",
-          "Alcançou 95% de taxa de satisfação dos alunos em todos os cursos"
+          "Ensino de Python e Algoritmos a mais de 50 alunos (8-16 anos)",
+          "Criação de um currículo que combina pensamento computacional com aplicações práticas",
+          "Taxa de satisfação de 95% dos alunos em todos os cursos"
         ],
         skills: ["Python", "Ensino", "Design Curricular", "Comunicação"]
       }
     },
     education: {
       title: "Educação",
-      subtitle: "Combinando conhecimento técnico com competência estratégica empresarial",
+      subtitle: "Combinando conhecimento técnico com visão estratégica de negócio",
       uc3m: {
         school: "Universidad Carlos III de Madrid",
         degree: "Mestrado em Gestão",
@@ -213,6 +217,10 @@ export const translations = {
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
+    },
+    // New key for the warning banner
+    banner: {
+      developmentWarning: "⚠️ Este site está em desenvolvimento ativo. O portfólio de projetos será atualizado brevemente."
     }
   },
   "pt-br": {
@@ -220,36 +228,36 @@ export const translations = {
       name: "Francisco Cordeiro Batista",
       role: "Cientista de Dados | MiM | Business Intelligence",
       title: "Conectando Ciência de Dados &",
-      titleAccent: "Estratégia de Negócio",
-      subtitle: "Transformando dados complexos em insights acionáveis que impulsionam decisões estratégicas e impacto mensurável.",
+      titleAccent: "Estratégia de Negócios",
+      subtitle: "Transformando dados complexos em insights acionáveis que guiam decisões estratégicas e impacto mensurável.",
       downloadCV: "Baixar CV",
-      contactMe: "Entrar em Contato"
+      contactMe: "Entre em Contato"
     },
     about: {
       title: "Sobre Mim",
-      intro: "Sou um estrategista orientado por dados que conecta análise técnica e impacto empresarial. Minha jornada começou com uma base sólida em modelagem estatística, aprendizado de máquina e programação.",
-      specialty: "Especializo-me em traduzir insights quantitativos complexos em estratégias de negócio acionáveis que geram resultados mensuráveis.",
-      international: "Minha mentalidade internacional, moldada pela fluência em",
-      languages: "Português, Espanhol e Inglês",
-      collaboration: ", permite-me colaborar eficazmente com equipes e mercados diversos. Destaco-me na interseção entre ciência de dados e estratégia, onde o rigor analítico encontra a intuição empresarial.",
+      p1: "Eu sou um <strong>Analista de Business Intelligence e Estratégia</strong> apaixonado por encontrar a \"história\" oculta nos dados. Meu valor único é fazer a ponte entre a análise técnica aprofundada e os objetivos estratégicos de negócios.",
+      p2: "No meu papel recente na <strong>NetJets</strong>, coloquei isso em prática: analisei perdas de receita, apresentando soluções acionáveis diretamente aos stakeholders seniores. Eu não apenas crio dashboards; meu objetivo é entregar respostas.",
+      p3: "Minha <strong>abordagem híbrida</strong> é construída sobre dois pilares. O primeiro é minha formação em Ciência de Dados (BSc), que fornece meu kit de ferramentas técnicas. Gerencio todo o ciclo de vida dos dados, desde consultas <strong>SQL</strong> complexas e automação em <strong>Python</strong> até a construção de <strong>Algoritmos de BI e ML</strong>. O segundo pilar é meu treinamento em Gestão (MSc), que me fornece visão de negócios. Isso me dá a clareza para saber quais perguntas fazer e como as respostas impactarão o <strong>P&L (Profit & Loss)</strong>.",
+      p4: "Além do meu trabalho analítico, eu sou um <strong>construtor</strong>. <strong>Co-fundei o NOVAe</strong>, o primeiro hub de empreendedorismo da minha universidade, e liderei sua estratégia de marketing do zero. Esta experiência me ensinou a liderar equipes e a construir uma visão estratégica.",
+      p5: "Minha <strong>fluência trilingue</strong> (Inglês, Espanhol e Português) me permite trabalhar de forma eficaz em ambientes internacionais e multiculturais. Estou sempre aberto a me conectar com profissionais das áreas de dados, estratégia e aviação.",
       expertise: "Especialização",
       expertiseDesc: "Ciência de Dados & Estratégia",
       languagesTitle: "Idiomas",
-      languagesDesc: "PT, ES, EN (Fluente)",
+      languagesDesc: "PT, ES (C1), EN (Fluência)",
       experience: "Experiência",
       experienceDesc: "Analista & Empreendedor"
     },
     experience: {
       title: "Experiência Profissional",
-      subtitle: "Gerando impacto através de insights orientados por dados e execução estratégica",
+      subtitle: "Gerando impacto por meio de insights orientados por dados e execução estratégica",
       netjets: {
         company: "NetJets Europe",
-        role: "Estagiário de Análise de Negócio",
+        role: "Estagiário em Análise de Negócios",
         period: "2024",
         achievements: [
-          "Analisou dados de vendas para identificar oportunidades significativas de perda de receita",
-          "Automatizou reconciliação manual de inventário usando SQL & Python, economizando ~10 horas/semana",
-          "Desenvolveu segmentação de clientes para iniciativas de marketing direcionadas"
+          "Análise de dados de vendas para identificar oportunidades significativas de recuperação de receita",
+          "Automatização da reconciliação de inventário (SQL & Python), gerando uma economia de ~10 horas/semana",
+          "Desenvolvimento de segmentação de clientes para iniciativas de marketing mais direcionadas"
         ],
         skills: ["SQL", "Python", "Análise de Dados", "Otimização de Receita"]
       },
@@ -258,9 +266,9 @@ export const translations = {
         role: "Co-Fundador & Diretor de Marketing",
         period: "2023 - 2024",
         achievements: [
-          "Co-fundou o primeiro hub de empreendedorismo da universidade",
-          "Aumentou a adesão para mais de 20 membros ativos e garantiu palestrantes da indústria no 1º ano",
-          "Desenvolveu parcerias estratégicas com empresas tecnológicas líderes"
+          "Co-fundação do primeiro hub de empreendedorismo da universidade",
+          "Aumento de mais de 20 membros ativos e captação de palestrantes do setor no 1º ano",
+          "Desenvolvimento de parcerias estratégicas com empresas líderes de tecnologia"
         ],
         skills: ["Empreendedorismo", "Marketing Estratégico", "Construção de Comunidade", "Liderança"]
       },
@@ -269,16 +277,16 @@ export const translations = {
         role: "Educador Tecnológico",
         period: "2022 - 2024",
         achievements: [
-          "Ensinou Python & Algoritmos a mais de 50 estudantes entre 8-16 anos",
-          "Desenvolveu currículo combinando pensamento computacional com aplicações práticas",
-          "Alcançou 95% de taxa de satisfação dos alunos em todos os cursos"
+          "Ensino de Python e Algoritmos para mais de 50 alunos (8-16 anos)",
+          "Desenvolvimento de um currículo que combina pensamento computacional com aplicações práticas",
+          "Taxa de satisfação de 95% dos alunos em todos os cursos"
         ],
         skills: ["Python", "Ensino", "Design Curricular", "Comunicação"]
       }
     },
     education: {
       title: "Educação",
-      subtitle: "Combinando conhecimento técnico com competência estratégica empresarial",
+      subtitle: "Combinando conhecimento técnico com visão estratégica de negócios",
       uc3m: {
         school: "Universidad Carlos III de Madrid",
         degree: "Mestrado em Gestão",
@@ -288,7 +296,7 @@ export const translations = {
       },
       nova: {
         school: "NOVA Information Management School",
-        degree: "Bacharelado em Ciência de Dados",
+        degree: "Graduação em Ciência de Dados",
         period: "2022 - 2025",
         location: "Lisboa, Portugal",
         focus: ["Estatística", "Aprendizado de Máquina", "Deep Learning", "Business Intelligence"],
@@ -321,6 +329,10 @@ export const translations = {
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
+    },
+    // New key for the warning banner
+    banner: {
+      developmentWarning: "⚠️ Este site está em desenvolvimento ativo. O portfólio de projetos será atualizado brevemente."
     }
   },
   es: {
@@ -335,15 +347,15 @@ export const translations = {
     },
     about: {
       title: "Sobre Mí",
-      intro: "Soy un estratega orientado por datos que conecta análisis técnico e impacto empresarial. Mi trayectoria comenzó con una base sólida en modelado estadístico, aprendizaje automático y programación.",
-      specialty: "Me especializo en traducir insights cuantitativos complejos en estrategias empresariales accionables que generan resultados medibles.",
-      international: "Mi mentalidad internacional, moldeada por la fluidez en",
-      languages: "Portugués, Español e Inglés",
-      collaboration: ", me permite colaborar eficazmente con equipos y mercados diversos. Destaco en la intersección entre ciencia de datos y estrategia, donde el rigor analítico se encuentra con la intuición empresarial.",
+      p1: "Soy un <strong>Analista de Business Intelligence y Estrategia</strong> apasionado por encontrar la \"historia\" oculta en los datos. Mi valor único es tender puentes entre el análisis técnico profundo y los objetivos estratégicos empresariales.",
+      p2: "En mi rol reciente en <strong>NetJets</strong>, puse esto en práctica: analicé pérdidas de ingresos, presentando soluciones accionables directamente a los altos cargos. No solo construyo cuadros de comando; mi objetivo es entregar respuestas.",
+      p3: "Mi <strong>enfoque híbrido</strong> se basa en dos pilares. El primero es mi formación en Ciencia de Datos (BSc), que me proporciona mi conjunto de herramientas técnicas. Gestiono todo el ciclo de vida de los datos, desde consultas <strong>SQL</strong> complejas y automatización en <strong>Python</strong> hasta la construcción de <strong>Algoritmos de BI y ML</strong>. El segundo pilar es mi formación en Gestión (MSc), que me aporta mi visión empresarial. Esto me da la perspectiva para saber qué preguntas hacer y cómo las respuestas impactarán en la <strong>P&L (Profit & Loss)</strong>.",
+      p4: "Más allá de mi trabajo analítico, soy un <strong>constructor</strong>. <strong>Co-fundé NOVAe</strong>, el primer hub de emprendimiento de mi universidad, y lideré su estrategia de marketing desde cero. Esta experiencia me enseñó a liderar equipos y a construir una visión estratégica.",
+      p5: "Mi <strong>fluidez trilingüe</strong> (Inglés, Español y Portugués) me permite trabajar eficazmente en entornos internacionales y multiculturales. Siempre estoy abierto a conectar con profesionales en los campos de datos, estrategia y aviación.",
       expertise: "Especialización",
       expertiseDesc: "Ciencia de Datos & Estrategia",
       languagesTitle: "Idiomas",
-      languagesDesc: "PT, ES, EN (Fluido)",
+      languagesDesc: "PT, ES (C1), EN (Fluido)",
       experience: "Experiencia",
       experienceDesc: "Analista & Emprendedor"
     },
@@ -385,7 +397,7 @@ export const translations = {
       }
     },
     education: {
-      title: "Educación",
+      title: "Educação",
       subtitle: "Combinando conocimiento técnico con competencia estratégica empresarial",
       uc3m: {
         school: "Universidad Carlos III de Madrid",
@@ -429,6 +441,10 @@ export const translations = {
     footer: {
       tagline: "Ciencia de Datos • Estrategia Empresarial • Mentalidad Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos los derechos reservados."
+    },
+    // New key for the warning banner
+    banner: {
+      developmentWarning: "⚠️ Este sitio está en desarrollo activo. El portafolio de proyectos se actualizará próximamente."
     }
   }
 };

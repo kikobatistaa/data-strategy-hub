@@ -19,18 +19,13 @@ const About = () => {
           
           <Card className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <CardContent className="pt-8 space-y-6">
-              <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
-                <p className="text-lg">
-                  {t.intro}
-                </p>
-                
-                <p className="text-lg">
-                  {t.specialty}
-                </p>
-                
-                <p className="text-lg">
-                  {t.international} <span className="font-semibold text-foreground">{t.languages}</span>{t.collaboration}
-                </p>
+              {/* Updated to display 5 distinct paragraphs and allow for bold/strong formatting */}
+              <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
+                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p1 }} />
+                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p2 }} />
+                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p3 }} />
+                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p4 }} />
+                <p className="text-lg" dangerouslySetInnerHTML={{ __html: t.p5 }} />
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 pt-4">
