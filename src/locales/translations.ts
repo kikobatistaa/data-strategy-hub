@@ -1,5 +1,11 @@
 export const translations = {
   en: {
+    navigation: {
+      experience: "Experience",
+      education: "Education",
+      projects: "Projects",
+      about: "About"
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Data Scientist | MiM | Business Intelligence",
@@ -112,6 +118,12 @@ export const translations = {
     }
   },
   "pt-pt": {
+    navigation: {
+      experience: "Experiência",
+      education: "Educação",
+      projects: "Projetos",
+      about: "Sobre"
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Cientista de Dados | MiM | Business Intelligence",
@@ -224,6 +236,12 @@ export const translations = {
     }
   },
   "pt-br": {
+    navigation: {
+      experience: "Experiência",
+      education: "Educação",
+      projects: "Projetos",
+      about: "Sobre"
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Cientista de Dados | MiM | Business Intelligence",
@@ -336,6 +354,12 @@ export const translations = {
     }
   },
   es: {
+    navigation: {
+      experience: "Experiencia",
+      education: "Educación",
+      projects: "Proyectos",
+      about: "Acerca"
+    },
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Científico de Datos | MiM | Business Intelligence",
