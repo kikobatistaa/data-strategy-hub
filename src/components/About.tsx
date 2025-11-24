@@ -1,14 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Brain } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language].about;
+
   return (
     <section id="about" className="py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              About Me
+              {t.title}
             </h2>
           </div>
           
@@ -16,19 +21,15 @@ const About = () => {
             <CardContent className="pt-8 space-y-6">
               <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  I'm a data-driven strategist bridging the gap between technical analytics and business impact. 
-                  My journey began with strong foundation in statistical modeling, machine learning, and programming.
+                  {t.intro}
                 </p>
                 
                 <p className="text-lg">
-                  I specialize in translating complex quantitative insights into actionable business strategies 
-                  that drive measurable results.
+                  {t.specialty}
                 </p>
                 
                 <p className="text-lg">
-                  My international mindset, shaped by fluency in <span className="font-semibold text-foreground">Portuguese, Spanish, and English</span>, 
-                  enables me to collaborate effectively across diverse teams and markets. I thrive at the intersection of data science 
-                  and strategy, where analytical rigor meets business intuition.
+                  {t.international} <span className="font-semibold text-foreground">{t.languages}</span>{t.collaboration}
                 </p>
               </div>
               
@@ -39,8 +40,8 @@ const About = () => {
                     <Brain className="h-5 w-5 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Expertise</h3>
-                    <p className="text-sm text-muted-foreground">Data Science & Strategy</p>
+                    <h3 className="font-semibold text-foreground mb-1">{t.expertise}</h3>
+                    <p className="text-sm text-muted-foreground">{t.expertiseDesc}</p>
                   </div>
                 </div>
                 
@@ -49,8 +50,8 @@ const About = () => {
                     <Globe className="h-5 w-5 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Languages</h3>
-                    <p className="text-sm text-muted-foreground">PT, ES, EN (Fluent)</p>
+                    <h3 className="font-semibold text-foreground mb-1">{t.languagesTitle}</h3>
+                    <p className="text-sm text-muted-foreground">{t.languagesDesc}</p>
                   </div>
                 </div>
 
@@ -59,8 +60,8 @@ const About = () => {
                     <Brain className="h-5 w-5 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Experience</h3>
-                    <p className="text-sm text-muted-foreground">Analyst & Entrepreneur</p>
+                    <h3 className="font-semibold text-foreground mb-1">{t.experience}</h3>
+                    <p className="text-sm text-muted-foreground">{t.experienceDesc}</p>
                   </div>
                 </div>
                 

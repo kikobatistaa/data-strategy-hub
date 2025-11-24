@@ -1,6 +1,11 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+
   return (
     <footer className="bg-secondary text-primary-foreground py-12 border-t border-border/50">
       <div className="container mx-auto px-6">
@@ -9,7 +14,7 @@ const Footer = () => {
             <div className="text-center md:text-left">
               <h3 className="text-xl font-bold mb-2 text-foreground">Francisco Cordeiro Batista</h3>
               <p className="text-muted-foreground text-sm">
-                Data Science • Business Strategy • International Mindset
+                {t.tagline}
               </p>
             </div>
             
@@ -46,7 +51,7 @@ const Footer = () => {
           
           <div className="border-t border-border/50 mt-8 pt-8 text-center">
             <p className="text-muted-foreground text-sm">
-              © 2025 Francisco Cordeiro Batista. All rights reserved.
+              {t.copyright}
             </p>
           </div>
         </div>

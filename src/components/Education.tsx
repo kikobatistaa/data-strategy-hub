@@ -1,39 +1,33 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Award, BookOpen, Clock } from "lucide-react";
-
-const education = [
-  {
-    school: "Universidad Carlos III de Madrid",
-    degree: "Master in Management",
-    period: "2025 - 2026",
-    location: "Madrid, Spain",
-    icon: GraduationCap,
-    focus: ["Corporate Finance", "Accountability", "Strategy", "Marketing", "Innovation"],
-    highlight: null,
-    details: ""
-  },
-  {
-    school: "NOVA Information Management School",
-    degree: "BSc in Data Science",
-    period: "2022 - 2025",
-    location: "Lisbon, Portugal",
-    icon: Award,
-    focus: ["Statistics", "Machine Learning", "Deep Learning", "Business Intelligence"],
-    highlight: "Grade: 15/20 • Co-Founded NOVAe Entrepreneurship Hub & Directed Marketing",
-    details: "Relevant coursework: Strategy, Finance, Machine Learning, Statistics, Econometrics, Marketing, Accountability"
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 const Education = () => {
-  // Extracting all unique coursework items for the bottom section
-  const allCoursework = education.flatMap(edu => {
-    // This is a temporary manual parsing, should be done cleaner if data source changes.
-    if (edu.details.includes("Relevant coursework:")) {
-        return edu.details.replace("Relevant coursework: ", "").split(', ').map(item => item.trim());
+  const { language } = useLanguage();
+  const t = translations[language].education;
+
+  const education = [
+    {
+      school: t.uc3m.school,
+      degree: t.uc3m.degree,
+      period: t.uc3m.period,
+      location: t.uc3m.location,
+      icon: GraduationCap,
+      focus: t.uc3m.focus,
+      highlight: null
+    },
+    {
+      school: t.nova.school,
+      degree: t.nova.degree,
+      period: t.nova.period,
+      location: t.nova.location,
+      icon: Award,
+      focus: t.nova.focus,
+      highlight: t.nova.highlight
     }
-    return [];
-  }).filter((value, index, self) => self.indexOf(value) === index); // Unique list
+  ];
 
   return (
     <section id="education" className="py-32 bg-background relative overflow-hidden">
@@ -41,10 +35,10 @@ const Education = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Education
+              {t.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Combining technical expertise with strategic business acumen
+              {t.subtitle}
             </p>
           </div>
           
@@ -134,12 +128,12 @@ const Education = () => {
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <BookOpen className="h-5 w-5 text-accent" />
-                  <CardTitle className="text-xl font-bold">Relevant Coursework</CardTitle>
+                  <CardTitle className="text-xl font-bold">{t.coursework}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {allCoursework.map((course, idx) => (
+                  {t.courseworkItems.map((course, idx) => (
                     <Badge 
                       key={idx}
                       variant="outline"
