@@ -1,36 +1,55 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage, Language } from "@/contexts/LanguageContext"; // Import Language type
+// Removed import: import { translations } from "@/locales/translations";
+
+const languageOptions: { value: Language, label: string }[] = [
+    { value: "en", label: "English" },
+    { value: "pt-pt", label: "Português (Portugal)" },
+    { value: "pt-br", label: "Português (Brasil)" },
+    { value: "es", label: "Español" },
+];
 
 const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();
-
-  const languages = [
-    { code: 'en' as const, flag: '🇬🇧', label: 'English' },
-    { code: 'pt-pt' as const, flag: '🇵🇹', label: 'Português (PT)' },
-    { code: 'pt-br' as const, flag: '🇧🇷', label: 'Português (BR)' },
-    { code: 'es' as const, flag: '🇪🇸', label: 'Español' }
-  ];
+  // Removed: const t = translations[language].languageSelector;
+  
+  // Find the current label dynamically
+  const currentOption = languageOptions.find(opt => opt.value === language);
+  const currentLabel = currentOption ? currentOption.label : "Language";
+  
+  const handleLanguageChange = (newLang: Language) => {
+    // Cast is no longer needed since newLang is typed as Language
+    setLanguage(newLang);
+  };
 
   return (
-    <div className="flex gap-2 items-center bg-card/30 backdrop-blur-md rounded-full p-1.5 border border-white/10">
-      {languages.map((lang) => (
-        <Button
-          key={lang.code}
-          variant="ghost"
-          size="sm"
-          onClick={() => setLanguage(lang.code)}
-          className={`rounded-full h-10 w-10 p-0 text-2xl hover:bg-accent/20 transition-all ${
-            language === lang.code 
-              ? 'bg-accent/20 ring-2 ring-accent/50' 
-              : 'opacity-60 hover:opacity-100'
-          }`}
-          aria-label={lang.label}
-          title={lang.label}
-        >
-          {lang.flag}
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-foreground">
+          <Globe className="h-5 w-5" />
+          <span className="sr-only">{currentLabel}</span>
         </Button>
-      ))}
-    </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="w-56">
+        {languageOptions.map((option) => (
+            <DropdownMenuItem 
+                key={option.value}
+                onClick={() => handleLanguageChange(option.value)}
+                disabled={option.value === language}
+            >
+                <Globe className="mr-2 h-4 w-4" />
+                <span>{option.label}</span>
+            </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
