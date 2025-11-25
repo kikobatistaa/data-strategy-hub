@@ -7,22 +7,18 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
-      <ParticleBackground />
-      <div className="relative z-10">
-        <Navigation />
-        <Hero />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects />
-        <About />
-        <Footer />
-      </div>
+    <div className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <Experience />
+      <Education />
+      <Skills />
+      <Projects />
+      <About />
+      <Footer />
       <ScrollToTopButton />
     </div>
   );
