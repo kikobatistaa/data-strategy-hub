@@ -1,5 +1,5 @@
 # Robots.txt for Francisco Cordeiro Batista Portfolio
-# https://francyscocbatista.com
+# https://franciscocbatista.com
 
 # Allow all search engines to crawl the site
 User-agent: *
@@ -32,4 +32,4 @@ Disallow: /*.ts$
 Disallow: /*.json$
 
 # Sitemap location
-Sitemap: https://francyscocbatista.com/sitemap.xml
+Sitemap: https://franciscocbatista.com/sitemap.xml
