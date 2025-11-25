@@ -1,12 +1,12 @@
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { useLanguage } from "@/contexts/LanguageContext"; 
+import { useLanguage, Language } from "@/contexts/LanguageContext";
 
 const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();
 
-  const languageOptions = [
+  const languageOptions: { code: Language, flag: string, label: string }[] = [
     { code: 'en', flag: '🇬🇧', label: 'English' },
     { code: 'pt-pt', flag: '🇵🇹', label: 'Português (PT)' },
     { code: 'pt-br', flag: '🇧🇷', label: 'Português (BR)' },
@@ -14,6 +14,10 @@ const LanguageSelector = () => {
   ];
   
   const currentLang = languageOptions.find(opt => opt.code === language) || languageOptions[0];
+
+  const handleLanguageChange = (newLangCode: Language) => {
+    setLanguage(newLangCode);
+  };
 
   return (
     <DropdownMenu>
@@ -31,8 +35,7 @@ const LanguageSelector = () => {
         {languageOptions.map((option) => (
             <DropdownMenuItem 
                 key={option.code}
-                // setLanguage is correctly typed, so direct call is safe
-                onClick={() => setLanguage(option.code)} 
+                onClick={() => handleLanguageChange(option.code)} 
                 disabled={option.code === language}
                 className="cursor-pointer"
             >
@@ -44,3 +47,5 @@ const LanguageSelector = () => {
     </DropdownMenu>
   );
 };
+
+export default LanguageSelector;
