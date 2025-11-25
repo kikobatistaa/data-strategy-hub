@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
-import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const { language } = useLanguage();
@@ -64,7 +63,7 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between py-6">
+        <div className="flex items-center justify-center py-6">
           <ul className="flex items-center gap-8 md:gap-12">
             {navItems.map((item) => (
               <li key={item.id}>
@@ -90,7 +89,6 @@ const Navigation = () => {
               </li>
             ))}
           </ul>
-          <ThemeToggle />
         </div>
       </div>
     </nav>
