@@ -15,24 +15,39 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 
 const JobOpportunityDrawer = () => {
-  // 1. Initialize state to false
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
   
-  // 2. Set state to true on mount to make it appear on load
   useEffect(() => {
-    setIsOpen(true);
-  }, []); 
+    // Check if user has previously dismissed the drawer
+    const dismissed = localStorage.getItem("job-drawer-dismissed");
+    
+    if (!dismissed) {
+      // Show drawer after 3 seconds if not previously dismissed
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
+  
+  const handleClose = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      // Mark as dismissed in localStorage
+      localStorage.setItem("job-drawer-dismissed", "true");
+    }
+  };
 
   const { language } = useLanguage();
   const t = translations[language].drawer;
 
   return (
-    // 3. Control the drawer's visibility using the state
     <Drawer 
-      open={isOpen} // Use state to open/close
-      onOpenChange={setIsOpen} // Allows swipe-down/DrawerClose to set isOpen(false)
-      modal={false} // Keep it non-intrusive
-    > 
+      open={isOpen}
+      onOpenChange={handleClose}
+      modal={false}
+    >
       {/* Removed the unnecessary DrawerTrigger hack */}
 
       <DrawerContent 
