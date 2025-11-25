@@ -25,13 +25,13 @@ const LanguageSelector = () => {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="h-10 w-10 text-muted-foreground hover:text-foreground relative z-50"
+          className="h-10 w-10 text-muted-foreground hover:text-foreground"
           aria-label={`Current language: ${currentLang.label}`}
         >
           <Globe className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56 z-[100] bg-background border-border shadow-lg backdrop-blur-md">
+      <DropdownMenuContent align="end" className="w-56">
         {languageOptions.map((option) => (
             <DropdownMenuItem 
                 key={option.code}
