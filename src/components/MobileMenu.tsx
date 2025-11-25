@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import ThemeToggle from "./ThemeToggle";
+import { Separator } from "@/components/ui/separator";
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
@@ -63,6 +65,12 @@ const MobileMenu = () => {
                 </li>
               ))}
             </ul>
+            
+            <Separator className="my-6" />
+            
+            <div className="mt-4">
+              <ThemeToggle showLabel />
+            </div>
           </nav>
         </SheetContent>
       </Sheet>
