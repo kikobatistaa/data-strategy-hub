@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import Hero from "@/components/Hero";
-// Removed: import Navigation from "@/components/Navigation";
 import MobileMenu from "@/components/MobileMenu";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
@@ -9,12 +9,27 @@ import About from "@/components/About";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import JobOpportunityDrawer from "@/components/JobOpportunityDrawer";
+import PortfolioSkeleton from "@/components/PortfolioSkeleton";
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial content loading (fonts, images, etc.)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <PortfolioSkeleton />;
+  }
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen animate-fade-in">
       <MobileMenu />
-      {/* Navigation bar removed as requested */}
       <Hero />
       <Experience />
       <Education />
