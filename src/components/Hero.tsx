@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Linkedin } from "lucide-react";
+import { Download, Mail, Linkedin, ChevronDown } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
@@ -96,6 +96,17 @@ const Hero = () => {
             </a>
           </div>
         </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <a 
+          href="#experience" 
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-300 group"
+          aria-label="Scroll to content"
+        >
+          <ChevronDown className="h-8 w-8 group-hover:scale-110 transition-transform" />
+        </a>
       </div>
     </section>
   );
