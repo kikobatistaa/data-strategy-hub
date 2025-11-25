@@ -57,7 +57,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`w-full z-50 transition-all duration-300 hidden md:block ${
+      className={`w-full z-50 transition-all duration-300 hidden lg:block ${
         isSticky
           ? "fixed top-0 bg-background/80 backdrop-blur-lg border-b border-white/10 shadow-lg"
           : "absolute top-0"
