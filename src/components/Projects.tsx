@@ -1,13 +1,17 @@
 /* src/components/Projects.tsx */
+import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Construction, LineChart, LayoutDashboard, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { useOnScreen } from "@/hooks/useOnScreen";
 
 const Projects = () => {
   const { language } = useLanguage();
   const t = translations[language].projects;
+  const sectionRef = useRef<HTMLElement>(null);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
   const projects = [
     {
@@ -31,7 +35,13 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-secondary/30">
+    <section 
+      id="projects" 
+      ref={sectionRef}
+      className={`py-24 bg-secondary/30 transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">

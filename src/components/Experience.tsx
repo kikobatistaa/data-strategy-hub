@@ -1,13 +1,17 @@
 /* src/components/Experience.tsx */
+import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Users, Code } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { useOnScreen } from "@/hooks/useOnScreen";
 
 const Experience = () => {
   const { language } = useLanguage();
   const t = translations[language].experience;
+  const sectionRef = useRef<HTMLElement>(null);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
   const experiences = [
     {
@@ -37,7 +41,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-background relative overflow-hidden">
+    <section 
+      id="experience" 
+      ref={sectionRef}
+      className={`py-24 bg-background relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       {/* Abstract Background Element */}
       <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
       

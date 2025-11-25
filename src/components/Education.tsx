@@ -1,12 +1,16 @@
+import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Award, BookOpen, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { useOnScreen } from "@/hooks/useOnScreen";
 
 const Education = () => {
   const { language } = useLanguage();
   const t = translations[language].education;
+  const sectionRef = useRef<HTMLElement>(null);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
   const education = [
     {
@@ -30,7 +34,13 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-32 bg-background relative overflow-hidden">
+    <section 
+      id="education" 
+      ref={sectionRef}
+      className={`py-32 bg-background relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
