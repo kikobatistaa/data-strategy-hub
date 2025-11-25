@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Navigation from "@/components/Navigation";
+// Removed: import Navigation from "@/components/Navigation";
 import MobileMenu from "@/components/MobileMenu";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
@@ -8,12 +8,16 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+// New Imports:
+import DevBanner from "@/components/DevBanner";
+import JobOpportunityDrawer from "@/components/JobOpportunityDrawer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <DevBanner /> 
       <MobileMenu />
-      <Navigation />
+      {/* Navigation bar removed as requested */}
       <Hero />
       <Experience />
       <Education />
@@ -22,6 +26,7 @@ const Index = () => {
       <About />
       <Footer />
       <ScrollToTopButton />
+      <JobOpportunityDrawer />
     </div>
   );
 };

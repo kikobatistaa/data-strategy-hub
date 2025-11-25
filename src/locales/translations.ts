@@ -135,6 +135,13 @@ export const translations = {
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
       copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved."
+    },
+    drawer: {
+      title: "Junior Opportunities",
+      description: "I am currently actively seeking junior roles in Data Science, Business Intelligence, or Management/Finance.",
+      region_open: "Open to roles across Europe, Japan, and LATAM.",
+      region_focus: "Especially interested in companies offering visa sponsorship for non-EU regions (Japan/LATAM).",
+      contact: "Let's Connect"
     }
   },
   "pt-pt": {
@@ -273,6 +280,13 @@ export const translations = {
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
+    },
+    drawer: {
+      title: "Oportunidades Júnior",
+      description: "Estou ativamente à procura de cargos júnior em Ciência de Dados, Business Intelligence, ou Gestão/Finanças.",
+      region_open: "Aberto a oportunidades em toda a Europa, Japão e LATAM.",
+      region_focus: "Interessado em empresas que ofereçam apoio para visto em regiões fora da UE (Japão/LATAM).",
+      contact: "Contacte-me"
     }
   },
   "pt-br": {
@@ -411,6 +425,13 @@ export const translations = {
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
+    },
+    drawer: {
+      title: "Oportunidades Júnior",
+      description: "Estou ativamente procurando vagas júnior em Ciência de Dados, Business Intelligence, ou Gestão/Finanças.",
+      region_open: "Aberto a vagas na Europa, Japão e Brasil.",
+      region_focus: "Especialmente interessado em empresas que ofereçam suporte de visto para o Japão e Brasil.",
+      contact: "Entre em Contato"
     }
   },
   es: {
@@ -549,6 +570,13 @@ export const translations = {
     footer: {
       tagline: "Ciencia de Datos • Estrategia Empresarial • Mentalidad Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos los derechos reservados."
+    },
+    drawer: {
+      title: "Oportunidades Junior",
+      description: "Actualmente estoy buscando activamente roles junior en Ciencia de Datos, Business Intelligence, o Gestión/Finanzas.",
+      region_open: "Abierto a roles en toda Europa, Japón y LATAM.",
+      region_focus: "Especialmente interesado en empresas que ofrezcan patrocinio de visa para regiones fuera de la UE (Japón/LATAM).",
+      contact: "Contactar"
     }
   }
 };
