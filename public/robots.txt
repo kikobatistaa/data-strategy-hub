@@ -1,14 +1,35 @@
+# Robots.txt for Francisco Cordeiro Batista Portfolio
+# https://franciscobatista.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Specifically allow major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# Allow social media crawlers for proper card previews
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Disallow crawling of unnecessary files
+Disallow: /src/
+Disallow: /*.tsx$
+Disallow: /*.ts$
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://franciscobatista.com/sitemap.xml

@@ -1,11 +1,15 @@
+import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Brain } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { useOnScreen } from "@/hooks/useOnScreen";
 
 const About = () => {
   const { language } = useLanguage();
   const t = translations[language].about;
+  const sectionRef = useRef<HTMLElement>(null);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
   // Helper function to render text with <strong> tags
   const renderText = (text: string) => {
@@ -24,7 +28,13 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-32 bg-secondary/30">
+    <section 
+      id="about" 
+      ref={sectionRef}
+      className={`py-32 bg-secondary/30 transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
