@@ -36,7 +36,7 @@ const MobileMenu = () => {
   ];
 
   return (
-    <div className="lg:hidden">
+    <div className="hidden">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button 
