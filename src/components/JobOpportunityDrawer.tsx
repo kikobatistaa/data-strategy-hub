@@ -1,4 +1,5 @@
 import { Briefcase, Globe, X, Send, Mail } from "lucide-react";
+import { useState, useEffect } from "react"; // <-- NEW: Import useState and useEffect
 import {
   Drawer,
   DrawerClose,
@@ -7,35 +8,40 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger, // Import added
+  // Removed: DrawerTrigger is no longer needed
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext"; // Import added
-import { translations } from "@/locales/translations"; // Import added
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 const JobOpportunityDrawer = () => {
-  const { language } = useLanguage(); // Hook usage added
-  const t = translations[language].drawer; // Translation hook usage added
+  // 1. Initialize state to false
+  const [isOpen, setIsOpen] = useState(false); 
+  
+  // 2. Set state to true on mount to make it appear on load
+  useEffect(() => {
+    setIsOpen(true);
+  }, []); 
+
+  const { language } = useLanguage();
+  const t = translations[language].drawer;
 
   return (
-    // Set open={true} to be visible on load, and modal={false} for non-intrusive behavior.
-    <Drawer open={true} modal={false}> 
-      {/* HACK FIX: For non-modal drawers, a dummy trigger can help stabilize dismissal logic.
-        We ensure this trigger remains hidden. 
-      */}
-      <DrawerTrigger asChild>
-        <Button variant="ghost" className="hidden" aria-hidden="true">
-          Open Job Search Info
-        </Button>
-      </DrawerTrigger>
+    // 3. Control the drawer's visibility using the state
+    <Drawer 
+      open={isOpen} // Use state to open/close
+      onOpenChange={setIsOpen} // Allows swipe-down/DrawerClose to set isOpen(false)
+      modal={false} // Keep it non-intrusive
+    > 
+      {/* Removed the unnecessary DrawerTrigger hack */}
 
       <DrawerContent 
         className="max-h-[80vh] h-auto w-full md:max-w-md mx-auto rounded-t-lg shadow-2xl border-t-4 border-accent bg-card/80 backdrop-blur-lg"
       >
         
-        {/* Close button positioned top-right for PC/Tablet close. */}
+        {/* Close button positioned top-right. */}
         <div className="absolute top-4 right-4 z-10">
-          {/* Ensure the close wrapper is on the button itself */}
+          {/* DrawerClose will now correctly trigger onOpenChange(false) */}
           <DrawerClose asChild>
             <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full text-muted-foreground hover:text-foreground">
               <X className="h-4 w-4" />
