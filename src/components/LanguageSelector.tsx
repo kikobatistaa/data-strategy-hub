@@ -1,50 +1,42 @@
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useLanguage, Language } from "@/contexts/LanguageContext"; // Import Language type
-// Removed import: import { translations } from "@/locales/translations";
-
-const languageOptions: { value: Language, label: string }[] = [
-    { value: "en", label: "English" },
-    { value: "pt-pt", label: "Português (Portugal)" },
-    { value: "pt-br", label: "Português (Brasil)" },
-    { value: "es", label: "Español" },
-];
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext"; 
 
 const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();
-  // Removed: const t = translations[language].languageSelector;
+
+  const languageOptions = [
+    { code: 'en', flag: '🇬🇧', label: 'English' },
+    { code: 'pt-pt', flag: '🇵🇹', label: 'Português (PT)' },
+    { code: 'pt-br', flag: '🇧🇷', label: 'Português (BR)' },
+    { code: 'es', flag: '🇪🇸', label: 'Español' }
+  ];
   
-  // Find the current label dynamically
-  const currentOption = languageOptions.find(opt => opt.value === language);
-  const currentLabel = currentOption ? currentOption.label : "Language";
-  
-  const handleLanguageChange = (newLang: Language) => {
-    // Cast is no longer needed since newLang is typed as Language
-    setLanguage(newLang);
-  };
+  const currentLang = languageOptions.find(opt => opt.code === language) || languageOptions[0];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-foreground">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="h-10 w-10 text-muted-foreground hover:text-foreground"
+          aria-label={`Current language: ${currentLang.label}`}
+        >
           <Globe className="h-5 w-5" />
-          <span className="sr-only">{currentLabel}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         {languageOptions.map((option) => (
             <DropdownMenuItem 
-                key={option.value}
-                onClick={() => handleLanguageChange(option.value)}
-                disabled={option.value === language}
+                key={option.code}
+                // setLanguage is correctly typed, so direct call is safe
+                onClick={() => setLanguage(option.code)} 
+                disabled={option.code === language}
+                className="cursor-pointer"
             >
-                <Globe className="mr-2 h-4 w-4" />
+                <span className="mr-3 text-lg">{option.flag}</span>
                 <span>{option.label}</span>
             </DropdownMenuItem>
         ))}
@@ -52,5 +44,3 @@ const LanguageSelector = () => {
     </DropdownMenu>
   );
 };
-
-export default LanguageSelector;
