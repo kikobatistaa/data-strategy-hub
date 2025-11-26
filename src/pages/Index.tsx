@@ -11,7 +11,6 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import JobOpportunityDrawer from "@/components/JobOpportunityDrawer";
 import PortfolioSkeleton from "@/components/PortfolioSkeleton";
-import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,9 +31,6 @@ const Index = () => {
   return (
     <div className="min-h-screen animate-fade-in">
       <ScrollProgressBar />
-      <div className="hidden lg:block">
-        <CustomCursor />
-      </div>
       <MobileMenu />
       <Hero />
       <Experience />
