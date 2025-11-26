@@ -154,7 +154,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Cientista de Dados | MiM | Business Intelligence",
+      role: "Data Scientist | MiM | Business Intelligence",
       title: "Conectando Ciência de Dados &",
       titleAccent: "Estratégia Empresarial",
       subtitle: "Transformando dados complexos em insights acionáveis que informam decisões estratégicas e impacto mensurável.",
@@ -299,7 +299,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Cientista de Dados | MiM | Business Intelligence",
+      role: "Data Scientist | MiM | Business Intelligence",
       title: "Conectando Ciência de Dados &",
       titleAccent: "Estratégia de Negócios",
       subtitle: "Transformando dados complexos em insights acionáveis que guiam decisões estratégicas e impacto mensurável.",
@@ -444,7 +444,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Científico de Datos | MiM | Business Intelligence",
+      role: "Data Scientist | MiM | Business Intelligence",
       title: "Conectando Ciencia de Datos &",
       titleAccent: "Estrategia Empresarial",
       subtitle: "Transformando datos complejos en insights accionables que impulsan decisiones estratégicas e impacto medible.",

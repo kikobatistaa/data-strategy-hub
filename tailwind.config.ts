@@ -66,7 +66,8 @@ export default {
         'glow': 'var(--shadow-glow)',
       },
       fontFamily: {
-        sans: ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',
