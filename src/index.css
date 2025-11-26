@@ -5,52 +5,52 @@
 
 @layer base {
   :root {
-    /* Dark Mode Premium - Almost Black Background */
-    --background: 240 10% 4%;
+    /* Monochrome Research Aesthetic - Black & Grey */
+    --background: 0 0% 3%;
     --foreground: 0 0% 98%;
 
     /* Card: Dark with transparency for glassmorphism */
-    --card: 240 8% 8%;
+    --card: 0 0% 6%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 8% 8%;
+    --popover: 0 0% 6%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary: Electric Purple (Used for buttons, rings, highlights) */
-    --primary: 270 91% 65%;
+    /* Primary: Neutral Grey (Used for buttons, rings, highlights) */
+    --primary: 0 0% 20%;
     --primary-foreground: 0 0% 98%;
 
     /* Secondary: Dark gray for subtle backgrounds */
-    --secondary: 240 6% 12%;
+    --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 98%;
 
     /* Muted: Medium dark grays */
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    /* Accent: Vibrant Electric Purple (Matching primary for consistency) */
-    --accent: 270 91% 65%;
+    /* Accent: Light Grey (Matching primary for consistency) */
+    --accent: 0 0% 25%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 100% / 0.1; /* White with 10% opacity for dark mode borders */
-    --input: 240 5% 15%;
-    --ring: 270 91% 65%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 30%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* New Gradients and Shadows */
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(270 91% 65% / 0.15) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(240 10% 4%) 100%); /* Purple-to-Black Gradient */
-    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 4%) 0%, hsl(240 8% 6%) 100%);
+    /* Monochrome Gradients and Shadows */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 5%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 5%) 100%);
     
-    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.5); /* Stronger shadow in dark mode */
-    --shadow-hover: 0 20px 60px -10px rgba(139, 92, 246, 0.4); /* Purple glow on hover */
-    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.2); /* Internal glow for icons/elements */
+    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.6);
+    --shadow-hover: 0 20px 60px -10px rgba(255, 255, 255, 0.1);
+    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.05);
 
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 

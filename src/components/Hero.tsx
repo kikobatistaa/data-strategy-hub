@@ -23,7 +23,7 @@ const Hero = () => {
           
           {/* Photo Section */}
           <div className="flex justify-center">
-            <div className="p-1 rounded-full bg-gradient-to-r from-accent via-purple-400 to-accent">
+            <div className="p-1 rounded-full bg-gradient-to-r from-foreground/20 to-foreground/10">
               <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-background">
                 <AvatarImage src="/profile.jpg" alt="Francisco Cordeiro Batista" className="object-cover" />
                 <AvatarFallback className="text-2xl font-bold">FCB</AvatarFallback>
@@ -38,18 +38,16 @@ const Hero = () => {
             </h1>
           </div>
 
-          {/* Updated Role Badge with improved visuals */}
-          <div className="inline-block mb-4">
-            <div className="px-6 py-2.5 bg-accent/10 backdrop-blur-md rounded-full border border-accent/20 shadow-glow transition-all duration-300 hover:bg-accent/15 hover:border-accent/30 hover:scale-105 cursor-default">
-              <p className="text-accent text-sm md:text-base font-semibold tracking-wide uppercase">
-                {t.role}
-              </p>
-            </div>
+          {/* Role Display - Minimal Research Aesthetic */}
+          <div className="mb-6">
+            <p className="text-muted-foreground text-sm md:text-base font-medium tracking-[0.2em] uppercase">
+              {t.role}
+            </p>
           </div>
           
           <h2 className="text-5xl md:text-7xl font-black text-foreground leading-tight tracking-tight">
             {t.title}{" "}
-            <span className="bg-gradient-to-r from-accent via-purple-400 to-accent bg-clip-text text-transparent">
+            <span className="text-foreground/80">
               {t.titleAccent}
             </span>
           </h2>
@@ -76,7 +74,7 @@ const Hero = () => {
               asChild
               size="lg" 
               variant="outline"
-              className="border-2 border-white/20 bg-gradient-cta text-white hover:bg-accent/80 hover:text-white hover:border-accent/50 backdrop-blur-sm px-8 py-6 text-lg font-bold shadow-lg transition-all duration-300"
+              className="border-2 border-border hover:bg-muted hover:text-foreground backdrop-blur-sm px-8 py-6 text-lg font-bold shadow-lg transition-all duration-300"
             >
               <a href="mailto:kiko.2205@hotmail.com">
                 <Mail className="mr-2 h-5 w-5" />
@@ -90,9 +88,9 @@ const Hero = () => {
               href="https://www.linkedin.com/in/kikobatistaa/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group p-3 rounded-full bg-card/50 backdrop-blur-md border border-border/50 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 shadow-lg"
+              className="group p-3 rounded-full bg-card/50 backdrop-blur-md border border-border/50 hover:border-foreground/20 hover:bg-muted transition-all duration-300 shadow-lg"
             >
-              <Linkedin className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
+              <Linkedin className="h-6 w-6 text-foreground group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>
@@ -102,7 +100,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <a 
           href="#experience" 
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-300 group"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 group"
           aria-label="Scroll to content"
         >
           <ChevronDown className="h-8 w-8 group-hover:scale-110 transition-transform" />
