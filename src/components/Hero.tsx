@@ -97,10 +97,10 @@ const Hero = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
         <a 
           href="#experience" 
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 group"
+          className="animate-bounce flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 group"
           aria-label="Scroll to content"
         >
           <ChevronDown className="h-8 w-8 group-hover:scale-110 transition-transform" />
