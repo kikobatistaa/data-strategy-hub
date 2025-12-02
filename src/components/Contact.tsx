@@ -9,7 +9,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
 import { toast } from "sonner";
-import { useForm, ValidationError } from "@formspree/react"; // 1. Importar useForm
+import { useForm, ValidationError } from "@formspree/react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -17,9 +18,15 @@ const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useOnScreen(sectionRef, "0px", 0.2);
   
-  // 2. Substituir a lógica manual pelo hook do Formspree
-  // "mgvgynyw" é o ID do seu formulário que estava no fetch
-  const [state, handleSubmit] = useForm("mgvgynyw");
+  // Estado para armazenar o token do reCAPTCHA
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+
+  // Hook do Formspree configurado para enviar o token extra
+  const [state, handleSubmit] = useForm("mgvgynyw", {
+    data: {
+      "g-recaptcha-response": recaptchaToken
+    }
+  });
 
   const [formData, setFormData] = useState({
     name: "",
@@ -34,11 +41,16 @@ const Contact = () => {
     }));
   };
 
-  // 3. Usar useEffect para reagir ao sucesso ou erro do envio
+  // Função chamada quando o utilizador completa o reCAPTCHA
+  const handleCaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
   useEffect(() => {
     if (state.succeeded) {
       toast.success(t.successMessage);
-      setFormData({ name: "", email: "", message: "" }); // Limpar o formulário
+      setFormData({ name: "", email: "", message: "" });
+      setRecaptchaToken(null); // Reiniciar o captcha após envio bem-sucedido
     }
     if (state.errors && state.errors.getFormErrors().length > 0) {
       toast.error(t.errorMessage);
@@ -66,7 +78,6 @@ const Contact = () => {
           
           <Card className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <CardContent className="pt-8">
-              {/* 4. O onSubmit passa a ser o handleSubmit do hook */}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground flex items-center gap-2">
@@ -84,7 +95,6 @@ const Contact = () => {
                     className="bg-secondary/50 border-border/50 focus:border-accent"
                     disabled={state.submitting}
                   />
-                  {/* Opcional: mostrar erro específico deste campo */}
                   <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
@@ -125,9 +135,19 @@ const Contact = () => {
                   <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
+                {/* Componente Google reCAPTCHA */}
+                <div className="flex justify-center py-2">
+                  <ReCAPTCHA
+                    sitekey="6LexVx8sAAAAAHxsdpvO3mgSrnRdlDqvzDRZHviw" 
+                    onChange={handleCaptchaChange}
+                    theme="dark" // Podes mudar para 'light' se preferires
+                  />
+                </div>
+
                 <Button
                   type="submit"
-                  disabled={state.submitting} // Usar o estado do hook
+                  // O botão fica desativado se estiver a enviar OU se o captcha não estiver resolvido
+                  disabled={state.submitting || !recaptchaToken} 
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6"
                 >
                   {state.submitting ? (
