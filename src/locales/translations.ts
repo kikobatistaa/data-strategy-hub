@@ -5,7 +5,8 @@ export const translations = {
       education: "Education",
       skills: "Skills",
       projects: "Projects",
-      about: "About"
+      about: "About",
+      contact: "Contact"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -132,6 +133,19 @@ export const translations = {
         tableau: { name: "Tableau", level: 75 }
       }
     },
+    contactSection: {
+      title: "Contact Me",
+      subtitle: "Have a question or want to work together? Send me a message.",
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      send: "Send Message",
+      sending: "Sending...",
+      successTitle: "Message Sent!",
+      successDesc: "Thank you for reaching out. I'll get back to you as soon as possible.",
+      errorTitle: "Error",
+      errorDesc: "Something went wrong. Please try again later."
+    },
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
       copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved."
@@ -150,7 +164,8 @@ export const translations = {
       education: "Educação",
       skills: "Competências",
       projects: "Projetos",
-      about: "Sobre"
+      about: "Sobre",
+      contact: "Contacto"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -277,6 +292,19 @@ export const translations = {
         tableau: { name: "Tableau", level: 75 }
       }
     },
+    contactSection: {
+      title: "Contacte-me",
+      subtitle: "Tem alguma questão ou quer trabalhar em conjunto? Envie-me uma mensagem.",
+      name: "Nome",
+      email: "Email",
+      message: "Mensagem",
+      send: "Enviar Mensagem",
+      sending: "A enviar...",
+      successTitle: "Mensagem Enviada!",
+      successDesc: "Obrigado pelo contacto. Responderei o mais brevemente possível.",
+      errorTitle: "Erro",
+      errorDesc: "Algo correu mal. Por favor tente novamente mais tarde."
+    },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
@@ -295,7 +323,8 @@ export const translations = {
       education: "Educação",
       skills: "Competências",
       projects: "Projetos",
-      about: "Sobre"
+      about: "Sobre",
+      contact: "Contato"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -422,6 +451,19 @@ export const translations = {
         tableau: { name: "Tableau", level: 75 }
       }
     },
+    contactSection: {
+      title: "Entre em Contato",
+      subtitle: "Tem alguma dúvida ou quer trabalhar junto? Envie-me uma mensagem.",
+      name: "Nome",
+      email: "Email",
+      message: "Mensagem",
+      send: "Enviar Mensagem",
+      sending: "Enviando...",
+      successTitle: "Mensagem Enviada!",
+      successDesc: "Obrigado pelo contato. Responderei o mais breve possível.",
+      errorTitle: "Erro",
+      errorDesc: "Algo deu errado. Por favor, tente novamente mais tarde."
+    },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
       copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
@@ -440,7 +482,8 @@ export const translations = {
       education: "Educación",
       skills: "Competencias",
       projects: "Proyectos",
-      about: "Acerca"
+      about: "Acerca",
+      contact: "Contacto"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -559,13 +602,26 @@ export const translations = {
         statistics: { name: "Estadística", level: 85 },
         businessIntelligence: { name: "Business Intelligence", level: 90 },
         dataVisualization: { name: "Visualización de Datos", level: 85 },
-        strategy: { name: "Análisis Estratégico", level: 85 },
+        strategy: { name: "Análise Estratégico", level: 85 },
         finance: { name: "Finanzas Corporativas", level: 75 },
         marketing: { name: "Estrategia de Marketing", level: 80 },
         powerBI: { name: "Power BI", level: 85 },
         excel: { name: "Excel", level: 90 },
         tableau: { name: "Tableau", level: 75 }
       }
+    },
+    contactSection: {
+      title: "Contáctame",
+      subtitle: "¿Tienes alguna pregunta o quieres trabajar juntos? Envíame un mensaje.",
+      name: "Nombre",
+      email: "Correo electrónico",
+      message: "Mensaje",
+      send: "Enviar Mensaje",
+      sending: "Enviando...",
+      successTitle: "¡Mensaje Enviado!",
+      successDesc: "Gracias por contactar. Te responderé lo antes posible.",
+      errorTitle: "Error",
+      errorDesc: "Algo salió mal. Por favor, inténtalo de nuevo más tarde."
     },
     footer: {
       tagline: "Ciencia de Datos • Estrategia Empresarial • Mentalidad Internacional",

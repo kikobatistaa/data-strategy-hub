@@ -15,12 +15,13 @@ const Navigation = () => {
       setIsSticky(window.scrollY > window.innerHeight * 0.8);
 
       // Detect active section
-      const sections = ["experience", "education", "projects", "about"];
+      const sections = ["experience", "education", "skills", "projects", "about", "contact"];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
+          // Adjusted detection area
+          return rect.top <= 200 && rect.bottom >= 200;
         }
         return false;
       });
@@ -52,6 +53,7 @@ const Navigation = () => {
     { id: "skills", label: t.skills },
     { id: "projects", label: t.projects },
     { id: "about", label: t.about },
+    { id: "contact", label: t.contact },
   ];
 
   return (
