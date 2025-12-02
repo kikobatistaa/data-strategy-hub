@@ -52,6 +52,7 @@ const Navigation = () => {
     { id: "skills", label: t.skills },
     { id: "projects", label: t.projects },
     { id: "about", label: t.about },
+    { id: "contact", label: t.contact },
   ];
 
   return (
