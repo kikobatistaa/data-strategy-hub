@@ -113,7 +113,13 @@ export const translations = {
         title: "Market Strategy Analysis",
         category: "Strategic Consulting",
         tags: ["Data Analysis", "Strategy", "Insights"]
-      }
+      },
+      portfolio: {
+        title: "Yes, This Website",
+        category: "Full-Stack Development & Shameless Self-Promotion",
+        tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
+      },
+      youreHere: "You're here!"
     },
     skills: {
       title: "Skills & Competencies",
@@ -345,7 +351,13 @@ export const translations = {
         title: "Análise de Estratégia de Mercado",
         category: "Consultoria Estratégica",
         tags: ["Análise de Dados", "Estratégia", "Insights"]
-      }
+      },
+      portfolio: {
+        title: "Sim, Este Website",
+        category: "Desenvolvimento Full-Stack & Auto-Promoção Descarada",
+        tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
+      },
+      youreHere: "Estás aqui!"
     },
     skills: {
       title: "Competências & Habilidades",
@@ -577,7 +589,13 @@ export const translations = {
         title: "Análise de Estratégia de Mercado",
         category: "Consultoria Estratégica",
         tags: ["Análise de Dados", "Estratégia", "Insights"]
-      }
+      },
+      portfolio: {
+        title: "Sim, Este Website",
+        category: "Desenvolvimento Full-Stack & Auto-Promoção Descarada",
+        tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
+      },
+      youreHere: "Você está aqui!"
     },
     skills: {
       title: "Competências & Habilidades",
@@ -809,7 +827,13 @@ export const translations = {
         title: "Análisis de Estrategia de Mercado",
         category: "Consultoría Estratégica",
         tags: ["Análisis de Datos", "Estrategia", "Insights"]
-      }
+      },
+      portfolio: {
+        title: "Sí, Este Sitio Web",
+        category: "Desarrollo Full-Stack & Auto-Promoción Descarada",
+        tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
+      },
+      youreHere: "¡Estás aquí!"
     },
     skills: {
       title: "Competencias & Habilidades",
