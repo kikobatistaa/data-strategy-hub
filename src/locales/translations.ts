@@ -222,6 +222,13 @@ export const translations = {
       changesText: "I may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. I encourage you to review this policy periodically.",
       contactTitle: "Contact",
       contactText: "If you have any questions about this Privacy Policy or your personal data, please contact me at:"
+    },
+    notFound: {
+      title: "Page Not Found",
+      description: "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+      backHome: "Back to Homepage",
+      goBack: "Go Back",
+      attemptedPath: "Attempted path"
     }
   },
   "pt-pt": {
@@ -447,6 +454,13 @@ export const translations = {
       changesText: "Posso atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão publicadas nesta página com uma data de revisão atualizada. Encorajo-o a rever esta política periodicamente.",
       contactTitle: "Contacto",
       contactText: "Se tiver alguma questão sobre esta Política de Privacidade ou os seus dados pessoais, contacte-me através de:"
+    },
+    notFound: {
+      title: "Página Não Encontrada",
+      description: "A página que procura não existe ou foi movida. Vamos ajudá-lo a voltar ao caminho certo.",
+      backHome: "Voltar ao Início",
+      goBack: "Voltar",
+      attemptedPath: "Caminho tentado"
     }
   },
   "pt-br": {
@@ -672,6 +686,13 @@ export const translations = {
       changesText: "Posso atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão publicadas nesta página com uma data de revisão atualizada. Encorajo você a revisar esta política periodicamente.",
       contactTitle: "Contato",
       contactText: "Se você tiver alguma dúvida sobre esta Política de Privacidade ou seus dados pessoais, entre em contato comigo pelo email:"
+    },
+    notFound: {
+      title: "Página Não Encontrada",
+      description: "A página que você procura não existe ou foi movida. Vamos ajudá-lo a voltar ao caminho certo.",
+      backHome: "Voltar ao Início",
+      goBack: "Voltar",
+      attemptedPath: "Caminho tentado"
     }
   },
   es: {
@@ -897,6 +918,13 @@ export const translations = {
       changesText: "Puedo actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publicará en esta página con una fecha de revisión actualizada. Te animo a revisar esta política periódicamente.",
       contactTitle: "Contacto",
       contactText: "Si tienes alguna pregunta sobre esta Política de Privacidad o tus datos personales, contáctame en:"
+    },
+    notFound: {
+      title: "Página No Encontrada",
+      description: "La página que buscas no existe o ha sido movida. Vamos a ayudarte a volver al camino correcto.",
+      backHome: "Volver al Inicio",
+      goBack: "Volver",
+      attemptedPath: "Ruta intentada"
     }
   }
 };
