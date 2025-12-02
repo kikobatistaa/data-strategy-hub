@@ -119,7 +119,8 @@ export const translations = {
         category: "Full-Stack Development & Shameless Self-Promotion",
         tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
       },
-      youreHere: "You're here!"
+      youreHere: "You're here!",
+      duckMessage: "While my projects are under construction, enjoy this dancing duck!"
     },
     skills: {
       title: "Skills & Competencies",
@@ -357,7 +358,8 @@ export const translations = {
         category: "Desenvolvimento Full-Stack & Auto-Promoção Descarada",
         tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
       },
-      youreHere: "Estás aqui!"
+      youreHere: "Estás aqui!",
+      duckMessage: "Enquanto os meus projetos estão em construção, aproveitem o patinho a dançar!"
     },
     skills: {
       title: "Competências & Habilidades",
@@ -595,7 +597,8 @@ export const translations = {
         category: "Desenvolvimento Full-Stack & Auto-Promoção Descarada",
         tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
       },
-      youreHere: "Você está aqui!"
+      youreHere: "Você está aqui!",
+      duckMessage: "Enquanto meus projetos estão em construção, aproveitem o patinho dançando!"
     },
     skills: {
       title: "Competências & Habilidades",
@@ -833,7 +836,8 @@ export const translations = {
         category: "Desarrollo Full-Stack & Auto-Promoción Descarada",
         tags: ["React", "TypeScript", "Tailwind CSS", "i18n", "SEO"]
       },
-      youreHere: "¡Estás aquí!"
+      youreHere: "¡Estás aquí!",
+      duckMessage: "¡Mientras mis proyectos están en construcción, disfruten del patito bailando!"
     },
     skills: {
       title: "Competencias & Habilidades",
