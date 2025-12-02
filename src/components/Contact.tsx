@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
 import { toast } from "sonner";
+import { useForm, ValidationError } from "@formspree/react"; // 1. Importar useForm
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -16,7 +17,10 @@ const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useOnScreen(sectionRef, "0px", 0.2);
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // 2. Substituir a lógica manual pelo hook do Formspree
+  // "mgvgynyw" é o ID do seu formulário que estava no fetch
+  const [state, handleSubmit] = useForm("mgvgynyw");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,32 +34,16 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("https://formspree.io/f/mgvgynyw", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        toast.success(t.successMessage);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch {
-      toast.error(t.errorMessage);
-    } finally {
-      setIsSubmitting(false);
+  // 3. Usar useEffect para reagir ao sucesso ou erro do envio
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success(t.successMessage);
+      setFormData({ name: "", email: "", message: "" }); // Limpar o formulário
     }
-  };
+    if (state.errors && state.errors.length > 0) {
+      toast.error(t.errorMessage);
+    }
+  }, [state.succeeded, state.errors, t]);
 
   return (
     <section 
@@ -78,6 +66,7 @@ const Contact = () => {
           
           <Card className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <CardContent className="pt-8">
+              {/* 4. O onSubmit passa a ser o handleSubmit do hook */}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground flex items-center gap-2">
@@ -93,8 +82,10 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={t.namePlaceholder}
                     className="bg-secondary/50 border-border/50 focus:border-accent"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                   />
+                  {/* Opcional: mostrar erro específico deste campo */}
+                  <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -111,8 +102,9 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={t.emailPlaceholder}
                     className="bg-secondary/50 border-border/50 focus:border-accent"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -128,16 +120,17 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={t.messagePlaceholder}
                     className="bg-secondary/50 border-border/50 focus:border-accent min-h-[150px]"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                   />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={state.submitting} // Usar o estado do hook
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6"
                 >
-                  {isSubmitting ? (
+                  {state.submitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       {t.sendingButton}
