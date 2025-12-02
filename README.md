@@ -1,73 +1,78 @@
-# Welcome to your Lovable project
+# Francisco Cordeiro Batista | Portfolio
 
-## Project info
+A professional portfolio website showcasing data science expertise, business intelligence projects, and strategic consulting experience.
 
-**URL**: https://lovable.dev/projects/99ba58ac-6f48-427a-a304-eff55e6c2421
+🌐 **Live Site**: [franciscocbatista.com](https://franciscocbatista.com)
 
-## How can I edit this code?
+## About
 
-There are several ways of editing your application.
+This portfolio presents my professional journey bridging Data Science and Business Strategy. It features my experience at organizations like NetJets Europe, projects in machine learning and business intelligence, and my educational background from NOVA Information Management School and Universidad Carlos III de Madrid.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/99ba58ac-6f48-427a-a304-eff55e6c2421) and start prompting.
+- **Multi-language Support**: English, Portuguese (PT/BR), and Spanish
+- **Responsive Design**: Optimized for all devices
+- **Performance Optimized**: Lazy loading, code splitting
+- **SEO Ready**: Structured data, Open Graph, sitemap
+- **Contact Form**: Integrated with Formspree and reCAPTCHA
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui + Radix UI
+- **Form Handling**: Formspree + react-google-recaptcha
+- **Routing**: React Router
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js 18+ 
+- npm or yarn
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/portfolio.git
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Navigate to project directory
+cd portfolio
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # UI components (Hero, Experience, Skills, etc.)
+├── contexts/       # React contexts (Language)
+├── hooks/          # Custom hooks
+├── locales/        # Translation files
+├── pages/          # Page components
+└── lib/            # Utility functions
+```
 
-This project is built with:
+## Contact
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **LinkedIn**: [linkedin.com/in/kikobatistaa](https://www.linkedin.com/in/kikobatistaa/)
+- **Email**: kiko.2205@hotmail.com
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/99ba58ac-6f48-427a-a304-eff55e6c2421) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2024 Francisco Cordeiro Batista. All rights reserved.
