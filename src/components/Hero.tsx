@@ -49,7 +49,12 @@ const Hero = () => {
           >
             <div className="p-1 rounded-full bg-gradient-to-r from-foreground/20 to-foreground/10">
               <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-background">
-                <AvatarImage src="/profile.jpg" alt="Francisco Cordeiro Batista" className="object-cover" />
+                <AvatarImage 
+                  src="/profile.jpg" 
+                  alt="Francisco Cordeiro Batista" 
+                  className="object-cover"
+                  loading="eager"
+                />
                 <AvatarFallback className="text-2xl font-bold">FCB</AvatarFallback>
               </Avatar>
             </div>
