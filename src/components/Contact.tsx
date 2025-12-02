@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
 import { toast } from "sonner";
-import { useForm, ValidationError } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
@@ -17,14 +16,11 @@ const Contact = () => {
   const t = translations[language].contactSection;
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useOnScreen(sectionRef, "0px", 0.2);
-  
-  // Estado para armazenar o token do reCAPTCHA
+  const captchaRef = useRef<ReCAPTCHA>(null); // Referência para resetar o captcha visualmente
+
+  // Estados locais
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-
-  // Hook do Formspree simplificado (sem o objeto 'data')
-  // O Formspree vai ler automaticamente o input escondido que adicionámos em baixo
-  const [state, handleSubmit] = useForm("mgvgynyw");
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,24 +34,54 @@ const Contact = () => {
     }));
   };
 
-  // Função chamada quando o utilizador completa o reCAPTCHA
   const handleCaptchaChange = (token: string | null) => {
-    console.log("Captcha resolvido, token:", token); // Log para debug
+    console.log("Captcha token gerado:", token);
     setRecaptchaToken(token);
   };
 
-  useEffect(() => {
-    if (state.succeeded) {
-      toast.success(t.successMessage);
-      setFormData({ name: "", email: "", message: "" });
-      setRecaptchaToken(null); // Reiniciar o estado local
-      // Nota: O widget do reCAPTCHA pode precisar de ser resetado manualmente se quiseres que o utilizador envie outro logo de seguida, 
-      // mas para um formulário de contacto simples isto chega.
+  // Função de envio manual
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!recaptchaToken) {
+      toast.error("Por favor, confirma que não és um robô.");
+      return;
     }
-    if (state.errors && state.errors.getFormErrors().length > 0) {
-      toast.error(t.errorMessage);
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mgvgynyw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          "g-recaptcha-response": recaptchaToken // Envia o token explicitamente
+        })
+      });
+
+      if (response.ok) {
+        toast.success(t.successMessage);
+        setFormData({ name: "", email: "", message: "" });
+        setRecaptchaToken(null);
+        captchaRef.current?.reset(); // Limpa a checkbox do captcha
+      } else {
+        const errorData = await response.json();
+        console.error("Erro Formspree:", errorData); // Vê a consola (F12) se der erro!
+        toast.error(t.errorMessage);
+      }
+    } catch (error) {
+      console.error("Erro de Rede:", error);
+      toast.error("Erro de conexão. Tenta novamente.");
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [state.succeeded, state.errors, t]);
+  };
 
   return (
     <section 
@@ -93,9 +119,8 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={t.namePlaceholder}
                     className="bg-secondary/50 border-border/50 focus:border-accent"
-                    disabled={state.submitting}
+                    disabled={isSubmitting}
                   />
-                  <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -112,9 +137,8 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={t.emailPlaceholder}
                     className="bg-secondary/50 border-border/50 focus:border-accent"
-                    disabled={state.submitting}
+                    disabled={isSubmitting}
                   />
-                  <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
                 <div className="space-y-2">
@@ -130,35 +154,26 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder={t.messagePlaceholder}
                     className="bg-secondary/50 border-border/50 focus:border-accent min-h-[150px]"
-                    disabled={state.submitting}
+                    disabled={isSubmitting}
                   />
-                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm" />
                 </div>
 
                 {/* Componente Google reCAPTCHA */}
                 <div className="flex justify-center py-2">
                   <ReCAPTCHA
+                    ref={captchaRef}
                     sitekey="6LfQWx8sAAAAAKwPvCMlQG4ueAShMqWYH2XAUOxX" 
                     onChange={handleCaptchaChange}
-                    theme="dark" // Podes mudar para 'light' se preferires
+                    theme="dark"
                   />
                 </div>
 
-                {/* --- FIX CRÍTICO --- */}
-                {/* Este input escondido garante que o valor do token é enviado no POST do formulário */}
-                <input 
-                  type="hidden" 
-                  name="g-recaptcha-response" 
-                  value={recaptchaToken || ""} 
-                />
-                {/* ------------------- */}
-
                 <Button
                   type="submit"
-                  disabled={state.submitting || !recaptchaToken} 
+                  disabled={isSubmitting || !recaptchaToken} 
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6"
                 >
-                  {state.submitting ? (
+                  {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       {t.sendingButton}
