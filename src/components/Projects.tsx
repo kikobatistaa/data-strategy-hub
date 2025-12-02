@@ -65,6 +65,18 @@ const Projects = () => {
               <Construction className="h-4 w-4 text-accent" />
               <span className="text-sm font-medium text-accent">{t.construction}</span>
             </div>
+            
+            {/* Dancing Duck - Hamlet Duck from Giphy */}
+            <div className="flex flex-col items-center gap-4 mt-8">
+              <img 
+                src="https://media.giphy.com/media/PQHZH0iHMCmrNhRcE9/giphy.gif"
+                alt="Dancing duck"
+                className="w-32 h-32 object-contain"
+              />
+              <p className="text-sm text-muted-foreground italic max-w-md text-center">
+                {t.duckMessage}
+              </p>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
