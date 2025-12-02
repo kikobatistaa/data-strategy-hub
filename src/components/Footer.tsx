@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 
@@ -49,10 +50,16 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="border-t border-border/50 mt-8 pt-8 text-center">
+          <div className="border-t border-border/50 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
               {t.copyright}
             </p>
+            <Link 
+              to="/privacy" 
+              className="text-muted-foreground text-sm hover:text-accent transition-colors"
+            >
+              {t.privacyPolicy}
+            </Link>
           </div>
         </div>
       </div>

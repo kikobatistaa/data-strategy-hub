@@ -135,7 +135,8 @@ export const translations = {
     },
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
-      copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved."
+      copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved.",
+      privacyPolicy: "Privacy Policy"
     },
     drawer: {
       title: "Junior Opportunities",
@@ -157,6 +158,49 @@ export const translations = {
       sendingButton: "Sending...",
       successMessage: "Message sent successfully! I'll get back to you soon.",
       errorMessage: "Failed to send message. Please try again."
+    },
+    privacy: {
+      backToHome: "Back to Home",
+      title: "Privacy Policy",
+      lastUpdated: "Last updated: December 2, 2025",
+      allRightsReserved: "All rights reserved.",
+      introTitle: "Introduction",
+      introText: "Welcome to franciscocbatista.com. I am Francisco Cordeiro Batista, and I am committed to protecting your privacy. This Privacy Policy explains how I collect, use, and safeguard your information when you visit my website and use the contact form.",
+      collectTitle: "Information We Collect",
+      collectText: "When you use the contact form on this website, I collect the following information:",
+      collectItems: [
+        "Name: To address you properly in my response",
+        "Email address: To respond to your inquiry",
+        "Message content: The content of your message to understand your inquiry"
+      ],
+      useTitle: "How We Use Your Information",
+      useText: "The information collected through the contact form is used solely to respond to your inquiries. I do not sell, trade, or share your personal information with third parties for marketing purposes.",
+      thirdPartyTitle: "Third-Party Services",
+      thirdPartyText: "This website uses the following third-party services to process your data:",
+      formspreeText: "Formspree is used to process and deliver contact form submissions. When you submit the contact form, your data is transmitted to and stored by Formspree.",
+      formspreeLink: "View Formspree Privacy Policy",
+      recaptchaText: "Google reCAPTCHA is used to protect the contact form from spam and abuse. reCAPTCHA collects hardware and software information, such as device and application data, and sends it to Google for analysis.",
+      recaptchaLink: "View Google Privacy Policy",
+      retentionTitle: "Data Retention",
+      retentionText: "Your contact form data is retained only as long as necessary to respond to your inquiry and for legitimate business purposes. Form submissions are stored by Formspree according to their data retention policies.",
+      gdprTitle: "Your Rights (GDPR)",
+      gdprText: "If you are located in the European Economic Area (EEA), you have certain data protection rights under the General Data Protection Regulation (GDPR). These include:",
+      gdprRights: [
+        "Right to access: You can request a copy of your personal data",
+        "Right to rectification: You can request correction of inaccurate data",
+        "Right to erasure: You can request deletion of your personal data",
+        "Right to restrict processing: You can request limitation of how your data is used",
+        "Right to data portability: You can request your data in a portable format",
+        "Right to object: You can object to the processing of your personal data"
+      ],
+      exerciseTitle: "How to Exercise Your Rights",
+      exerciseText: "To exercise any of these rights, please contact me at:",
+      cookiesTitle: "Cookies",
+      cookiesText: "This website uses minimal cookies. Google reCAPTCHA may set cookies to verify that you are not a robot. The language selector also stores your language preference in localStorage for a better user experience.",
+      changesTitle: "Changes to This Policy",
+      changesText: "I may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. I encourage you to review this policy periodically.",
+      contactTitle: "Contact",
+      contactText: "If you have any questions about this Privacy Policy or your personal data, please contact me at:"
     }
   },
   "pt-pt": {
@@ -295,7 +339,8 @@ export const translations = {
     },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
-      copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
+      copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados.",
+      privacyPolicy: "Política de Privacidade"
     },
     drawer: {
       title: "Oportunidades Júnior",
@@ -317,6 +362,49 @@ export const translations = {
       sendingButton: "A enviar...",
       successMessage: "Mensagem enviada com sucesso! Responderei em breve.",
       errorMessage: "Falha ao enviar mensagem. Por favor, tente novamente."
+    },
+    privacy: {
+      backToHome: "Voltar ao Início",
+      title: "Política de Privacidade",
+      lastUpdated: "Última atualização: 2 de dezembro de 2025",
+      allRightsReserved: "Todos os direitos reservados.",
+      introTitle: "Introdução",
+      introText: "Bem-vindo a franciscocbatista.com. Sou Francisco Cordeiro Batista e estou comprometido em proteger a sua privacidade. Esta Política de Privacidade explica como recolho, utilizo e protejo as suas informações quando visita o meu website e utiliza o formulário de contacto.",
+      collectTitle: "Informações que Recolhemos",
+      collectText: "Quando utiliza o formulário de contacto neste website, recolho as seguintes informações:",
+      collectItems: [
+        "Nome: Para me dirigir a si adequadamente na minha resposta",
+        "Endereço de email: Para responder à sua consulta",
+        "Conteúdo da mensagem: O conteúdo da sua mensagem para compreender a sua consulta"
+      ],
+      useTitle: "Como Utilizamos as Suas Informações",
+      useText: "As informações recolhidas através do formulário de contacto são utilizadas exclusivamente para responder às suas consultas. Não vendo, troco ou partilho as suas informações pessoais com terceiros para fins de marketing.",
+      thirdPartyTitle: "Serviços de Terceiros",
+      thirdPartyText: "Este website utiliza os seguintes serviços de terceiros para processar os seus dados:",
+      formspreeText: "O Formspree é utilizado para processar e entregar submissões do formulário de contacto. Quando submete o formulário de contacto, os seus dados são transmitidos e armazenados pelo Formspree.",
+      formspreeLink: "Ver Política de Privacidade do Formspree",
+      recaptchaText: "O Google reCAPTCHA é utilizado para proteger o formulário de contacto contra spam e abuso. O reCAPTCHA recolhe informações de hardware e software, como dados do dispositivo e da aplicação, e envia-os para a Google para análise.",
+      recaptchaLink: "Ver Política de Privacidade da Google",
+      retentionTitle: "Retenção de Dados",
+      retentionText: "Os dados do formulário de contacto são retidos apenas pelo tempo necessário para responder à sua consulta e para fins comerciais legítimos. As submissões de formulários são armazenadas pelo Formspree de acordo com as suas políticas de retenção de dados.",
+      gdprTitle: "Os Seus Direitos (RGPD)",
+      gdprText: "Se estiver localizado no Espaço Económico Europeu (EEE), tem certos direitos de proteção de dados ao abrigo do Regulamento Geral sobre a Proteção de Dados (RGPD). Estes incluem:",
+      gdprRights: [
+        "Direito de acesso: Pode solicitar uma cópia dos seus dados pessoais",
+        "Direito de retificação: Pode solicitar a correção de dados inexatos",
+        "Direito de apagamento: Pode solicitar a eliminação dos seus dados pessoais",
+        "Direito de limitação do tratamento: Pode solicitar a limitação de como os seus dados são utilizados",
+        "Direito à portabilidade dos dados: Pode solicitar os seus dados num formato portátil",
+        "Direito de oposição: Pode opor-se ao tratamento dos seus dados pessoais"
+      ],
+      exerciseTitle: "Como Exercer os Seus Direitos",
+      exerciseText: "Para exercer qualquer um destes direitos, contacte-me através de:",
+      cookiesTitle: "Cookies",
+      cookiesText: "Este website utiliza cookies mínimos. O Google reCAPTCHA pode definir cookies para verificar que não é um robô. O seletor de idioma também armazena a sua preferência de idioma no localStorage para uma melhor experiência de utilizador.",
+      changesTitle: "Alterações a Esta Política",
+      changesText: "Posso atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão publicadas nesta página com uma data de revisão atualizada. Encorajo-o a rever esta política periodicamente.",
+      contactTitle: "Contacto",
+      contactText: "Se tiver alguma questão sobre esta Política de Privacidade ou os seus dados pessoais, contacte-me através de:"
     }
   },
   "pt-br": {
@@ -455,7 +543,8 @@ export const translations = {
     },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
-      copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados."
+      copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados.",
+      privacyPolicy: "Política de Privacidade"
     },
     drawer: {
       title: "Oportunidades Júnior",
@@ -477,6 +566,49 @@ export const translations = {
       sendingButton: "Enviando...",
       successMessage: "Mensagem enviada com sucesso! Retornarei em breve.",
       errorMessage: "Falha ao enviar mensagem. Por favor, tente novamente."
+    },
+    privacy: {
+      backToHome: "Voltar ao Início",
+      title: "Política de Privacidade",
+      lastUpdated: "Última atualização: 2 de dezembro de 2025",
+      allRightsReserved: "Todos os direitos reservados.",
+      introTitle: "Introdução",
+      introText: "Bem-vindo a franciscocbatista.com. Sou Francisco Cordeiro Batista e estou comprometido em proteger sua privacidade. Esta Política de Privacidade explica como coleto, uso e protejo suas informações quando você visita meu site e usa o formulário de contato.",
+      collectTitle: "Informações que Coletamos",
+      collectText: "Quando você usa o formulário de contato neste site, coleto as seguintes informações:",
+      collectItems: [
+        "Nome: Para me dirigir a você adequadamente na minha resposta",
+        "Endereço de email: Para responder à sua consulta",
+        "Conteúdo da mensagem: O conteúdo da sua mensagem para entender sua consulta"
+      ],
+      useTitle: "Como Usamos Suas Informações",
+      useText: "As informações coletadas através do formulário de contato são usadas exclusivamente para responder às suas consultas. Não vendo, troco ou compartilho suas informações pessoais com terceiros para fins de marketing.",
+      thirdPartyTitle: "Serviços de Terceiros",
+      thirdPartyText: "Este site usa os seguintes serviços de terceiros para processar seus dados:",
+      formspreeText: "O Formspree é usado para processar e entregar envios do formulário de contato. Quando você envia o formulário de contato, seus dados são transmitidos e armazenados pelo Formspree.",
+      formspreeLink: "Ver Política de Privacidade do Formspree",
+      recaptchaText: "O Google reCAPTCHA é usado para proteger o formulário de contato contra spam e abuso. O reCAPTCHA coleta informações de hardware e software, como dados do dispositivo e do aplicativo, e envia para o Google para análise.",
+      recaptchaLink: "Ver Política de Privacidade do Google",
+      retentionTitle: "Retenção de Dados",
+      retentionText: "Os dados do formulário de contato são retidos apenas pelo tempo necessário para responder à sua consulta e para fins comerciais legítimos. Os envios de formulários são armazenados pelo Formspree de acordo com suas políticas de retenção de dados.",
+      gdprTitle: "Seus Direitos (LGPD/GDPR)",
+      gdprText: "Se você está localizado no Espaço Econômico Europeu (EEE) ou no Brasil, você tem certos direitos de proteção de dados. Estes incluem:",
+      gdprRights: [
+        "Direito de acesso: Você pode solicitar uma cópia dos seus dados pessoais",
+        "Direito de retificação: Você pode solicitar a correção de dados inexatos",
+        "Direito de exclusão: Você pode solicitar a eliminação dos seus dados pessoais",
+        "Direito de limitação do tratamento: Você pode solicitar a limitação de como seus dados são usados",
+        "Direito à portabilidade dos dados: Você pode solicitar seus dados em um formato portátil",
+        "Direito de oposição: Você pode se opor ao tratamento dos seus dados pessoais"
+      ],
+      exerciseTitle: "Como Exercer Seus Direitos",
+      exerciseText: "Para exercer qualquer um desses direitos, entre em contato comigo pelo email:",
+      cookiesTitle: "Cookies",
+      cookiesText: "Este site usa cookies mínimos. O Google reCAPTCHA pode definir cookies para verificar que você não é um robô. O seletor de idioma também armazena sua preferência de idioma no localStorage para uma melhor experiência de usuário.",
+      changesTitle: "Alterações a Esta Política",
+      changesText: "Posso atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão publicadas nesta página com uma data de revisão atualizada. Encorajo você a revisar esta política periodicamente.",
+      contactTitle: "Contato",
+      contactText: "Se você tiver alguma dúvida sobre esta Política de Privacidade ou seus dados pessoais, entre em contato comigo pelo email:"
     }
   },
   es: {
@@ -615,7 +747,8 @@ export const translations = {
     },
     footer: {
       tagline: "Ciencia de Datos • Estrategia Empresarial • Mentalidad Internacional",
-      copyright: "© 2025 Francisco Cordeiro Batista. Todos los derechos reservados."
+      copyright: "© 2025 Francisco Cordeiro Batista. Todos los derechos reservados.",
+      privacyPolicy: "Política de Privacidad"
     },
     drawer: {
       title: "Oportunidades Junior",
@@ -637,6 +770,49 @@ export const translations = {
       sendingButton: "Enviando...",
       successMessage: "¡Mensaje enviado con éxito! Te responderé pronto.",
       errorMessage: "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    },
+    privacy: {
+      backToHome: "Volver al Inicio",
+      title: "Política de Privacidad",
+      lastUpdated: "Última actualización: 2 de diciembre de 2025",
+      allRightsReserved: "Todos los derechos reservados.",
+      introTitle: "Introducción",
+      introText: "Bienvenido a franciscocbatista.com. Soy Francisco Cordeiro Batista y estoy comprometido a proteger tu privacidad. Esta Política de Privacidad explica cómo recopilo, uso y protejo tu información cuando visitas mi sitio web y usas el formulario de contacto.",
+      collectTitle: "Información que Recopilamos",
+      collectText: "Cuando usas el formulario de contacto en este sitio web, recopilo la siguiente información:",
+      collectItems: [
+        "Nombre: Para dirigirme a ti correctamente en mi respuesta",
+        "Dirección de correo electrónico: Para responder a tu consulta",
+        "Contenido del mensaje: El contenido de tu mensaje para entender tu consulta"
+      ],
+      useTitle: "Cómo Usamos Tu Información",
+      useText: "La información recopilada a través del formulario de contacto se utiliza exclusivamente para responder a tus consultas. No vendo, intercambio ni comparto tu información personal con terceros para fines de marketing.",
+      thirdPartyTitle: "Servicios de Terceros",
+      thirdPartyText: "Este sitio web utiliza los siguientes servicios de terceros para procesar tus datos:",
+      formspreeText: "Formspree se utiliza para procesar y entregar los envíos del formulario de contacto. Cuando envías el formulario de contacto, tus datos se transmiten y almacenan en Formspree.",
+      formspreeLink: "Ver Política de Privacidad de Formspree",
+      recaptchaText: "Google reCAPTCHA se utiliza para proteger el formulario de contacto contra spam y abuso. reCAPTCHA recopila información de hardware y software, como datos del dispositivo y de la aplicación, y los envía a Google para su análisis.",
+      recaptchaLink: "Ver Política de Privacidad de Google",
+      retentionTitle: "Retención de Datos",
+      retentionText: "Los datos del formulario de contacto se conservan solo el tiempo necesario para responder a tu consulta y para fines comerciales legítimos. Los envíos de formularios se almacenan en Formspree de acuerdo con sus políticas de retención de datos.",
+      gdprTitle: "Tus Derechos (RGPD)",
+      gdprText: "Si te encuentras en el Espacio Económico Europeo (EEE), tienes ciertos derechos de protección de datos bajo el Reglamento General de Protección de Datos (RGPD). Estos incluyen:",
+      gdprRights: [
+        "Derecho de acceso: Puedes solicitar una copia de tus datos personales",
+        "Derecho de rectificación: Puedes solicitar la corrección de datos inexactos",
+        "Derecho de supresión: Puedes solicitar la eliminación de tus datos personales",
+        "Derecho a la limitación del tratamiento: Puedes solicitar la limitación de cómo se usan tus datos",
+        "Derecho a la portabilidad de datos: Puedes solicitar tus datos en un formato portable",
+        "Derecho de oposición: Puedes oponerte al tratamiento de tus datos personales"
+      ],
+      exerciseTitle: "Cómo Ejercer Tus Derechos",
+      exerciseText: "Para ejercer cualquiera de estos derechos, contáctame en:",
+      cookiesTitle: "Cookies",
+      cookiesText: "Este sitio web utiliza cookies mínimas. Google reCAPTCHA puede establecer cookies para verificar que no eres un robot. El selector de idioma también almacena tu preferencia de idioma en localStorage para una mejor experiencia de usuario.",
+      changesTitle: "Cambios en Esta Política",
+      changesText: "Puedo actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publicará en esta página con una fecha de revisión actualizada. Te animo a revisar esta política periódicamente.",
+      contactTitle: "Contacto",
+      contactText: "Si tienes alguna pregunta sobre esta Política de Privacidad o tus datos personales, contáctame en:"
     }
   }
 };
