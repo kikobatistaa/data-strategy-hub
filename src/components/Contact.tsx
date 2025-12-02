@@ -159,7 +159,7 @@ const Contact = () => {
                 </div>
 
                 {/* Componente Google reCAPTCHA */}
-                <div className="flex justify-center py-2">
+                <div className="flex justify-center py-2" role="group" aria-label="Human verification">
                   <ReCAPTCHA
                     ref={captchaRef}
                     sitekey="6LfQWx8sAAAAAKwPvCMlQG4ueAShMqWYH2XAUOxX" 

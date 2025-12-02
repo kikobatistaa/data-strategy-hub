@@ -93,8 +93,9 @@ const Hero = () => {
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg font-bold group border border-primary/50"
               onClick={() => setCvModalOpen(true)}
+              aria-label={t.downloadCV}
             >
-              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" aria-hidden="true" />
               {t.downloadCV}
             </Button>
             
@@ -105,8 +106,8 @@ const Hero = () => {
               variant="outline"
               className="border-2 border-border hover:bg-muted hover:text-foreground backdrop-blur-sm px-8 py-6 text-lg font-bold shadow-lg transition-all duration-300"
             >
-              <a href="mailto:kiko.2205@hotmail.com">
-                <Mail className="mr-2 h-5 w-5" />
+              <a href="mailto:kiko.2205@hotmail.com" aria-label={t.contactMe}>
+                <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
                 {t.contactMe}
               </a>
             </Button>
@@ -118,8 +119,9 @@ const Hero = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="group p-3 rounded-full bg-card/50 backdrop-blur-md border border-border/50 hover:border-foreground/20 hover:bg-muted transition-all duration-300 shadow-lg"
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin className="h-6 w-6 text-foreground group-hover:scale-110 transition-transform" />
+              <Linkedin className="h-6 w-6 text-foreground group-hover:scale-110 transition-transform" aria-hidden="true" />
             </a>
           </div>
         </div>
