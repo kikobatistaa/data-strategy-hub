@@ -164,6 +164,22 @@ export const translations = {
       successMessage: "Message sent successfully! I'll get back to you soon.",
       errorMessage: "Failed to send message. Please try again."
     },
+    testimonials: {
+      title: "What Others Say",
+      subtitle: "Excerpts from recommendation letters",
+      netjets: {
+        author: "Manager",
+        context: "Excerpt from Recommendation Letter"
+      },
+      nova1: {
+        author: "Professor of AI and Big Data Storage",
+        context: "Excerpt from Recommendation Letter"
+      },
+      nova2: {
+        author: "Professor of AI and Big Data Storage",
+        context: "Excerpt from Recommendation Letter"
+      }
+    },
     privacy: {
       backToHome: "Back to Home",
       title: "Privacy Policy",
@@ -372,6 +388,22 @@ export const translations = {
       sendingButton: "A enviar...",
       successMessage: "Mensagem enviada com sucesso! Responderei em breve.",
       errorMessage: "Falha ao enviar mensagem. Por favor, tente novamente."
+    },
+    testimonials: {
+      title: "O Que Dizem Sobre Mim",
+      subtitle: "Excertos de cartas de recomendação",
+      netjets: {
+        author: "Gestor",
+        context: "Excerto da Carta de Recomendação"
+      },
+      nova1: {
+        author: "Professora de IA e Armazenamento de Big Data",
+        context: "Excerto da Carta de Recomendação"
+      },
+      nova2: {
+        author: "Professora de IA e Armazenamento de Big Data",
+        context: "Excerto da Carta de Recomendação"
+      }
     },
     privacy: {
       backToHome: "Voltar ao Início",
@@ -582,6 +614,22 @@ export const translations = {
       successMessage: "Mensagem enviada com sucesso! Retornarei em breve.",
       errorMessage: "Falha ao enviar mensagem. Por favor, tente novamente."
     },
+    testimonials: {
+      title: "O Que Dizem Sobre Mim",
+      subtitle: "Excertos de cartas de recomendação",
+      netjets: {
+        author: "Gerente",
+        context: "Excerto da Carta de Recomendação"
+      },
+      nova1: {
+        author: "Professora de IA e Armazenamento de Big Data",
+        context: "Excerto da Carta de Recomendação"
+      },
+      nova2: {
+        author: "Professora de IA e Armazenamento de Big Data",
+        context: "Excerto da Carta de Recomendação"
+      }
+    },
     privacy: {
       backToHome: "Voltar ao Início",
       title: "Política de Privacidade",
@@ -790,6 +838,22 @@ export const translations = {
       sendingButton: "Enviando...",
       successMessage: "¡Mensaje enviado con éxito! Te responderé pronto.",
       errorMessage: "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    },
+    testimonials: {
+      title: "Lo Que Dicen De Mí",
+      subtitle: "Extractos de cartas de recomendación",
+      netjets: {
+        author: "Gerente",
+        context: "Extracto de Carta de Recomendación"
+      },
+      nova1: {
+        author: "Profesora de IA y Almacenamiento de Big Data",
+        context: "Extracto de Carta de Recomendación"
+      },
+      nova2: {
+        author: "Profesora de IA y Almacenamiento de Big Data",
+        context: "Extracto de Carta de Recomendación"
+      }
     },
     privacy: {
       backToHome: "Volver al Inicio",

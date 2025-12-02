@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 // Lazy load below-the-fold components for better initial load performance
 const Experience = lazy(() => import("@/components/Experience"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Education = lazy(() => import("@/components/Education"));
 const Skills = lazy(() => import("@/components/Skills"));
 const Projects = lazy(() => import("@/components/Projects"));
@@ -53,6 +54,9 @@ const Index = () => {
       <Hero />
       <Suspense fallback={<SectionSkeleton />}>
         <Experience />
+      </Suspense>
+      <Suspense fallback={<SectionSkeleton />}>
+        <Testimonials />
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
         <Education />
