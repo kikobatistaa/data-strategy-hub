@@ -40,7 +40,7 @@ const Contact = () => {
       toast.success(t.successMessage);
       setFormData({ name: "", email: "", message: "" }); // Limpar o formulário
     }
-    if (state.errors && state.errors.length > 0) {
+    if (state.errors && state.errors.getFormErrors().length > 0) {
       toast.error(t.errorMessage);
     }
   }, [state.succeeded, state.errors, t]);
