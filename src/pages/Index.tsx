@@ -6,6 +6,7 @@ import Education from "@/components/Education";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
@@ -38,6 +39,7 @@ const Index = () => {
       <Skills />
       <Projects />
       <About />
+      <Contact />
       <Footer />
       <ScrollToTopButton />
       <JobOpportunityDrawer />

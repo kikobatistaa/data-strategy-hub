@@ -5,7 +5,8 @@ export const translations = {
       education: "Education",
       skills: "Skills",
       projects: "Projects",
-      about: "About"
+      about: "About",
+      contact: "Contact"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -142,6 +143,20 @@ export const translations = {
       region_open: "Open to roles across Europe, Japan, and LATAM.",
       region_focus: "Especially interested in companies offering visa sponsorship for non-EU regions (Japan/LATAM).",
       contact: "Let's Connect"
+    },
+    contactSection: {
+      title: "Get In Touch",
+      subtitle: "Have a question or want to work together? Drop me a message.",
+      nameLabel: "Name",
+      namePlaceholder: "Your name",
+      emailLabel: "Email",
+      emailPlaceholder: "your.email@example.com",
+      messageLabel: "Message",
+      messagePlaceholder: "Your message...",
+      sendButton: "Send Message",
+      sendingButton: "Sending...",
+      successMessage: "Message sent successfully! I'll get back to you soon.",
+      errorMessage: "Failed to send message. Please try again."
     }
   },
   "pt-pt": {
@@ -150,7 +165,8 @@ export const translations = {
       education: "Educação",
       skills: "Competências",
       projects: "Projetos",
-      about: "Sobre"
+      about: "Sobre",
+      contact: "Contacto"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -287,6 +303,20 @@ export const translations = {
       region_open: "Aberto a oportunidades em toda a Europa, Japão e LATAM.",
       region_focus: "Interessado em empresas que ofereçam apoio para visto em regiões fora da UE (Japão/LATAM).",
       contact: "Contacte-me"
+    },
+    contactSection: {
+      title: "Entre em Contacto",
+      subtitle: "Tem alguma questão ou quer trabalhar comigo? Envie-me uma mensagem.",
+      nameLabel: "Nome",
+      namePlaceholder: "O seu nome",
+      emailLabel: "Email",
+      emailPlaceholder: "o.seu.email@exemplo.com",
+      messageLabel: "Mensagem",
+      messagePlaceholder: "A sua mensagem...",
+      sendButton: "Enviar Mensagem",
+      sendingButton: "A enviar...",
+      successMessage: "Mensagem enviada com sucesso! Responderei em breve.",
+      errorMessage: "Falha ao enviar mensagem. Por favor, tente novamente."
     }
   },
   "pt-br": {
@@ -295,7 +325,8 @@ export const translations = {
       education: "Educação",
       skills: "Competências",
       projects: "Projetos",
-      about: "Sobre"
+      about: "Sobre",
+      contact: "Contato"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -432,6 +463,20 @@ export const translations = {
       region_open: "Aberto a vagas na Europa, Japão e Brasil.",
       region_focus: "Especialmente interessado em empresas que ofereçam suporte de visto para o Japão e Brasil.",
       contact: "Entre em Contato"
+    },
+    contactSection: {
+      title: "Entre em Contato",
+      subtitle: "Tem alguma dúvida ou quer trabalhar comigo? Me mande uma mensagem.",
+      nameLabel: "Nome",
+      namePlaceholder: "Seu nome",
+      emailLabel: "Email",
+      emailPlaceholder: "seu.email@exemplo.com",
+      messageLabel: "Mensagem",
+      messagePlaceholder: "Sua mensagem...",
+      sendButton: "Enviar Mensagem",
+      sendingButton: "Enviando...",
+      successMessage: "Mensagem enviada com sucesso! Retornarei em breve.",
+      errorMessage: "Falha ao enviar mensagem. Por favor, tente novamente."
     }
   },
   es: {
@@ -440,7 +485,8 @@ export const translations = {
       education: "Educación",
       skills: "Competencias",
       projects: "Proyectos",
-      about: "Acerca"
+      about: "Acerca",
+      contact: "Contacto"
     },
     hero: {
       name: "Francisco Cordeiro Batista",
@@ -577,6 +623,20 @@ export const translations = {
       region_open: "Abierto a roles en toda Europa, Japón y LATAM.",
       region_focus: "Especialmente interesado en empresas que ofrezcan patrocinio de visa para regiones fuera de la UE (Japón/LATAM).",
       contact: "Contactar"
+    },
+    contactSection: {
+      title: "Ponte en Contacto",
+      subtitle: "¿Tienes alguna pregunta o quieres trabajar conmigo? Envíame un mensaje.",
+      nameLabel: "Nombre",
+      namePlaceholder: "Tu nombre",
+      emailLabel: "Correo",
+      emailPlaceholder: "tu.correo@ejemplo.com",
+      messageLabel: "Mensaje",
+      messagePlaceholder: "Tu mensaje...",
+      sendButton: "Enviar Mensaje",
+      sendingButton: "Enviando...",
+      successMessage: "¡Mensaje enviado con éxito! Te responderé pronto.",
+      errorMessage: "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
     }
   }
 };
