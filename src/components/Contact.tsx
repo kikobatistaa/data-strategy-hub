@@ -138,7 +138,7 @@ const Contact = () => {
                 {/* Componente Google reCAPTCHA */}
                 <div className="flex justify-center py-2">
                   <ReCAPTCHA
-                    sitekey="6LexVx8sAAAAAHxsdpvO3mgSrnRdlDqvzDRZHviw" 
+                    sitekey="6LfQWx8sAAAAAKwPvCMlQG4ueAShMqWYH2XAUOxX" 
                     onChange={handleCaptchaChange}
                     theme="dark" // Podes mudar para 'light' se preferires
                   />
