@@ -4,12 +4,14 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import LanguageSelector from "./LanguageSelector";
+import CVPreviewModal from "./CVPreviewModal";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
   const { language } = useLanguage();
   const t = translations[language].hero;
   const [scrollY, setScrollY] = useState(0);
+  const [cvModalOpen, setCvModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,14 +90,12 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
             {/* 1. Download CV Button */}
             <Button 
-              asChild 
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg font-bold group border border-primary/50"
+              onClick={() => setCvModalOpen(true)}
             >
-              <a href="/CV.pdf" download="Francisco_Batista_CV.pdf">
-                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                {t.downloadCV}
-              </a>
+              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+              {t.downloadCV}
             </Button>
             
             {/* 2. Contact Me Button */}
@@ -135,6 +135,8 @@ const Hero = () => {
           <ChevronDown className="h-8 w-8 group-hover:scale-110 transition-transform" />
         </a>
       </div>
+
+      <CVPreviewModal open={cvModalOpen} onOpenChange={setCvModalOpen} />
     </section>
   );
 };

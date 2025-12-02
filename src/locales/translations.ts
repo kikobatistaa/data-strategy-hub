@@ -15,7 +15,12 @@ export const translations = {
       titleAccent: "Business Strategy",
       subtitle: "Transforming complex data into actionable insights that drive strategic business decisions and measurable impact.",
       downloadCV: "Download CV",
-      contactMe: "Contact Me"
+      contactMe: "Contact Me",
+      cvPreviewTitle: "Curriculum Vitae",
+      cvPreviewDescription: "Preview my CV before downloading.",
+      openInNewTab: "Open in New Tab",
+      downloadButton: "Download",
+      cvLoadingError: "Could not load preview. Use the buttons below."
     },
     about: {
       title: "About Me",
@@ -219,7 +224,12 @@ export const translations = {
       titleAccent: "Estratégia Empresarial",
       subtitle: "Transformando dados complexos em insights acionáveis que informam decisões estratégicas e impacto mensurável.",
       downloadCV: "Descarregar CV",
-      contactMe: "Contacte-me"
+      contactMe: "Contacte-me",
+      cvPreviewTitle: "Curriculum Vitae",
+      cvPreviewDescription: "Pré-visualize o meu CV antes de descarregar.",
+      openInNewTab: "Abrir em Nova Aba",
+      downloadButton: "Descarregar",
+      cvLoadingError: "Não foi possível carregar a pré-visualização. Use os botões abaixo."
     },
     about: {
       title: "Sobre Mim",
@@ -423,7 +433,12 @@ export const translations = {
       titleAccent: "Estratégia de Negócios",
       subtitle: "Transformando dados complexos em insights acionáveis que guiam decisões estratégicas e impacto mensurável.",
       downloadCV: "Baixar CV",
-      contactMe: "Entre em Contato"
+      contactMe: "Entre em Contato",
+      cvPreviewTitle: "Curriculum Vitae",
+      cvPreviewDescription: "Visualize meu CV antes de baixar.",
+      openInNewTab: "Abrir em Nova Aba",
+      downloadButton: "Baixar",
+      cvLoadingError: "Não foi possível carregar a pré-visualização. Use os botões abaixo."
     },
     about: {
       title: "Sobre Mim",
@@ -627,7 +642,12 @@ export const translations = {
       titleAccent: "Estrategia Empresarial",
       subtitle: "Transformando datos complejos en insights accionables que impulsan decisiones estratégicas e impacto medible.",
       downloadCV: "Descargar CV",
-      contactMe: "Contactar"
+      contactMe: "Contactar",
+      cvPreviewTitle: "Curriculum Vitae",
+      cvPreviewDescription: "Vista previa de mi CV antes de descargar.",
+      openInNewTab: "Abrir en Nueva Pestaña",
+      downloadButton: "Descargar",
+      cvLoadingError: "No se pudo cargar la vista previa. Use los botones de abajo."
     },
     about: {
       title: "Sobre Mí",
