@@ -25,9 +25,9 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn Profile"
               >
-                <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" />
+                <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" aria-hidden="true" />
               </a>
               
               <a 
@@ -35,17 +35,17 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
-                aria-label="GitHub"
+                aria-label="GitHub Profile"
               >
-                <Github className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" />
+                <Github className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" aria-hidden="true" />
               </a>
               
               <a 
                 href="mailto:kiko.2205@hotmail.com"
                 className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
-                aria-label="Email"
+                aria-label="Send Email"
               >
-                <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" />
+                <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" aria-hidden="true" />
               </a>
             </div>
           </div>

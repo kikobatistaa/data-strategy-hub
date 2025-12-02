@@ -111,13 +111,14 @@ const CVPreviewModal = ({ open, onOpenChange }: CVPreviewModalProps) => {
             variant="outline"
             onClick={() => window.open("/CV.pdf", "_blank")}
             className="flex-1 sm:flex-none"
+            aria-label={t.openInNewTab}
           >
-            <ExternalLink className="mr-2 h-4 w-4" />
+            <ExternalLink className="mr-2 h-4 w-4" aria-hidden="true" />
             {t.openInNewTab}
           </Button>
           <Button asChild className="flex-1 sm:flex-none">
-            <a href="/CV.pdf" download="Francisco_Batista_CV.pdf">
-              <Download className="mr-2 h-4 w-4" />
+            <a href="/CV.pdf" download="Francisco_Batista_CV.pdf" aria-label={t.downloadButton}>
+              <Download className="mr-2 h-4 w-4" aria-hidden="true" />
               {t.downloadButton}
             </a>
           </Button>
