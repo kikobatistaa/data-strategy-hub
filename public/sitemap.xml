@@ -62,4 +62,16 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://franciscocbatista.com/privacy</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franciscocbatista.com/privacy?lang=en" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://franciscocbatista.com/privacy?lang=pt-pt" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franciscocbatista.com/privacy?lang=pt-br" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://franciscocbatista.com/privacy?lang=es" />
+  </url>
+
 </urlset>
