@@ -21,12 +21,9 @@ const Contact = () => {
   // Estado para armazenar o token do reCAPTCHA
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
-  // Hook do Formspree configurado para enviar o token extra
-  const [state, handleSubmit] = useForm("mgvgynyw", {
-    data: {
-      "g-recaptcha-response": recaptchaToken
-    }
-  });
+  // Hook do Formspree simplificado (sem o objeto 'data')
+  // O Formspree vai ler automaticamente o input escondido que adicionámos em baixo
+  const [state, handleSubmit] = useForm("mgvgynyw");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -43,6 +40,7 @@ const Contact = () => {
 
   // Função chamada quando o utilizador completa o reCAPTCHA
   const handleCaptchaChange = (token: string | null) => {
+    console.log("Captcha resolvido, token:", token); // Log para debug
     setRecaptchaToken(token);
   };
 
@@ -50,7 +48,9 @@ const Contact = () => {
     if (state.succeeded) {
       toast.success(t.successMessage);
       setFormData({ name: "", email: "", message: "" });
-      setRecaptchaToken(null); // Reiniciar o captcha após envio bem-sucedido
+      setRecaptchaToken(null); // Reiniciar o estado local
+      // Nota: O widget do reCAPTCHA pode precisar de ser resetado manualmente se quiseres que o utilizador envie outro logo de seguida, 
+      // mas para um formulário de contacto simples isto chega.
     }
     if (state.errors && state.errors.getFormErrors().length > 0) {
       toast.error(t.errorMessage);
@@ -144,9 +144,17 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* --- FIX CRÍTICO --- */}
+                {/* Este input escondido garante que o valor do token é enviado no POST do formulário */}
+                <input 
+                  type="hidden" 
+                  name="g-recaptcha-response" 
+                  value={recaptchaToken || ""} 
+                />
+                {/* ------------------- */}
+
                 <Button
                   type="submit"
-                  // O botão fica desativado se estiver a enviar OU se o captcha não estiver resolvido
                   disabled={state.submitting || !recaptchaToken} 
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6"
                 >
