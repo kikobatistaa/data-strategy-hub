@@ -44,7 +44,7 @@ const CVPreviewModal = ({ open, onOpenChange }: CVPreviewModalProps) => {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="max-w-5xl w-[95vw] h-[90vh] flex flex-col">
+      <DialogContent className="max-w-5xl w-[95vw] h-[70vh] sm:h-[85vh] flex flex-col p-4 sm:p-6">
         <DialogHeader>
           <DialogTitle>{t.cvPreviewTitle}</DialogTitle>
           <DialogDescription>{t.cvPreviewDescription}</DialogDescription>
