@@ -101,15 +101,16 @@ const Hero = () => {
             
             {/* 2. Contact Me Button */}
             <Button 
-              asChild
               size="lg" 
               variant="outline"
               className="border-2 border-border hover:bg-muted hover:text-foreground backdrop-blur-sm px-8 py-6 text-lg font-bold shadow-lg transition-all duration-300"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              aria-label={t.contactMe}
             >
-              <a href="mailto:kiko.2205@hotmail.com" aria-label={t.contactMe}>
-                <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
-                {t.contactMe}
-              </a>
+              <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
+              {t.contactMe}
             </Button>
           </div>
           
