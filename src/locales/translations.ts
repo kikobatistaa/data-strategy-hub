@@ -109,10 +109,17 @@ export const translations = {
         category: "Business Intelligence",
         tags: ["SQL", "Visualization", "KPIs"]
       },
-      strategy: {
-        title: "Market Strategy Analysis",
-        category: "Strategic Consulting",
-        tags: ["Data Analysis", "Strategy", "Insights"]
+      sparkAnalytics: {
+        title: "Big Data Analytics with Apache Spark",
+        category: "Big Data & Distributed Computing",
+        tags: ["Spark", "Databricks", "MLlib", "Python", "GraphFrames"],
+        academicBadge: "Academic Project • NOVA IMS • Grade:",
+        grade: "20/20",
+        buttons: {
+          github: "GitHub",
+          traffic: "Traffic Analysis",
+          spotify: "Spotify Analysis"
+        }
       },
       portfolio: {
         title: "Yes, This Website",
@@ -348,10 +355,17 @@ export const translations = {
         category: "Business Intelligence",
         tags: ["SQL", "Visualização", "KPIs"]
       },
-      strategy: {
-        title: "Análise de Estratégia de Mercado",
-        category: "Consultoria Estratégica",
-        tags: ["Análise de Dados", "Estratégia", "Insights"]
+      sparkAnalytics: {
+        title: "Big Data Analytics com Apache Spark",
+        category: "Big Data & Computação Distribuída",
+        tags: ["Spark", "Databricks", "MLlib", "Python", "GraphFrames"],
+        academicBadge: "Projeto Académico • NOVA IMS • Nota:",
+        grade: "20/20",
+        buttons: {
+          github: "GitHub",
+          traffic: "Análise de Tráfego",
+          spotify: "Análise Spotify"
+        }
       },
       portfolio: {
         title: "Sim, Este Website",
@@ -587,10 +601,17 @@ export const translations = {
         category: "Business Intelligence",
         tags: ["SQL", "Visualização", "KPIs"]
       },
-      strategy: {
-        title: "Análise de Estratégia de Mercado",
-        category: "Consultoria Estratégica",
-        tags: ["Análise de Dados", "Estratégia", "Insights"]
+      sparkAnalytics: {
+        title: "Big Data Analytics com Apache Spark",
+        category: "Big Data & Computação Distribuída",
+        tags: ["Spark", "Databricks", "MLlib", "Python", "GraphFrames"],
+        academicBadge: "Projeto Acadêmico • NOVA IMS • Nota:",
+        grade: "20/20",
+        buttons: {
+          github: "GitHub",
+          traffic: "Análise de Tráfego",
+          spotify: "Análise Spotify"
+        }
       },
       portfolio: {
         title: "Sim, Este Website",
@@ -826,10 +847,17 @@ export const translations = {
         category: "Business Intelligence",
         tags: ["SQL", "Visualización", "KPIs"]
       },
-      strategy: {
-        title: "Análisis de Estrategia de Mercado",
-        category: "Consultoría Estratégica",
-        tags: ["Análisis de Datos", "Estrategia", "Insights"]
+      sparkAnalytics: {
+        title: "Big Data Analytics con Apache Spark",
+        category: "Big Data & Computación Distribuida",
+        tags: ["Spark", "Databricks", "MLlib", "Python", "GraphFrames"],
+        academicBadge: "Proyecto Académico • NOVA IMS • Nota:",
+        grade: "20/20",
+        buttons: {
+          github: "GitHub",
+          traffic: "Análisis de Tráfico",
+          spotify: "Análisis Spotify"
+        }
       },
       portfolio: {
         title: "Sí, Este Sitio Web",

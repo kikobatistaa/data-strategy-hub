@@ -1,11 +1,15 @@
 /* src/components/Projects.tsx */
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Construction, LineChart, LayoutDashboard, Target, Code2, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Construction, LineChart, LayoutDashboard, Database, Code2, CheckCircle, GraduationCap, Github, Sparkles, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
+
+const GITHUB_URL = "https://github.com/kikobatistaa/Using-Databricks-to-Predict-Traffic-and-Analyse-Spotify-Playlists";
 
 const Projects = () => {
   const { language } = useLanguage();
@@ -19,28 +23,35 @@ const Projects = () => {
       category: t.revenue.category,
       icon: LineChart,
       tags: t.revenue.tags,
-      isLive: false
+      isLive: false,
+      isAcademic: false
     },
     {
       title: t.dashboard.title,
       category: t.dashboard.category,
       icon: LayoutDashboard,
       tags: t.dashboard.tags,
-      isLive: false
+      isLive: false,
+      isAcademic: false
     },
     {
-      title: t.strategy.title,
-      category: t.strategy.category,
-      icon: Target,
-      tags: t.strategy.tags,
-      isLive: false
+      title: t.sparkAnalytics.title,
+      category: t.sparkAnalytics.category,
+      icon: Database,
+      tags: t.sparkAnalytics.tags,
+      isLive: true,
+      isAcademic: true,
+      academicBadge: t.sparkAnalytics.academicBadge,
+      grade: t.sparkAnalytics.grade,
+      buttons: t.sparkAnalytics.buttons
     },
     {
       title: t.portfolio.title,
       category: t.portfolio.category,
       icon: Code2,
       tags: t.portfolio.tags,
-      isLive: true
+      isLive: true,
+      isAcademic: false
     }
   ];
 
@@ -82,6 +93,8 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {projects.map((project, index) => {
               const Icon = project.icon;
+              const isSparkProject = project.isAcademic;
+              
               return (
                 <Card 
                   key={index}
@@ -91,7 +104,9 @@ const Projects = () => {
                   {/* Decorative gradient blob */}
                   <div className={`absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-1/2 translate-x-1/3 transition-colors duration-500 blur-3xl ${
                     project.isLive 
-                      ? "bg-green-500/5 group-hover:bg-green-500/10" 
+                      ? isSparkProject 
+                        ? "bg-[hsl(var(--gold))]/5 group-hover:bg-[hsl(var(--gold))]/10"
+                        : "bg-green-500/5 group-hover:bg-green-500/10" 
                       : "bg-accent/5 group-hover:bg-accent/10"
                   }`} />
                   
@@ -99,10 +114,18 @@ const Projects = () => {
                     <div className="mb-4">
                       <div className={`p-3 rounded-xl inline-block transition-colors duration-300 ${
                         project.isLive 
-                          ? "bg-green-500/10 group-hover:bg-green-500/20" 
+                          ? isSparkProject
+                            ? "bg-[hsl(var(--gold))]/10 group-hover:bg-[hsl(var(--gold))]/20"
+                            : "bg-green-500/10 group-hover:bg-green-500/20" 
                           : "bg-accent/10 group-hover:bg-accent/20"
                       }`}>
-                        <Icon className={`h-7 w-7 ${project.isLive ? "text-green-500" : "text-accent"}`} />
+                        <Icon className={`h-7 w-7 ${
+                          project.isLive 
+                            ? isSparkProject 
+                              ? "text-[hsl(var(--gold))]" 
+                              : "text-green-500" 
+                            : "text-accent"
+                        }`} />
                       </div>
                     </div>
                     <CardTitle className="text-2xl mb-2 font-bold">{project.title}</CardTitle>
@@ -111,16 +134,68 @@ const Projects = () => {
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-6 relative z-10">
-                    {project.isLive ? (
-                      <div className="flex items-center gap-2 text-green-500 bg-green-500/10 px-4 py-3 rounded-lg border border-green-500/20">
-                        <CheckCircle className="h-4 w-4" />
-                        <span className="text-sm font-medium">{t.youreHere}</span>
+                  <CardContent className="space-y-4 relative z-10">
+                    {/* Academic Badge with Golden 20/20 and Sparkle */}
+                    {isSparkProject && project.academicBadge && (
+                      <div className="flex items-center gap-2 text-[hsl(var(--gold))] bg-[hsl(var(--gold))]/10 px-4 py-3 rounded-lg border border-[hsl(var(--gold))]/20">
+                        <GraduationCap className="h-4 w-4 flex-shrink-0" />
+                        <span className="text-sm font-medium">
+                          {project.academicBadge}{" "}
+                          <span className="text-gold-shimmer font-bold inline-flex items-center gap-1">
+                            {project.grade}
+                            <Sparkles className="h-3.5 w-3.5 text-[hsl(var(--gold-light))]" />
+                          </span>
+                        </span>
                       </div>
-                    ) : (
-                      <div className="flex items-center gap-2 text-accent bg-accent/10 px-4 py-3 rounded-lg border border-accent/20">
-                        <Construction className="h-4 w-4" />
-                        <span className="text-sm font-medium">{t.comingSoon}</span>
+                    )}
+
+                    {/* Status Badge for non-academic projects */}
+                    {!isSparkProject && (
+                      project.isLive ? (
+                        <div className="flex items-center gap-2 text-green-500 bg-green-500/10 px-4 py-3 rounded-lg border border-green-500/20">
+                          <CheckCircle className="h-4 w-4" />
+                          <span className="text-sm font-medium">{t.youreHere}</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2 text-accent bg-accent/10 px-4 py-3 rounded-lg border border-accent/20">
+                          <Construction className="h-4 w-4" />
+                          <span className="text-sm font-medium">{t.comingSoon}</span>
+                        </div>
+                      )
+                    )}
+
+                    {/* Buttons for Spark Analytics Project */}
+                    {isSparkProject && project.buttons && (
+                      <div className="flex flex-wrap gap-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="gap-1.5 text-xs border-border/50 hover:bg-accent/10"
+                          onClick={() => window.open(GITHUB_URL, "_blank")}
+                        >
+                          <Github className="h-3.5 w-3.5" />
+                          {project.buttons.github}
+                        </Button>
+                        <Link to="/projects/spark-analytics/traffic">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="gap-1.5 text-xs border-border/50 hover:bg-accent/10"
+                          >
+                            <ExternalLink className="h-3.5 w-3.5" />
+                            {project.buttons.traffic}
+                          </Button>
+                        </Link>
+                        <Link to="/projects/spark-analytics/spotify">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="gap-1.5 text-xs border-border/50 hover:bg-accent/10"
+                          >
+                            <ExternalLink className="h-3.5 w-3.5" />
+                            {project.buttons.spotify}
+                          </Button>
+                        </Link>
                       </div>
                     )}
                     
