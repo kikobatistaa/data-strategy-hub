@@ -24,7 +24,7 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      p1: "I am a <strong>Business Intelligence and Strategy Analyst</strong> passionate about finding the \"story\" hidden within the data. My unique value is bridging the gap between deep technical analysis and strategic business objectives.",
+      p1: "I am a <strong>Data Scientist and Business Intelligence expert</strong> passionate about finding the \"story\" hidden within the data. My unique value is bridging the gap between deep technical analysis and strategic business objectives.",
       p2: "In my recent role at <strong>NetJets</strong>, I put this into practice: I analyzed revenue losses, presenting actionable solutions directly to senior stakeholders. I don't just build dashboards; my goal is to deliver answers.",
       p3: "My <strong>hybrid approach</strong> is built on two pillars. The first is my Data Science (BSc) background, which provides my technical toolkit. I manage the full data lifecycle, from complex <strong>SQL</strong> queries and <strong>Python</strong> automation to building <strong>BI and ML Algorithms</strong>. The second pillar is my Management (MSc) training, which provides my business acumen. This gives me the insight to know which questions to ask and how the answers will impact the <strong>P&L (Profit & Loss)</strong>.",
       p4: "Beyond my analytical work, I am a <strong>builder</strong>. I <strong>co-founded NOVAe</strong>, my university's first entrepreneurship hub, and led its marketing strategy from the ground up. This experience taught me how to lead teams and build a strategic vision.",
@@ -270,7 +270,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mim",
-      p1: "Sou um <strong>Analista de Business Intelligence e Estratégia</strong>, apaixonado por descobrir a \"história\" escondida nos dados. O meu valor único reside em ligar a análise técnica aprofundada com os objetivos estratégicos de negócio.",
+      p1: "Sou um <strong>Data Scientist e um expert em Business Intelligence</strong>, apaixonado por descobrir a \"história\" escondida nos dados. O meu valor único reside em ligar a análise técnica aprofundada com os objetivos estratégicos de negócio.",
       p2: "No meu papel recente na <strong>NetJets</strong>, pus isto em prática: analisei perdas de receita, apresentando soluções acionáveis diretamente aos stakeholders séniores. Não construo apenas dashboards; o meu objetivo é entregar respostas.",
       p3: "A minha <strong>abordagem híbrida</strong> assenta em dois pilares. O primeiro é a minha formação em Ciência de Dados (BSc), que fornece o meu kit de ferramentas técnicas. Eu gerencio todo o ciclo de vida dos dados, desde consultas <strong>SQL</strong> complexas e automação em <strong>Python</strong> até à construção de <strong>Algoritmos de BI e ML</strong>. O segundo pilar é a minha formação em Gestão (MSc), que me fornece visão de negócio. Isso permite-me saber quais perguntas fazer e como as respostas impactarão o <strong>P&L (Profit & Loss)</strong>.",
       p4: "Para além do meu trabalho analítico, sou um <strong>construtor</strong>. <strong>Co-fundei o NOVAe</strong>, o primeiro núcleo de empreendedorismo da minha universidade, e liderei a sua estratégia de marketing desde o início. Esta experiência ensinou-me a liderar equipas e a construir uma visão estratégica.",
@@ -280,7 +280,7 @@ export const translations = {
       languagesTitle: "Idiomas",
       languagesDesc: "PT, ES (C1), EN (Fluência)",
       experience: "Experiência",
-      experienceDesc: "Analista & Empreendedor"
+      experienceDesc: "Data Scientist & Empreendedor"
     },
     experience: {
       title: "Experiência Profissional",
@@ -516,7 +516,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mim",
-      p1: "Eu sou um <strong>Analista de Business Intelligence e Estratégia</strong> apaixonado por encontrar a \"história\" oculta nos dados. Meu valor único é fazer a ponte entre a análise técnica aprofundada e os objetivos estratégicos de negócios.",
+      p1: "Eu sou um <strong>Cientista de Dados e um expert em Business Intelligence</strong> apaixonado por encontrar a \"história\" oculta nos dados. Meu valor único é fazer a ponte entre a análise técnica aprofundada e os objetivos estratégicos de negócios.",
       p2: "No meu papel recente na <strong>NetJets</strong>, coloquei isso em prática: analisei perdas de receita, apresentando soluções acionáveis diretamente aos stakeholders seniores. Eu não apenas crio dashboards; meu objetivo é entregar respostas.",
       p3: "Minha <strong>abordagem híbrida</strong> é construída sobre dois pilares. O primeiro é minha formação em Ciência de Dados (BSc), que fornece meu kit de ferramentas técnicas. Gerencio todo o ciclo de vida dos dados, desde consultas <strong>SQL</strong> complexas e automação em <strong>Python</strong> até a construção de <strong>Algoritmos de BI e ML</strong>. O segundo pilar é meu treinamento em Gestão (MSc), que me fornece visão de negócios. Isso me dá a clareza para saber quais perguntas fazer e como as respostas impactarão o <strong>P&L (Profit & Loss)</strong>.",
       p4: "Além do meu trabalho analítico, eu sou um <strong>construtor</strong>. <strong>Co-fundei o NOVAe</strong>, o primeiro hub de empreendedorismo da minha universidade, e liderei sua estratégia de marketing do zero. Esta experiência me ensinou a liderar equipes e a construir uma visão estratégica.",
@@ -762,7 +762,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mí",
-      p1: "Soy un <strong>Analista de Business Intelligence y Estrategia</strong> apasionado por encontrar la \"historia\" oculta en los datos. Mi valor único es tender puentes entre el análisis técnico profundo y los objetivos estratégicos empresariales.",
+      p1: "Soy un <strong>Científico de Datos y un experto en Business Intelligence</strong> apasionado por encontrar la \"historia\" oculta en los datos. Mi valor único es tender puentes entre el análisis técnico profundo y los objetivos estratégicos empresariales.",
       p2: "En mi rol reciente en <strong>NetJets</strong>, puse esto en práctica: analicé pérdidas de ingresos, presentando soluciones accionables directamente a los altos cargos. No solo construyo cuadros de comando; mi objetivo es entregar respuestas.",
       p3: "Mi <strong>enfoque híbrido</strong> se basa en dos pilares. El primero es mi formación en Ciencia de Datos (BSc), que me proporciona mi conjunto de herramientas técnicas. Gestiono todo el ciclo de vida de los datos, desde consultas <strong>SQL</strong> complejas y automatización en <strong>Python</strong> hasta la construcción de <strong>Algoritmos de BI y ML</strong>. El segundo pilar es mi formación en Gestión (MSc), que me aporta mi visión empresarial. Esto me da la perspectiva para saber qué preguntas hacer y cómo las respuestas impactarán en la <strong>P&L (Profit & Loss)</strong>.",
       p4: "Más allá de mi trabajo analítico, soy un <strong>constructor</strong>. <strong>Co-fundé NOVAe</strong>, el primer hub de emprendimiento de mi universidad, y lideré su estrategia de marketing desde cero. Esta experiencia me enseñó a liderar equipos y a construir una visión estratégica.",
