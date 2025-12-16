@@ -99,6 +99,24 @@ export const translations = {
       subtitle: "Applying advanced ML & Econometrics to business cases",
       construction: "Portfolio Under Construction",
       comingSoon: "Coming Soon",
+      volkswagen: {
+        title: "Volkswagen Group Strategy 2030",
+        category: "Corporate Strategy & Turnaround",
+        tags: ["Strategy", "Financial Modeling", "TOWS", "Automotive"],
+        shortDesc: "Strategic turnaround plan for VW Group to combat EV competitors.",
+        caseStudy: {
+          title: "Volkswagen 2030: Electrification & Software Strategy",
+          challenge: "VW faces an existential threat from agile EV competitors (Tesla, BYD) and critical legacy software inefficiencies that hamper innovation.",
+          approach: "• External: PESTLE & Porter’s 5 Forces (High rivalry).\n• Internal: VRIO Analysis (Software identified as critical gap).\n• Strategy: TOWS Matrix (Leveraging scale to fix tech debt).",
+          contribution: "Led the Strategic Formulation (TOWS) and Financial Analysis, modeling the budget reallocation required to pivot from internal software development to strategic partnerships.",
+          recommendation: "Launch a <€25k Entry-Level EV to defend mass-market share and reallocate R&D budget towards Software Partnerships to close the technological gap.",
+          credits: "Team: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
+        },
+        buttons: {
+          caseStudy: "Read Case Study",
+          downloadDeck: "Download Strategy Deck"
+        }
+      },
       revenue: {
         title: "Revenue Prediction Model",
         category: "Machine Learning & Econometrics",
@@ -345,6 +363,24 @@ export const translations = {
       subtitle: "Aplicando ML avançado & Econometria a casos de negócio",
       construction: "Portfólio Em Construção",
       comingSoon: "Em Breve",
+      volkswagen: {
+        title: "Estratégia Grupo Volkswagen 2030",
+        category: "Estratégia Corporativa & Turnaround",
+        tags: ["Estratégia", "Modelação Financeira", "TOWS", "Automóvel"],
+        shortDesc: "Plano estratégico de viragem para o Grupo VW combater concorrentes de VE.",
+        caseStudy: {
+          title: "Volkswagen 2030: Estratégia de Eletrificação e Software",
+          challenge: "A VW enfrenta uma ameaça existencial de concorrentes ágeis de VE (Tesla, BYD) e ineficiências críticas de software legado que dificultam a inovação.",
+          approach: "• Externa: PESTLE & 5 Forças de Porter (Alta rivalidade).\n• Interna: Análise VRIO (Software identificado como lacuna crítica).\n• Estratégia: Matriz TOWS (Alavancar escala de produção para corrigir dívida técnica).",
+          contribution: "Liderei a Formulação Estratégica (TOWS) e a Análise Financeira, modelando a realocação orçamental necessária para pivotar do desenvolvimento interno de software para parcerias estratégicas.",
+          recommendation: "Lançar um VE de Entrada <€25k para defender a quota de mercado de massa e realocar o orçamento de I&D para Parcerias de Software.",
+          credits: "Equipa: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
+        },
+        buttons: {
+          caseStudy: "Ler Case Study",
+          downloadDeck: "Descarregar Apresentação"
+        }
+      },
       revenue: {
         title: "Modelo de Previsão de Receita",
         category: "Aprendizagem Automática & Econometria",
@@ -591,6 +627,24 @@ export const translations = {
       subtitle: "Aplicando ML avançado & Econometria a casos de negócio",
       construction: "Portfólio Em Construção",
       comingSoon: "Em Breve",
+      volkswagen: {
+        title: "Estratégia Grupo Volkswagen 2030",
+        category: "Estratégia Corporativa & Turnaround",
+        tags: ["Estratégia", "Modelagem Financeira", "TOWS", "Automotivo"],
+        shortDesc: "Plano estratégico de virada para o Grupo VW combater concorrentes de VE.",
+        caseStudy: {
+          title: "Volkswagen 2030: Estratégia de Eletrificação e Software",
+          challenge: "A VW enfrenta uma ameaça existencial de concorrentes ágeis de VE (Tesla, BYD) e ineficiências críticas de software legado que dificultam a inovação.",
+          approach: "• Externa: PESTLE & 5 Forças de Porter (Alta rivalidade).\n• Interna: Análise VRIO (Software identificado como lacuna crítica).\n• Estratégia: Matriz TOWS (Alavancar escala para corrigir dívida técnica).",
+          contribution: "Liderei a Formulação Estratégica (TOWS) e a Análise Financeira, modelando a realocação orçamentária necessária para pivotar do desenvolvimento interno de software para parcerias estratégicas.",
+          recommendation: "Lançar um VE de Entrada <€25k para defender a quota de mercado de massa e realocar o orçamento de P&D para Parcerias de Software.",
+          credits: "Equipe: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
+        },
+        buttons: {
+          caseStudy: "Ler Case Study",
+          downloadDeck: "Baixar Apresentação"
+        }
+      },
       revenue: {
         title: "Modelo de Previsão de Receita",
         category: "Aprendizado de Máquina & Econometria",
@@ -837,6 +891,24 @@ export const translations = {
       subtitle: "Aplicando ML avanzado & Econometría a casos empresariales",
       construction: "Portafolio En Construcción",
       comingSoon: "Próximamente",
+      volkswagen: {
+        title: "Estrategia Grupo Volkswagen 2030",
+        category: "Estrategia Corporativa & Turnaround",
+        tags: ["Estrategia", "Modelado Financiero", "TOWS", "Automotriz"],
+        shortDesc: "Plan estratégico de cambio para el Grupo VW contra competidores de VE.",
+        caseStudy: {
+          title: "Volkswagen 2030: Estrategia de Electrificación y Software",
+          challenge: "VW enfrenta una amenaza existencial de competidores ágiles de VE (Tesla, BYD) e ineficiencias críticas de software legado que obstaculizan la innovación.",
+          approach: "• Externa: PESTLE & 5 Fuerzas de Porter (Alta rivalidad).\n• Interna: Análisis VRIO (Software identificado como brecha crítica).\n• Estrategia: Matriz TOWS (Apalancar escala para corregir deuda técnica).",
+          contribution: "Lideré la Formulación Estratégica (TOWS) y el Análisis Financiero, modelando la reasignación presupuestaria requerida para pivotar del desarrollo interno de software a alianzas estratégicas.",
+          recommendation: "Lanzar un VE de Entrada <€25k para defender la cuota de mercado masivo y reasignar el presupuesto de I+D a Alianzas de Software.",
+          credits: "Equipo: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
+        },
+        buttons: {
+          caseStudy: "Leer Case Study",
+          downloadDeck: "Descargar Presentación"
+        }
+      },
       revenue: {
         title: "Modelo de Predicción de Ingresos",
         category: "Aprendizaje Automático & Econometría",
@@ -960,7 +1032,7 @@ export const translations = {
       gdprText: "Si te encuentras en el Espacio Económico Europeo (EEE), tienes ciertos derechos de protección de datos bajo el Reglamento General de Protección de Datos (RGPD). Estos incluyen:",
       gdprRights: [
         "Derecho de acceso: Puedes solicitar una copia de tus datos personales",
-        "Derecho de rectificación: Puedes solicitar la corrección de datos inexactos",
+        "Derecho de rectificación: Puedes solicitar la corrección de datos inexatos",
         "Derecho de supresión: Puedes solicitar la eliminación de tus datos personales",
         "Derecho a la limitación del tratamiento: Puedes solicitar la limitación de cómo se usan tus datos",
         "Derecho a la portabilidad de datos: Puedes solicitar tus datos en un formato portable",
