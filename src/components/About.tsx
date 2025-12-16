@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Globe, Brain } from "lucide-react";
+import { Globe, Brain, Music } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
+import { Separator } from "@/components/ui/separator";
 
 const About = () => {
   const { language } = useLanguage();
@@ -86,6 +87,38 @@ const About = () => {
                 </div>
                 
               </div>
+
+              {/* Other Interests / Video Section */}
+              <div className="pt-8">
+                <Separator className="bg-white/10 mb-8" />
+                
+                <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                    <Music className="h-6 w-6 text-accent" />
+                  </div>
+                  {t.otherInterests}
+                </h3>
+
+                <div className="space-y-4">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {t.hobby}
+                  </p>
+                  
+                  <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/20 shadow-inner aspect-video max-w-2xl mx-auto">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      preload="none"
+                      poster="/saxophone-poster.jpg"
+                      playsInline
+                    >
+                      <source src="/saxophone.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+
             </CardContent>
           </Card>
         </div>

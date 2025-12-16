@@ -34,7 +34,9 @@ export const translations = {
       languagesTitle: "Languages",
       languagesDesc: "PT, ES (C1), EN (Fluent)",
       experience: "Experience",
-      experienceDesc: "Analyst & Entrepreneur"
+      experienceDesc: "Analyst & Entrepreneur",
+      otherInterests: "Other Interests",
+      hobby: "Playing Saxophone"
     },
     experience: {
       title: "Professional Experience",
@@ -298,7 +300,9 @@ export const translations = {
       languagesTitle: "Idiomas",
       languagesDesc: "PT, ES (C1), EN (Fluência)",
       experience: "Experiência",
-      experienceDesc: "Data Scientist & Empreendedor"
+      experienceDesc: "Data Scientist & Empreendedor",
+      otherInterests: "Outros Interesses",
+      hobby: "Tocar Saxofone"
     },
     experience: {
       title: "Experiência Profissional",
@@ -562,7 +566,9 @@ export const translations = {
       languagesTitle: "Idiomas",
       languagesDesc: "PT, ES (C1), EN (Fluência)",
       experience: "Experiência",
-      experienceDesc: "Analista & Empreendedor"
+      experienceDesc: "Analista & Empreendedor",
+      otherInterests: "Outros Interesses",
+      hobby: "Tocar Saxofone"
     },
     experience: {
       title: "Experiência Profissional",
@@ -826,7 +832,9 @@ export const translations = {
       languagesTitle: "Idiomas",
       languagesDesc: "PT, ES (C1), EN (Fluido)",
       experience: "Experiencia",
-      experienceDesc: "Analista & Emprendedor"
+      experienceDesc: "Analista & Emprendedor",
+      otherInterests: "Otros Intereses",
+      hobby: "Tocar Saxofón"
     },
     experience: {
       title: "Experiencia Profesional",
@@ -900,7 +908,7 @@ export const translations = {
           title: "Volkswagen 2030: Estrategia de Electrificación y Software",
           challenge: "VW enfrenta una amenaza existencial de competidores ágiles de VE (Tesla, BYD) e ineficiencias críticas de software legado que obstaculizan la innovación.",
           approach: "• Externa: PESTLE & 5 Fuerzas de Porter (Alta rivalidad).\n• Interna: Análisis VRIO (Software identificado como brecha crítica).\n• Estrategia: Matriz TOWS (Apalancar escala para corregir deuda técnica).",
-          contribution: "Lideré el Análisis Interno y apoyé la formulación de los Movimientos Estratégicos Clave y Recomendaciones.",
+          contribution: "Lideré el Análisis Interno y apoyé la formulación de los Movimentos Estratégicos Clave y Recomendaciones.",
           recommendation: "Lanzar un VE de Entrada <€25k para defender la cuota de mercado masivo y reasignar el presupuesto de I+D a Alianzas de Software.",
           credits: "Equipo: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
         },
@@ -1020,7 +1028,7 @@ export const translations = {
       ],
       useTitle: "Cómo Usamos Tu Información",
       useText: "La información recopilada a través del formulario de contacto se utiliza exclusivamente para responder a tus consultas. No vendo, intercambio ni comparto tu información personal con terceros para fines de marketing.",
-      thirdPartyTitle: "Servicios de Terceros",
+      thirdPartyTitle: "Serviicios de Terceros",
       thirdPartyText: "Este sitio web utiliza los siguientes servicios de terceros para procesar tus datos:",
       formspreeText: "Formspree se utiliza para procesar y entregar los envíos del formulario de contacto. Cuando envías el formulario de contacto, tus datos se transmiten y almacenan en Formspree.",
       formspreeLink: "Ver Política de Privacidad de Formspree",
