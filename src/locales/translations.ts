@@ -108,7 +108,7 @@ export const translations = {
           title: "Volkswagen 2030: Electrification & Software Strategy",
           challenge: "VW faces an existential threat from agile EV competitors (Tesla, BYD) and critical legacy software inefficiencies that hamper innovation.",
           approach: "• External: PESTLE & Porter’s 5 Forces (High rivalry).\n• Internal: VRIO Analysis (Software identified as critical gap).\n• Strategy: TOWS Matrix (Leveraging scale to fix tech debt).",
-          contribution: "Led the Strategic Formulation (TOWS) and Financial Analysis, modeling the budget reallocation required to pivot from internal software development to strategic partnerships.",
+          contribution: "Spearheaded the Internal Analysis and supported the formulation of Key Strategic Moves and Recommendations.",
           recommendation: "Launch a <€25k Entry-Level EV to defend mass-market share and reallocate R&D budget towards Software Partnerships to close the technological gap.",
           credits: "Team: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
         },
@@ -372,7 +372,7 @@ export const translations = {
           title: "Volkswagen 2030: Estratégia de Eletrificação e Software",
           challenge: "A VW enfrenta uma ameaça existencial de concorrentes ágeis de VE (Tesla, BYD) e ineficiências críticas de software legado que dificultam a inovação.",
           approach: "• Externa: PESTLE & 5 Forças de Porter (Alta rivalidade).\n• Interna: Análise VRIO (Software identificado como lacuna crítica).\n• Estratégia: Matriz TOWS (Alavancar escala de produção para corrigir dívida técnica).",
-          contribution: "Liderei a Formulação Estratégica (TOWS) e a Análise Financeira, modelando a realocação orçamental necessária para pivotar do desenvolvimento interno de software para parcerias estratégicas.",
+          contribution: "Liderei a Análise Interna e apoiei a formulação dos Movimentos Estratégicos Chave e Recomendações.",
           recommendation: "Lançar um VE de Entrada <€25k para defender a quota de mercado de massa e realocar o orçamento de I&D para Parcerias de Software.",
           credits: "Equipa: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
         },
@@ -636,7 +636,7 @@ export const translations = {
           title: "Volkswagen 2030: Estratégia de Eletrificação e Software",
           challenge: "A VW enfrenta uma ameaça existencial de concorrentes ágeis de VE (Tesla, BYD) e ineficiências críticas de software legado que dificultam a inovação.",
           approach: "• Externa: PESTLE & 5 Forças de Porter (Alta rivalidade).\n• Interna: Análise VRIO (Software identificado como lacuna crítica).\n• Estratégia: Matriz TOWS (Alavancar escala para corrigir dívida técnica).",
-          contribution: "Liderei a Formulação Estratégica (TOWS) e a Análise Financeira, modelando a realocação orçamentária necessária para pivotar do desenvolvimento interno de software para parcerias estratégicas.",
+          contribution: "Liderei a Análise Interna e apoiei a formulação dos Principais Movimentos Estratégicos e Recomendações.",
           recommendation: "Lançar um VE de Entrada <€25k para defender a quota de mercado de massa e realocar o orçamento de P&D para Parcerias de Software.",
           credits: "Equipe: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
         },
@@ -900,7 +900,7 @@ export const translations = {
           title: "Volkswagen 2030: Estrategia de Electrificación y Software",
           challenge: "VW enfrenta una amenaza existencial de competidores ágiles de VE (Tesla, BYD) e ineficiencias críticas de software legado que obstaculizan la innovación.",
           approach: "• Externa: PESTLE & 5 Fuerzas de Porter (Alta rivalidad).\n• Interna: Análisis VRIO (Software identificado como brecha crítica).\n• Estrategia: Matriz TOWS (Apalancar escala para corregir deuda técnica).",
-          contribution: "Lideré la Formulación Estratégica (TOWS) y el Análisis Financiero, modelando la reasignación presupuestaria requerida para pivotar del desarrollo interno de software a alianzas estratégicas.",
+          contribution: "Lideré el Análisis Interno y apoyé la formulación de los Movimientos Estratégicos Clave y Recomendaciones.",
           recommendation: "Lanzar un VE de Entrada <€25k para defender la cuota de mercado masivo y reasignar el presupuesto de I+D a Alianzas de Software.",
           credits: "Equipo: Cordeiro Batista F., Zedgenidze S., De man J., Keser K., Laared N., Dötsch F."
         },
