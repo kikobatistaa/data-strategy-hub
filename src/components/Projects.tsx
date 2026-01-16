@@ -33,8 +33,8 @@ import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
 
 const GITHUB_URL = "https://github.com/kikobatistaa/Using-Databricks-to-Predict-Traffic-and-Analyse-Spotify-Playlists";
-// This path works if Strategy_VW.pdf is inside the "public" folder
 const VW_PDF_URL = "/Strategy_VW.pdf"; 
+const BANK_REPORT_URL = "/Bank_Profitability_Report.pdf";
 
 const Projects = () => {
   const { language } = useLanguage();
@@ -55,6 +55,19 @@ const Projects = () => {
       isCaseStudy: true,
       caseStudyData: t.volkswagen.caseStudy,
       buttons: t.volkswagen.buttons
+    },
+    {
+      title: t.bank.title,
+      category: t.bank.category,
+      icon: LineChart,
+      tags: t.bank.tags,
+      isLive: true,
+      isAcademic: true,
+      academicBadge: t.bank.academicBadge,
+      grade: t.bank.grade,
+      isCaseStudy: true,
+      caseStudyData: t.bank.caseStudy,
+      buttons: t.bank.buttons
     },
     {
       title: t.sparkAnalytics.title,
@@ -115,13 +128,20 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {projects.map((project, index) => {
               const Icon = project.icon;
+              // Check if it's the Spark project
               const isSparkProject = project.title === t.sparkAnalytics.title; 
-              const isVWProject = project.isCaseStudy;
+              // Check if it's a Case Study project (VW or Bank)
+              const isCaseStudyProject = project.isCaseStudy;
+              
+              // Determine PDF URL based on title
+              const pdfUrl = project.title === t.volkswagen.title ? VW_PDF_URL : BANK_REPORT_URL;
 
               return (
                 <Card 
                   key={index}
-                  className={`group border border-white/10 shadow-card hover:shadow-hover hover:-translate-y-2 transition-all duration-500 relative overflow-hidden bg-card/50 backdrop-blur-md hover:border-accent/50 rounded-2xl flex flex-col ${isVWProject ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                  // Responsive grid logic: Case studies take 2 columns on medium screens if desired, or standard 1. 
+                  // Kept standard behavior but allowed VW to span if preferred (current code spans 2 for VW).
+                  className={`group border border-white/10 shadow-card hover:shadow-hover hover:-translate-y-2 transition-all duration-500 relative overflow-hidden bg-card/50 backdrop-blur-md hover:border-accent/50 rounded-2xl flex flex-col ${project.title === t.volkswagen.title ? 'md:col-span-2 lg:col-span-1' : ''}`}
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   {/* Decorative gradient blob */}
@@ -182,7 +202,7 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-2 mt-auto pt-2">
-                      {isVWProject && project.caseStudyData && (
+                      {isCaseStudyProject && project.caseStudyData && (
                         <Dialog>
                           <DialogTrigger asChild>
                             <Button variant="default" size="sm" className="w-full gap-2 bg-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/90 text-primary-foreground font-bold">
@@ -233,7 +253,7 @@ const Projects = () => {
                             <div className="pt-4 mt-auto">
                               <Button 
                                 className="w-full gap-2" 
-                                onClick={() => window.open(VW_PDF_URL, "_blank")}
+                                onClick={() => window.open(pdfUrl, "_blank")}
                               >
                                 <Download className="h-4 w-4" />
                                 {project.buttons?.downloadDeck}

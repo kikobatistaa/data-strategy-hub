@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Data Scientist | MiM | Business Intelligence",
+      role: "Analyst | Data Scientist & Analyst | Python, SQL, Econometrics, R | Machine Learning & Risk Modeling | MSc Management",
       title: "Bridging Data Science &",
       titleAccent: "Business Strategy",
       subtitle: "Transforming complex data into actionable insights that drive strategic business decisions and measurable impact.",
@@ -117,6 +117,26 @@ export const translations = {
         buttons: {
           caseStudy: "Read Case Study",
           downloadDeck: "Download Strategy Deck"
+        }
+      },
+      bank: {
+        title: "Bank Branch Profitability",
+        category: "Econometrics & Risk Modeling",
+        tags: ["R", "Econometrics", "Statistical Modeling", "Banking"],
+        academicBadge: "Quantitative Methods • UC3M", 
+        grade: "Distinction",
+        shortDesc: "Econometric analysis of bank branch profitability drivers using OLS and best-subset selection.",
+        caseStudy: {
+          title: "Determinants of Bank Branch Profitability",
+          challenge: "Identify the key financial and operational drivers of 'Ordinary Margin' for bank branches to optimize profitability, while handling multicollinearity among financial predictors.",
+          approach: "• Data: Extensive EDA & Univariate Analysis to identify significant predictors.\n• Modeling: Addressed collinearity using VIF; built 'Optimal Model' using Best Subsets Regression on continuous variables.\n• Refinement: Tested structural dummy variables to capture branch-specific effects.",
+          contribution: "Co-authored the statistical analysis in R, performed the model selection process (OLS), and interpreted coefficients for business recommendations.",
+          recommendation: "Prioritize structural variables (increasing R² by ~5%) and implement robust outlier analysis (Lasso/Ridge) to isolate true 'star' branches from statistical anomalies.",
+          credits: "Team: Cordeiro Batista F., Mourão D. Moreira A., Carinhas Marques G., Silva M. F."
+        },
+        buttons: {
+          caseStudy: "Read Analysis",
+          downloadDeck: "Download Report"
         }
       },
       revenue: {
@@ -276,7 +296,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Data Scientist | MiM | Business Intelligence",
+      role: "Analista | Data Scientist & Analyst | Python, SQL, Econometria, R | Machine Learning & Risk Modeling | MSc Management",
       title: "Conectando Ciência de Dados &",
       titleAccent: "Estratégia Empresarial",
       subtitle: "Transformando dados complexos em insights acionáveis que informam decisões estratégicas e impacto mensurável.",
@@ -383,6 +403,26 @@ export const translations = {
         buttons: {
           caseStudy: "Ler Case Study",
           downloadDeck: "Descarregar Apresentação"
+        }
+      },
+      bank: {
+        title: "Rentabilidade de Agências Bancárias",
+        category: "Econometria & Modelação de Risco",
+        tags: ["R", "Econometria", "Modelação Estatística", "Banca"],
+        academicBadge: "Métodos Quantitativos • UC3M", 
+        grade: "Distinção",
+        shortDesc: "Análise econométrica dos impulsionadores da rentabilidade bancária usando OLS e seleção best-subset.",
+        caseStudy: {
+          title: "Determinantes da Rentabilidade Bancária",
+          challenge: "Identificar os principais impulsionadores financeiros e operacionais da 'Margem Ordinária' para otimizar a rentabilidade das agências, lidando com multicolinearidade.",
+          approach: "• Dados: EDA extensa e Análise Univariada para identificar preditores significativos.\n• Modelação: Resolução de colinearidade (VIF); construção de 'Modelo Ótimo' (Best Subsets).\n• Refinamento: Teste de variáveis dummy estruturais para captar efeitos específicos.",
+          contribution: "Co-autoria da análise estatística em R, processo de seleção de modelo (OLS) e interpretação de coeficientes para recomendações de negócio.",
+          recommendation: "Priorizar variáveis estruturais (aumento de R² em ~5%) e implementar análise robusta de outliers (Lasso/Ridge) para isolar verdadeiros desempenhos de topo.",
+          credits: "Equipa: Cordeiro Batista F., Mourão D. Moreira A., Carinhas Marques G., Silva M. F."
+        },
+        buttons: {
+          caseStudy: "Ler Análise",
+          downloadDeck: "Descarregar Relatório"
         }
       },
       revenue: {
@@ -542,7 +582,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Data Scientist | MiM | Business Intelligence",
+      role: "Analista | Data Scientist & Analyst | Python, SQL, Econometria, R | Machine Learning & Risk Modeling | MSc Management",
       title: "Conectando Ciência de Dados &",
       titleAccent: "Estratégia de Negócios",
       subtitle: "Transformando dados complexos em insights acionáveis que guiam decisões estratégicas e impacto mensurável.",
@@ -649,6 +689,26 @@ export const translations = {
         buttons: {
           caseStudy: "Ler Case Study",
           downloadDeck: "Baixar Apresentação"
+        }
+      },
+      bank: {
+        title: "Rentabilidade de Agências Bancárias",
+        category: "Econometria & Modelagem de Risco",
+        tags: ["R", "Econometria", "Modelagem Estatística", "Banca"],
+        academicBadge: "Métodos Quantitativos • UC3M", 
+        grade: "Distinção",
+        shortDesc: "Análise econométrica dos impulsionadores da rentabilidade bancária usando OLS e seleção best-subset.",
+        caseStudy: {
+          title: "Determinantes da Rentabilidade Bancária",
+          challenge: "Identificar os principais impulsionadores financeiros e operacionais da 'Margem Ordinária' para otimizar a rentabilidade das agências, lidando com multicolinearidade.",
+          approach: "• Dados: EDA extensa e Análise Univariada para identificar preditores significativos.\n• Modelagem: Resolução de colinearidade (VIF); construção de 'Modelo Ótimo' (Best Subsets).\n• Refinamento: Teste de variáveis dummy estruturais para captar efeitos específicos.",
+          contribution: "Co-autoria da análise estatística em R, processo de seleção de modelo (OLS) e interpretação de coeficientes para recomendações de negócio.",
+          recommendation: "Priorizar variáveis estruturais (aumento de R² em ~5%) e implementar análise robusta de outliers (Lasso/Ridge) para isolar verdadeiros desempenhos de topo.",
+          credits: "Equipe: Cordeiro Batista F., Mourão D. Moreira A., Carinhas Marques G., Silva M. F."
+        },
+        buttons: {
+          caseStudy: "Ler Análise",
+          downloadDeck: "Baixar Relatório"
         }
       },
       revenue: {
@@ -808,7 +868,7 @@ export const translations = {
     },
     hero: {
       name: "Francisco Cordeiro Batista",
-      role: "Data Scientist | MiM | Business Intelligence",
+      role: "Analista | Data Scientist & Analyst | Python, SQL, Econometría, R | Machine Learning & Risk Modeling | MSc Management",
       title: "Conectando Ciencia de Datos &",
       titleAccent: "Estrategia Empresarial",
       subtitle: "Transformando datos complejos en insights accionables que impulsan decisiones estratégicas e impacto medible.",
@@ -915,6 +975,26 @@ export const translations = {
         buttons: {
           caseStudy: "Leer Case Study",
           downloadDeck: "Descargar Presentación"
+        }
+      },
+      bank: {
+        title: "Rentabilidad de Agencias Bancarias",
+        category: "Econometría y Modelado de Riesgos",
+        tags: ["R", "Econometría", "Modelado Estadístico", "Banca"],
+        academicBadge: "Métodos Cuantitativos • UC3M", 
+        grade: "Distinción",
+        shortDesc: "Análisis econométrico de los impulsores de la rentabilidad bancaria usando OLS y selección best-subset.",
+        caseStudy: {
+          title: "Determinantes de la Rentabilidad Bancaria",
+          challenge: "Identificar los principales impulsores financieros y operativos del 'Margen Ordinario' para optimizar la rentabilidad de las agencias, gestionando la multicolinealidad.",
+          approach: "• Datos: EDA extenso y Análisis Univariado para identificar predictores significativos.\n• Modelado: Resolución de colinealidad (VIF); construcción del 'Modelo Óptimo' (Best Subsets).\n• Refinamiento: Prueba de variables dummy estructurales para capturar efectos específicos.",
+          contribution: "Coautor del análisis estadístico en R, proceso de selección de modelo (OLS) e interpretación de coeficientes para recomendaciones de negocio.",
+          recommendation: "Priorizar variables estructurales (aumento de R² en ~5%) e implementar análisis robusto de outliers (Lasso/Ridge) para aislar verdaderos desempeños superiores.",
+          credits: "Equipo: Cordeiro Batista F., Mourão D. Moreira A., Carinhas Marques G., Silva M. F."
+        },
+        buttons: {
+          caseStudy: "Leer Análisis",
+          downloadDeck: "Descargar Reporte"
         }
       },
       revenue: {
@@ -1032,7 +1112,7 @@ export const translations = {
       thirdPartyText: "Este sitio web utiliza los siguientes servicios de terceros para procesar tus datos:",
       formspreeText: "Formspree se utiliza para procesar y entregar los envíos del formulario de contacto. Cuando envías el formulario de contacto, tus datos se transmiten y almacenan en Formspree.",
       formspreeLink: "Ver Política de Privacidad de Formspree",
-      recaptchaText: "Google reCAPTCHA se utiliza para proteger el formulario de contacto contra spam y abuso. reCAPTCHA recopila información de hardware y software, como datos del dispositivo y de la aplicación, y los envía a Google para su análisis.",
+      recaptchaText: "Google reCAPTCHA se utiliza para proteger el formulario de contacto contra spam y abuso. reCAPTCHA recopila información de hardware e software, como datos del dispositivo y de la aplicación, y los envía a Google para su análisis.",
       recaptchaLink: "Ver Política de Privacidad de Google",
       retentionTitle: "Retención de Datos",
       retentionText: "Los datos del formulario de contacto se conservan solo el tiempo necesario para responder a tu consulta y para fines comerciales legítimos. Los envíos de formularios se almacenan en Formspree de acuerdo con sus políticas de retención de datos.",
