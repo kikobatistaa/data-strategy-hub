@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Users, Code } from "lucide-react";
+import { Briefcase, Users, Code, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
@@ -14,6 +14,14 @@ const Experience = () => {
   const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
   const experiences = [
+    {
+      company: t.brainycommerce.company,
+      role: t.brainycommerce.role,
+      period: t.brainycommerce.period,
+      icon: BarChart3,
+      achievements: t.brainycommerce.achievements,
+      skills: t.brainycommerce.skills
+    },
     {
       company: t.netjets.company,
       role: t.netjets.role,

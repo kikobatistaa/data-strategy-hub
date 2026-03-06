@@ -25,7 +25,7 @@ export const translations = {
     about: {
       title: "About Me",
       p1: "I am a <strong>Data Scientist and Business Intelligence expert</strong> passionate about finding the \"story\" hidden within the data. My unique value is bridging the gap between deep technical analysis and strategic business objectives.",
-      p2: "In my recent role at <strong>NetJets</strong>, I put this into practice: I analyzed revenue losses, presenting actionable solutions directly to senior stakeholders. I don't just build dashboards; my goal is to deliver answers.",
+      p2: "In my current role at <strong>Brainy Commerce</strong>, I put this into practice: I build Power BI dashboards for marketplace clients, translating business questions into actionable data insights. I don't just build dashboards; my goal is to deliver answers.",
       p3: "My <strong>hybrid approach</strong> is built on two pillars. The first is my Data Science (BSc) background, which provides my technical toolkit. I manage the full data lifecycle, from complex <strong>SQL</strong> queries and <strong>Python</strong> automation to building <strong>BI and ML Algorithms</strong>. The second pillar is my Management (MSc) training, which provides my business acumen. This gives me the insight to know which questions to ask and how the answers will impact the <strong>P&L (Profit & Loss)</strong>.",
       p4: "Beyond my analytical work, I am a <strong>builder</strong>. I <strong>co-founded NOVAe</strong>, my university's first entrepreneurship hub, and led its marketing strategy from the ground up. This experience taught me how to lead teams and build a strategic vision.",
       p5: "My <strong>trilingual fluency</strong> (English, Spanish, and Portuguese) allows me to work effectively in international and multicultural environments. I am always open to connecting with professionals in the data, strategy, and aviation fields.",
@@ -41,6 +41,18 @@ export const translations = {
     experience: {
       title: "Professional Experience",
       subtitle: "Driving impact through data-driven insights and strategic execution",
+      brainycommerce: {
+        company: "Brainy Commerce",
+        role: "Key Account Manager – Data Analyst Intern",
+        period: "2026 - Present",
+        achievements: [
+          "Built and maintained Power BI dashboards to visualize sales, competitive, and advertising data for marketplace clients",
+          "Acted as liaison between Account Managers and the analytics team, translating business questions into technical data requirements",
+          "Supported ad-hoc analysis of marketplace datasets to surface trends, anomalies, and actionable insights for consulting deliverables",
+          "Assisted in the development of internal analytics tools and data models, improving coverage and reliability of KPIs"
+        ],
+        skills: ["Power BI", "SQL", "Data Analysis", "Marketplace Analytics"]
+      },
       netjets: {
         company: "NetJets Europe",
         role: "Business Analyst Intern",
@@ -194,14 +206,14 @@ export const translations = {
     },
     footer: {
       tagline: "Data Science • Business Strategy • International Mindset",
-      copyright: "© 2025 Francisco Cordeiro Batista. All rights reserved.",
+      copyright: "© 2026 Francisco Cordeiro Batista. All rights reserved.",
       privacyPolicy: "Privacy Policy"
     },
     drawer: {
-      title: "Junior Opportunities",
-      description: "I am currently actively seeking junior roles in Data Science, Business Intelligence, or Management/Finance.",
-      region_open: "Open to roles across Europe, Japan, and LATAM.",
-      region_focus: "Especially interested in companies offering visa sponsorship for non-EU regions (Japan/LATAM).",
+      title: "Let's Connect",
+      description: "Currently working as a Data Analyst at Brainy Commerce in Madrid. Always open to networking and new opportunities in Data Science, Business Intelligence, and Strategy.",
+      region_open: "Open to connecting with professionals across Europe, Japan, and LATAM.",
+      region_focus: "",
       contact: "Let's Connect"
     },
     contactSection: {
@@ -237,7 +249,7 @@ export const translations = {
     privacy: {
       backToHome: "Back to Home",
       title: "Privacy Policy",
-      lastUpdated: "Last updated: December 2, 2025",
+      lastUpdated: "Last updated: March 6, 2026",
       allRightsReserved: "All rights reserved.",
       introTitle: "Introduction",
       introText: "Welcome to franciscocbatista.com. I am Francisco Cordeiro Batista, and I am committed to protecting your privacy. This Privacy Policy explains how I collect, use, and safeguard your information when you visit my website and use the contact form.",
@@ -311,7 +323,7 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       p1: "Sou um <strong>Data Scientist e um expert em Business Intelligence</strong>, apaixonado por descobrir a \"história\" escondida nos dados. O meu valor único reside em ligar a análise técnica aprofundada com os objetivos estratégicos de negócio.",
-      p2: "No meu papel recente na <strong>NetJets</strong>, pus isto em prática: analisei perdas de receita, apresentando soluções acionáveis diretamente aos stakeholders séniores. Não construo apenas dashboards; o meu objetivo é entregar respostas.",
+      p2: "No meu papel atual na <strong>Brainy Commerce</strong>, ponho isto em prática: construo dashboards em Power BI para clientes de marketplaces, traduzindo questões de negócio em insights acionáveis. Não construo apenas dashboards; o meu objetivo é entregar respostas.",
       p3: "A minha <strong>abordagem híbrida</strong> assenta em dois pilares. O primeiro é a minha formação em Ciência de Dados (BSc), que fornece o meu kit de ferramentas técnicas. Eu gerencio todo o ciclo de vida dos dados, desde consultas <strong>SQL</strong> complexas e automação em <strong>Python</strong> até à construção de <strong>Algoritmos de BI e ML</strong>. O segundo pilar é a minha formação em Gestão (MSc), que me fornece visão de negócio. Isso permite-me saber quais perguntas fazer e como as respostas impactarão o <strong>P&L (Profit & Loss)</strong>.",
       p4: "Para além do meu trabalho analítico, sou um <strong>construtor</strong>. <strong>Co-fundei o NOVAe</strong>, o primeiro núcleo de empreendedorismo da minha universidade, e liderei a sua estratégia de marketing desde o início. Esta experiência ensinou-me a liderar equipas e a construir uma visão estratégica.",
       p5: "A minha <strong>fluência trilingue</strong> (Inglês, Espanhol e Português) permite-me trabalhar eficazmente em ambientes internacionais e multiculturais. Estou sempre aberto a conectar-me com profissionais das áreas de dados, estratégia e aviação.",
@@ -327,6 +339,18 @@ export const translations = {
     experience: {
       title: "Experiência Profissional",
       subtitle: "A gerar impacto através de insights orientados por dados e execução estratégica",
+      brainycommerce: {
+        company: "Brainy Commerce",
+        role: "Key Account Manager – Estagiário de Análise de Dados",
+        period: "2026 - Presente",
+        achievements: [
+          "Construção e manutenção de dashboards em Power BI para visualizar dados de vendas, concorrência e publicidade para clientes de marketplaces",
+          "Atuação como elo entre os Account Managers e a equipa de analytics, traduzindo questões de negócio em requisitos técnicos de dados",
+          "Suporte em análises ad-hoc de datasets de marketplaces para identificar tendências, anomalias e insights acionáveis",
+          "Apoio no desenvolvimento de ferramentas internas de analytics e modelos de dados, melhorando a cobertura e fiabilidade dos KPIs"
+        ],
+        skills: ["Power BI", "SQL", "Análise de Dados", "Analytics de Marketplaces"]
+      },
       netjets: {
         company: "NetJets Europe",
         role: "Estagiário de Análise de Negócio",
@@ -480,14 +504,14 @@ export const translations = {
     },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
-      copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados.",
+      copyright: "© 2026 Francisco Cordeiro Batista. Todos os direitos reservados.",
       privacyPolicy: "Política de Privacidade"
     },
     drawer: {
-      title: "Oportunidades Júnior",
-      description: "Estou ativamente à procura de cargos júnior em Ciência de Dados, Business Intelligence, ou Gestão/Finanças.",
-      region_open: "Aberto a oportunidades em toda a Europa, Japão e LATAM.",
-      region_focus: "Interessado em empresas que ofereçam apoio para visto em regiões fora da UE (Japão/LATAM).",
+      title: "Vamos Conectar",
+      description: "Atualmente a trabalhar como Data Analyst na Brainy Commerce em Madrid. Sempre aberto a networking e novas oportunidades em Ciência de Dados, Business Intelligence e Estratégia.",
+      region_open: "Aberto a conectar com profissionais de toda a Europa, Japão e LATAM.",
+      region_focus: "",
       contact: "Contacte-me"
     },
     contactSection: {
@@ -523,7 +547,7 @@ export const translations = {
     privacy: {
       backToHome: "Voltar ao Início",
       title: "Política de Privacidade",
-      lastUpdated: "Última atualização: 2 de dezembro de 2025",
+      lastUpdated: "Última atualização: 6 de março de 2026",
       allRightsReserved: "Todos os direitos reservados.",
       introTitle: "Introdução",
       introText: "Bem-vindo a franciscocbatista.com. Sou Francisco Cordeiro Batista e estou comprometido em proteger a sua privacidade. Esta Política de Privacidade explica como recolho, utilizo e protejo as suas informações quando visita o meu website e utiliza o formulário de contacto.",
@@ -597,7 +621,7 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       p1: "Eu sou um <strong>Cientista de Dados e um expert em Business Intelligence</strong> apaixonado por encontrar a \"história\" oculta nos dados. Meu valor único é fazer a ponte entre a análise técnica aprofundada e os objetivos estratégicos de negócios.",
-      p2: "No meu papel recente na <strong>NetJets</strong>, coloquei isso em prática: analisei perdas de receita, apresentando soluções acionáveis diretamente aos stakeholders seniores. Eu não apenas crio dashboards; meu objetivo é entregar respostas.",
+      p2: "No meu papel atual na <strong>Brainy Commerce</strong>, coloco isso em prática: construo dashboards em Power BI para clientes de marketplaces, traduzindo perguntas de negócio em insights acionáveis. Eu não apenas crio dashboards; meu objetivo é entregar respostas.",
       p3: "Minha <strong>abordagem híbrida</strong> é construída sobre dois pilares. O primeiro é minha formação em Ciência de Dados (BSc), que fornece meu kit de ferramentas técnicas. Gerencio todo o ciclo de vida dos dados, desde consultas <strong>SQL</strong> complexas e automação em <strong>Python</strong> até a construção de <strong>Algoritmos de BI e ML</strong>. O segundo pilar é meu treinamento em Gestão (MSc), que me fornece visão de negócios. Isso me dá a clareza para saber quais perguntas fazer e como as respostas impactarão o <strong>P&L (Profit & Loss)</strong>.",
       p4: "Além do meu trabalho analítico, eu sou um <strong>construtor</strong>. <strong>Co-fundei o NOVAe</strong>, o primeiro hub de empreendedorismo da minha universidade, e liderei sua estratégia de marketing do zero. Esta experiência me ensinou a liderar equipes e a construir uma visão estratégica.",
       p5: "Minha <strong>fluência trilingue</strong> (Inglês, Espanhol e Português) me permite trabalhar de forma eficaz em ambientes internacionais e multiculturais. Estou sempre aberto a me conectar com profissionais das áreas de dados, estratégia e aviação.",
@@ -613,6 +637,18 @@ export const translations = {
     experience: {
       title: "Experiência Profissional",
       subtitle: "Gerando impacto por meio de insights orientados por dados e execução estratégica",
+      brainycommerce: {
+        company: "Brainy Commerce",
+        role: "Key Account Manager – Estagiário de Análise de Dados",
+        period: "2026 - Presente",
+        achievements: [
+          "Construção e manutenção de dashboards em Power BI para visualizar dados de vendas, concorrência e publicidade para clientes de marketplaces",
+          "Atuação como ponte entre os Account Managers e a equipe de analytics, traduzindo perguntas de negócio em requisitos técnicos de dados",
+          "Suporte em análises ad-hoc de datasets de marketplaces para identificar tendências, anomalias e insights acionáveis",
+          "Apoio no desenvolvimento de ferramentas internas de analytics e modelos de dados, melhorando a cobertura e confiabilidade dos KPIs"
+        ],
+        skills: ["Power BI", "SQL", "Análise de Dados", "Analytics de Marketplaces"]
+      },
       netjets: {
         company: "NetJets Europe",
         role: "Estagiário em Análise de Negócios",
@@ -766,14 +802,14 @@ export const translations = {
     },
     footer: {
       tagline: "Ciência de Dados • Estratégia de Negócio • Mentalidade Internacional",
-      copyright: "© 2025 Francisco Cordeiro Batista. Todos os direitos reservados.",
+      copyright: "© 2026 Francisco Cordeiro Batista. Todos os direitos reservados.",
       privacyPolicy: "Política de Privacidade"
     },
     drawer: {
-      title: "Oportunidades Júnior",
-      description: "Estou ativamente procurando vagas júnior em Ciência de Dados, Business Intelligence, ou Gestão/Finanças.",
-      region_open: "Aberto a vagas na Europa, Japão e Brasil.",
-      region_focus: "Especialmente interessado em empresas que ofereçam suporte de visto para o Japão e Brasil.",
+      title: "Vamos Conectar",
+      description: "Atualmente trabalhando como Data Analyst na Brainy Commerce em Madrid. Sempre aberto a networking e novas oportunidades em Ciência de Dados, Business Intelligence e Estratégia.",
+      region_open: "Aberto a conectar com profissionais de toda a Europa, Japão e Brasil.",
+      region_focus: "",
       contact: "Entre em Contato"
     },
     contactSection: {
@@ -809,7 +845,7 @@ export const translations = {
     privacy: {
       backToHome: "Voltar ao Início",
       title: "Política de Privacidade",
-      lastUpdated: "Última atualização: 2 de dezembro de 2025",
+      lastUpdated: "Última atualização: 6 de março de 2026",
       allRightsReserved: "Todos os direitos reservados.",
       introTitle: "Introdução",
       introText: "Bem-vindo a franciscocbatista.com. Sou Francisco Cordeiro Batista e estou comprometido em proteger sua privacidade. Esta Política de Privacidade explica como coleto, uso e protejo suas informações quando você visita meu site e usa o formulário de contato.",
@@ -883,7 +919,7 @@ export const translations = {
     about: {
       title: "Sobre Mí",
       p1: "Soy un <strong>Científico de Datos y un experto en Business Intelligence</strong> apasionado por encontrar la \"historia\" oculta en los datos. Mi valor único es tender puentes entre el análisis técnico profundo y los objetivos estratégicos empresariales.",
-      p2: "En mi rol reciente en <strong>NetJets</strong>, puse esto en práctica: analicé pérdidas de ingresos, presentando soluciones accionables directamente a los altos cargos. No solo construyo cuadros de comando; mi objetivo es entregar respuestas.",
+      p2: "En mi rol actual en <strong>Brainy Commerce</strong>, pongo esto en práctica: construyo dashboards en Power BI para clientes de marketplaces, traduciendo preguntas de negocio en insights accionables. No solo construyo cuadros de comando; mi objetivo es entregar respuestas.",
       p3: "Mi <strong>enfoque híbrido</strong> se basa en dos pilares. El primero es mi formación en Ciencia de Datos (BSc), que me proporciona mi conjunto de herramientas técnicas. Gestiono todo el ciclo de vida de los datos, desde consultas <strong>SQL</strong> complejas y automatización en <strong>Python</strong> hasta la construcción de <strong>Algoritmos de BI y ML</strong>. El segundo pilar es mi formación en Gestión (MSc), que me aporta mi visión empresarial. Esto me da la perspectiva para saber qué preguntas hacer y cómo las respuestas impactarán en la <strong>P&L (Profit & Loss)</strong>.",
       p4: "Más allá de mi trabajo analítico, soy un <strong>constructor</strong>. <strong>Co-fundé NOVAe</strong>, el primer hub de emprendimiento de mi universidad, y lideré su estrategia de marketing desde cero. Esta experiencia me enseñó a liderar equipos y a construir una visión estratégica.",
       p5: "Mi <strong>fluidez trilingüe</strong> (Inglés, Español y Portugués) me permite trabajar eficazmente en entornos internacionales y multiculturales. Siempre estoy abierto a conectar con profesionales en los campos de datos, estrategia y aviación.",
@@ -899,6 +935,18 @@ export const translations = {
     experience: {
       title: "Experiencia Profesional",
       subtitle: "Generando impacto a través de insights basados en datos y ejecución estratégica",
+      brainycommerce: {
+        company: "Brainy Commerce",
+        role: "Key Account Manager – Becario de Análisis de Datos",
+        period: "2026 - Presente",
+        achievements: [
+          "Construcción y mantenimiento de dashboards en Power BI para visualizar datos de ventas, competencia y publicidad para clientes de marketplaces",
+          "Actuación como enlace entre los Account Managers y el equipo de analytics, traduciendo preguntas de negocio en requisitos técnicos de datos",
+          "Soporte en análisis ad-hoc de datasets de marketplaces para identificar tendencias, anomalías e insights accionables",
+          "Apoyo en el desarrollo de herramientas internas de analytics y modelos de datos, mejorando la cobertura y fiabilidad de los KPIs"
+        ],
+        skills: ["Power BI", "SQL", "Análisis de Datos", "Analytics de Marketplaces"]
+      },
       netjets: {
         company: "NetJets Europe",
         role: "Becario de Análisis de Negocios",
@@ -1052,14 +1100,14 @@ export const translations = {
     },
     footer: {
       tagline: "Ciencia de Datos • Estrategia Empresarial • Mentalidad Internacional",
-      copyright: "© 2025 Francisco Cordeiro Batista. Todos los derechos reservados.",
+      copyright: "© 2026 Francisco Cordeiro Batista. Todos los derechos reservados.",
       privacyPolicy: "Política de Privacidad"
     },
     drawer: {
-      title: "Oportunidades Junior",
-      description: "Actualmente estoy buscando activamente roles junior en Ciencia de Datos, Business Intelligence, o Gestión/Finanzas.",
-      region_open: "Abierto a roles en toda Europa, Japón y LATAM.",
-      region_focus: "Especialmente interesado en empresas que ofrezcan patrocinio de visa para regiones fuera de la UE (Japón/LATAM).",
+      title: "Conectemos",
+      description: "Actualmente trabajando como Data Analyst en Brainy Commerce en Madrid. Siempre abierto a networking y nuevas oportunidades en Ciencia de Datos, Business Intelligence y Estrategia.",
+      region_open: "Abierto a conectar con profesionales de toda Europa, Japón y LATAM.",
+      region_focus: "",
       contact: "Contactar"
     },
     contactSection: {
@@ -1095,7 +1143,7 @@ export const translations = {
     privacy: {
       backToHome: "Volver al Inicio",
       title: "Política de Privacidad",
-      lastUpdated: "Última actualización: 2 de diciembre de 2025",
+      lastUpdated: "Última actualización: 6 de marzo de 2026",
       allRightsReserved: "Todos los derechos reservados.",
       introTitle: "Introducción",
       introText: "Bienvenido a franciscocbatista.com. Soy Francisco Cordeiro Batista y estoy comprometido a proteger tu privacidad. Esta Política de Privacidad explica cómo recopilo, uso y protejo tu información cuando visitas mi sitio web y usas el formulario de contacto.",
@@ -1108,7 +1156,7 @@ export const translations = {
       ],
       useTitle: "Cómo Usamos Tu Información",
       useText: "La información recopilada a través del formulario de contacto se utiliza exclusivamente para responder a tus consultas. No vendo, intercambio ni comparto tu información personal con terceros para fines de marketing.",
-      thirdPartyTitle: "Serviicios de Terceros",
+      thirdPartyTitle: "Servicios de Terceros",
       thirdPartyText: "Este sitio web utiliza los siguientes servicios de terceros para procesar tus datos:",
       formspreeText: "Formspree se utiliza para procesar y entregar los envíos del formulario de contacto. Cuando envías el formulario de contacto, tus datos se transmiten y almacenan en Formspree.",
       formspreeLink: "Ver Política de Privacidad de Formspree",

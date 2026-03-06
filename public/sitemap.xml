@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://franciscocbatista.com/</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://franciscocbatista.com/?lang=en" />
@@ -17,7 +17,7 @@
   <!-- Experience Section -->
   <url>
     <loc>https://franciscocbatista.com/#experience</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -25,7 +25,7 @@
   <!-- Education Section -->
   <url>
     <loc>https://franciscocbatista.com/#education</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,7 +33,7 @@
   <!-- Skills Section -->
   <url>
     <loc>https://franciscocbatista.com/#skills</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,7 +41,7 @@
   <!-- Projects Section -->
   <url>
     <loc>https://franciscocbatista.com/#projects</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -49,7 +49,7 @@
   <!-- About Section -->
   <url>
     <loc>https://franciscocbatista.com/#about</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -57,7 +57,7 @@
   <!-- CV Download -->
   <url>
     <loc>https://franciscocbatista.com/CV.pdf</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -65,7 +65,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://franciscocbatista.com/privacy</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://franciscocbatista.com/privacy?lang=en" />

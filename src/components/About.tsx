@@ -108,8 +108,7 @@ const About = () => {
                     <video
                       className="w-full h-full object-cover"
                       controls
-                      preload="none"
-                      poster="/saxophone-poster.jpg"
+                      preload="metadata"
                       playsInline
                     >
                       <source src="/saxophone.mp4" type="video/mp4" />

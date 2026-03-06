@@ -151,7 +151,7 @@ const PrivacyContent = () => {
       <footer className="border-t border-border/50 py-8">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Francisco Cordeiro Batista. {t.allRightsReserved}
+            © 2026 Francisco Cordeiro Batista. {t.allRightsReserved}
           </p>
         </div>
       </footer>
