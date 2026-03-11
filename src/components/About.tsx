@@ -10,7 +10,7 @@ const About = () => {
   const { language } = useLanguage();
   const t = translations[language].about;
   const sectionRef = useRef<HTMLElement>(null);
-  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.05);
   const videoLoadedRef = useRef(false);
   if (isVisible) videoLoadedRef.current = true;
 

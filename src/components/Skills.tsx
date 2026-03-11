@@ -11,7 +11,7 @@ const Skills = () => {
   const { language } = useLanguage();
   const t = translations[language].skills;
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.05);
 
   const skillCategories = [
     {

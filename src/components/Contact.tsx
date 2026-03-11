@@ -15,7 +15,7 @@ const Contact = () => {
   const { language } = useLanguage();
   const t = translations[language].contactSection;
   const sectionRef = useRef<HTMLElement>(null);
-  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.05);
   const captchaRef = useRef<ReCAPTCHA>(null); // Referência para resetar o captcha visualmente
 
   // Estados locais

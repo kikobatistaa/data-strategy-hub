@@ -80,7 +80,7 @@ const Experience = () => {
   const { language } = useLanguage();
   const t = translations[language].experience;
   const sectionRef = useRef<HTMLElement>(null);
-  const isVisible = useOnScreen(sectionRef, "0px", 0.2);
+  const isVisible = useOnScreen(sectionRef, "0px", 0.05);
 
   const experiences: ExperienceEntry[] = [
     {

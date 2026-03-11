@@ -5,12 +5,18 @@ export function useOnScreen(
   rootMargin: string = '0px',
   threshold: number | number[] = 0.5,
 ): boolean {
-  const [isIntersecting, setIntersecting] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIntersecting(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setHasBeenVisible(true);
+          // Stop observing once visible — no need to re-hide
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        }
       },
       { rootMargin, threshold }
     );
@@ -28,5 +34,5 @@ export function useOnScreen(
     };
   }, [ref, rootMargin, threshold]);
 
-  return isIntersecting;
+  return hasBeenVisible;
 }
