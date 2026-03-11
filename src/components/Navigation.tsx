@@ -1,5 +1,5 @@
 /* src/components/Navigation.tsx */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 
@@ -8,34 +8,53 @@ const Navigation = () => {
   const t = translations[language].navigation;
   const [isSticky, setIsSticky] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const tickingRef = useRef(false);
+
+  // rAF-throttled sticky check
+  const onScroll = useCallback(() => {
+    if (tickingRef.current) return;
+    tickingRef.current = true;
+    requestAnimationFrame(() => {
+      const shouldStick = window.scrollY > window.innerHeight * 0.8;
+      setIsSticky((prev) => (prev !== shouldStick ? shouldStick : prev));
+      tickingRef.current = false;
+    });
+  }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Make sticky after scrolling past hero section (roughly 100vh)
-      setIsSticky(window.scrollY > window.innerHeight * 0.8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
 
-      // Detect active section
-      const sections = ["experience", "education", "projects", "about"];
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
+  // IntersectionObserver for active section detection
+  useEffect(() => {
+    const sections = ["experience", "education", "skills", "projects", "about", "contact"];
+    const observers: IntersectionObserver[] = [];
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        { rootMargin: "-20% 0px -70% 0px" }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Account for sticky nav height
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 

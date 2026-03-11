@@ -11,6 +11,8 @@ const About = () => {
   const t = translations[language].about;
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useOnScreen(sectionRef, "0px", 0.2);
+  const videoLoadedRef = useRef(false);
+  if (isVisible) videoLoadedRef.current = true;
 
   // Helper function to render text with <strong> tags
   const renderText = (text: string) => {
@@ -105,15 +107,21 @@ const About = () => {
                   </p>
                   
                   <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black/20 shadow-inner aspect-video max-w-2xl mx-auto">
-                    <video
-                      className="w-full h-full object-cover"
-                      controls
-                      preload="metadata"
-                      playsInline
-                    >
-                      <source src="/saxophone.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                    {videoLoadedRef.current ? (
+                      <video
+                        className="w-full h-full object-cover"
+                        controls
+                        preload="metadata"
+                        playsInline
+                      >
+                        <source src="/saxophone.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-black/40">
+                        <Music className="h-12 w-12 text-muted-foreground/50" />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

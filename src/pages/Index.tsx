@@ -1,9 +1,8 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import Hero from "@/components/Hero";
 import MobileMenu from "@/components/MobileMenu";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
-import PortfolioSkeleton from "@/components/PortfolioSkeleton";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Lazy load below-the-fold components for better initial load performance
@@ -32,21 +31,6 @@ const SectionSkeleton = () => (
 );
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate initial content loading (fonts, images, etc.)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <PortfolioSkeleton />;
-  }
-
   return (
     <div className="min-h-screen animate-fade-in">
       <ScrollProgressBar />
