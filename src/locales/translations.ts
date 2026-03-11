@@ -76,15 +76,24 @@ export const translations = {
         skills: ["Entrepreneurship", "Strategic Marketing", "Community Building", "Leadership"]
       },
       happycode: {
-        company: "Happy Code Oriente and Colégio Francisco São Xavier",
-        role: "Tech Educator",
-        period: "2022 - 2024",
+        company: "Happy Code Oriente",
+        role: "Programming & Computer Science Instructor",
+        period: "2023 - 2024",
         achievements: [
-          "Taught Python & Algorithms to 50+ students aged 8-16",
-          "Designed curriculum combining computational thinking with practical applications",
-          "Achieved 95% student satisfaction rate across all courses"
+          "Designed and delivered Python and Algorithms curriculum to 50+ students aged 8-16",
+          "Developed project-based learning modules that translated complex technical concepts for non-technical audiences"
         ],
         skills: ["Python", "Teaching", "Curriculum Design", "Communication"]
+      },
+      colegio: {
+        company: "Colégio São Francisco Xavier",
+        role: "Computer Science Curricular Director",
+        period: "2022 - 2023",
+        achievements: [
+          "Directed the school's technical curriculum design; structured and sequenced computing concepts taught across all student cohorts",
+          "Coordinated with faculty to align computer science modules with national education standards"
+        ],
+        skills: ["Curriculum Design", "Computer Science", "Educational Leadership", "Technical Planning"]
       }
     },
     education: {
@@ -374,15 +383,24 @@ export const translations = {
         skills: ["Empreendedorismo", "Marketing Estratégico", "Construção de Comunidade", "Liderança"]
       },
       happycode: {
-        company: "Happy Code Oriente e Colégio Francisco São Xavier",
-        role: "Educador Tecnológico",
-        period: "2022 - 2024",
+        company: "Happy Code Oriente",
+        role: "Instrutor de Programação e Informática",
+        period: "2023 - 2024",
         achievements: [
-          "Ensino de Python e Algoritmos a mais de 50 alunos (8-16 anos)",
-          "Criação de um currículo que combina pensamento computacional com aplicações práticas",
-          "Taxa de satisfação de 95% dos alunos em todos os cursos"
+          "Conceção e lecionação de currículo de Python e Algoritmos a mais de 50 alunos (8-16 anos)",
+          "Desenvolvimento de módulos de aprendizagem baseados em projetos que traduziam conceitos técnicos complexos para audiências não técnicas"
         ],
         skills: ["Python", "Ensino", "Design Curricular", "Comunicação"]
+      },
+      colegio: {
+        company: "Colégio São Francisco Xavier",
+        role: "Diretor Curricular de Informática",
+        period: "2022 - 2023",
+        achievements: [
+          "Direção do design curricular técnico da escola; estruturação e sequenciação dos conceitos de computação lecionados a todas as turmas de alunos",
+          "Coordenação com o corpo docente para alinhar os módulos de informática com os padrões nacionais de educação"
+        ],
+        skills: ["Design Curricular", "Informática", "Liderança Educativa", "Planeamento Técnico"]
       }
     },
     education: {
@@ -672,15 +690,24 @@ export const translations = {
         skills: ["Empreendedorismo", "Marketing Estratégico", "Construção de Comunidade", "Liderança"]
       },
       happycode: {
-        company: "Happy Code Oriente e Colégio Francisco São Xavier",
-        role: "Educador Tecnológico",
-        period: "2022 - 2024",
+        company: "Happy Code Oriente",
+        role: "Instrutor de Programação e Informática",
+        period: "2023 - 2024",
         achievements: [
-          "Ensino de Python e Algoritmos para mais de 50 alunos (8-16 anos)",
-          "Desenvolvimento de um currículo que combina pensamento computacional com aplicações práticas",
-          "Taxa de satisfação de 95% dos alunos em todos os cursos"
+          "Elaboração e ministração de currículo de Python e Algoritmos para mais de 50 alunos (8-16 anos)",
+          "Desenvolvimento de módulos de aprendizagem baseados em projetos que traduziam conceitos técnicos complexos para públicos não técnicos"
         ],
         skills: ["Python", "Ensino", "Design Curricular", "Comunicação"]
+      },
+      colegio: {
+        company: "Colégio São Francisco Xavier",
+        role: "Diretor Curricular de Informática",
+        period: "2022 - 2023",
+        achievements: [
+          "Direção do design curricular técnico da escola; estruturação e sequenciamento dos conceitos de computação ensinados a todas as turmas de alunos",
+          "Coordenação com o corpo docente para alinhar os módulos de informática com os padrões nacionais de educação"
+        ],
+        skills: ["Design Curricular", "Informática", "Liderança Educacional", "Planejamento Técnico"]
       }
     },
     education: {
@@ -970,19 +997,28 @@ export const translations = {
         skills: ["Emprendimiento", "Marketing Estratégico", "Construcción de Comunidad", "Liderazgo"]
       },
       happycode: {
-        company: "Happy Code Oriente y Colégio Francisco São Xavier",
-        role: "Educador Tecnológico",
-        period: "2022 - 2024",
+        company: "Happy Code Oriente",
+        role: "Instructor de Programación e Informática",
+        period: "2023 - 2024",
         achievements: [
-          "Enseñó Python & Algoritmos a más de 50 estudiantes de 8-16 años",
-          "Diseñó currículo combinando pensamiento computacional con aplicaciones prácticas",
-          "Logró 95% de tasa de satisfacción estudiantil en todos los cursos"
+          "Diseño e impartición de currículo de Python y Algoritmos a más de 50 estudiantes de 8-16 años",
+          "Desarrollo de módulos de aprendizaje basados en proyectos que tradujeron conceptos técnicos complejos para audiencias no técnicas"
         ],
         skills: ["Python", "Enseñanza", "Diseño Curricular", "Comunicación"]
+      },
+      colegio: {
+        company: "Colégio São Francisco Xavier",
+        role: "Director Curricular de Informática",
+        period: "2022 - 2023",
+        achievements: [
+          "Dirección del diseño curricular técnico de la escuela; estructuración y secuenciación de los conceptos de computación impartidos a todas las cohortes de alumnos",
+          "Coordinación con el profesorado para alinear los módulos de informática con los estándares nacionales de educación"
+        ],
+        skills: ["Diseño Curricular", "Informática", "Liderazgo Educativo", "Planificación Técnica"]
       }
     },
     education: {
-      title: "Educação",
+      title: "Educación",
       subtitle: "Combinando conocimiento técnico con competencia estratégica empresarial",
       uc3m: {
         school: "Universidad Carlos III de Madrid",

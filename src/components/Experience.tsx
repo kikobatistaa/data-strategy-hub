@@ -2,10 +2,79 @@
 import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Users, Code, BarChart3 } from "lucide-react";
+import { Briefcase, Users, Code, BarChart3, GraduationCap, LucideIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 import { useOnScreen } from "@/hooks/useOnScreen";
+import { useTiltEffect } from "@/hooks/useTiltEffect";
+
+interface ExperienceEntry {
+  company: string;
+  role: string;
+  period: string;
+  icon: LucideIcon;
+  achievements: string[];
+  skills: string[];
+}
+
+const ExperienceCard = ({ exp, index }: { exp: ExperienceEntry; index: number }) => {
+  const { ref, handleMouseMove, handleMouseLeave } = useTiltEffect(4);
+  const Icon = exp.icon;
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ transition: "transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99)" }}
+    >
+      <Card 
+        className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 group"
+        style={{ animationDelay: `${index * 150}ms` }}
+      >
+        <CardHeader className="pb-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex items-start gap-5">
+              <div className="p-3 rounded-xl bg-accent/10 shadow-glow border border-accent/20 group-hover:bg-accent/20 transition-colors duration-300">
+                <Icon className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl mb-2 font-bold">{exp.role}</CardTitle>
+                <CardDescription className="text-base font-medium">
+                  <span className="text-foreground">{exp.company}</span>
+                </CardDescription>
+              </div>
+            </div>
+            <Badge variant="outline" className="w-fit px-4 py-1 text-sm border-accent/30 text-accent bg-accent/10">
+              {exp.period}
+            </Badge>
+          </div>
+        </CardHeader>
+        <CardContent className="pl-20">
+          <ul className="space-y-3 mb-6">
+            {exp.achievements.map((achievement, idx) => (
+              <li key={idx} className="flex items-start gap-3 text-muted-foreground">
+                <div className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                <span className="text-base leading-relaxed">{achievement}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-2">
+            {exp.skills.map((skill, idx) => (
+              <Badge 
+                key={idx} 
+                variant="secondary"
+                className="bg-background text-muted-foreground hover:text-foreground border border-transparent hover:border-border transition-all"
+              >
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
 
 const Experience = () => {
   const { language } = useLanguage();
@@ -13,7 +82,7 @@ const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useOnScreen(sectionRef, "0px", 0.2);
 
-  const experiences = [
+  const experiences: ExperienceEntry[] = [
     {
       company: t.brainycommerce.company,
       role: t.brainycommerce.role,
@@ -45,6 +114,14 @@ const Experience = () => {
       icon: Code,
       achievements: t.happycode.achievements,
       skills: t.happycode.skills
+    },
+    {
+      company: t.colegio.company,
+      role: t.colegio.role,
+      period: t.colegio.period,
+      icon: GraduationCap,
+      achievements: t.colegio.achievements,
+      skills: t.colegio.skills
     }
   ];
 
@@ -71,56 +148,9 @@ const Experience = () => {
           </div>
           
           <div className="space-y-8">
-            {experiences.map((exp, index) => {
-              const Icon = exp.icon;
-              return (
-                <Card 
-                  key={index}
-                  className="border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 group"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <CardHeader className="pb-4">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                      <div className="flex items-start gap-5">
-                        <div className="p-3 rounded-xl bg-accent/10 shadow-glow border border-accent/20 group-hover:bg-accent/20 transition-colors duration-300">
-                          <Icon className="h-6 w-6 text-accent" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-2xl mb-2 font-bold">{exp.role}</CardTitle>
-                          <CardDescription className="text-base font-medium">
-                            <span className="text-foreground">{exp.company}</span>
-                          </CardDescription>
-                        </div>
-                      </div>
-                      <Badge variant="outline" className="w-fit px-4 py-1 text-sm border-accent/30 text-accent bg-accent/10">
-                        {exp.period}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pl-20">
-                    <ul className="space-y-3 mb-6">
-                      {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                          <div className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
-                          <span className="text-base leading-relaxed">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill, idx) => (
-                        <Badge 
-                          key={idx} 
-                          variant="secondary"
-                          className="bg-background text-muted-foreground hover:text-foreground border border-transparent hover:border-border transition-all"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+            {experiences.map((exp, index) => (
+              <ExperienceCard key={index} exp={exp} index={index} />
+            ))}
           </div>
         </div>
       </div>
