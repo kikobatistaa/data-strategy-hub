@@ -11,6 +11,7 @@ export const translations = {
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Analyst | Data Scientist & Analyst | Python, SQL, Econometrics, R | Machine Learning & Risk Modeling | MSc Management",
+      roleVariants: ["Data Strategist", "Analytics Engineer", "Business Intelligence", "Machine Learning"],
       title: "Bridging Data Science &",
       titleAccent: "Business Strategy",
       subtitle: "Transforming complex data into actionable insights that drive strategic business decisions and measurable impact.",
@@ -318,6 +319,7 @@ export const translations = {
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Analista | Data Scientist & Analyst | Python, SQL, Econometria, R | Machine Learning & Risk Modeling | MSc Management",
+      roleVariants: ["Estratega de Dados", "Engenheiro de Analytics", "Business Intelligence", "Machine Learning"],
       title: "Conectando Ciência de Dados &",
       titleAccent: "Estratégia Empresarial",
       subtitle: "Transformando dados complexos em insights acionáveis que informam decisões estratégicas e impacto mensurável.",
@@ -625,6 +627,7 @@ export const translations = {
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Analista | Data Scientist & Analyst | Python, SQL, Econometria, R | Machine Learning & Risk Modeling | MSc Management",
+      roleVariants: ["Estrategista de Dados", "Engenheiro de Analytics", "Business Intelligence", "Machine Learning"],
       title: "Conectando Ciência de Dados &",
       titleAccent: "Estratégia de Negócios",
       subtitle: "Transformando dados complexos em insights acionáveis que guiam decisões estratégicas e impacto mensurável.",
@@ -932,6 +935,7 @@ export const translations = {
     hero: {
       name: "Francisco Cordeiro Batista",
       role: "Analista | Data Scientist & Analyst | Python, SQL, Econometría, R | Machine Learning & Risk Modeling | MSc Management",
+      roleVariants: ["Estratega de Datos", "Ingeniero de Analytics", "Business Intelligence", "Machine Learning"],
       title: "Conectando Ciencia de Datos &",
       titleAccent: "Estrategia Empresarial",
       subtitle: "Transformando datos complejos en insights accionables que impulsan decisiones estratégicas e impacto medible.",

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { useSmoothScroll } from "./SmoothScroll";
 
 const Navigation = () => {
   const { language } = useLanguage();
@@ -9,6 +10,7 @@ const Navigation = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const tickingRef = useRef(false);
+  const { lenis } = useSmoothScroll();
 
   // rAF-throttled sticky check
   const onScroll = useCallback(() => {
@@ -54,14 +56,14 @@ const Navigation = () => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      if (lenis) {
+        lenis.scrollTo(element, { offset: -80 });
+      } else {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      }
     }
   };
 

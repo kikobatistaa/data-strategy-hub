@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSmoothScroll } from "./SmoothScroll";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
   const tickingRef = useRef(false);
+  const { lenis } = useSmoothScroll();
 
   const onScroll = useCallback(() => {
     if (tickingRef.current) return;
@@ -22,7 +24,11 @@ const ScrollToTopButton = () => {
   }, [onScroll]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (lenis) {
+      lenis.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
