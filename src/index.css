@@ -209,11 +209,3 @@ html.lenis .lenis-smooth {
   opacity: 0;
   transform: translateY(30px);
 }
-
-/* Custom cursor */
-@media (pointer: fine) {
-  .custom-cursor-active,
-  .custom-cursor-active * {
-    cursor: none !important;
-  }
-}

@@ -4,7 +4,6 @@ import MobileMenu from "@/components/MobileMenu";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import Preloader from "@/components/Preloader";
-import CustomCursor from "@/components/CustomCursor";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Experience = lazy(() => import("@/components/Experience"));
@@ -42,7 +41,6 @@ const Index = () => {
   return (
     <>
       <Preloader onComplete={handlePreloaderComplete} />
-      <CustomCursor />
       <div className={`min-h-screen ${preloaderDone ? "animate-fade-in" : ""}`}>
         <ScrollProgressBar />
         <MobileMenu />

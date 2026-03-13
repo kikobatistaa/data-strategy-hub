@@ -102,19 +102,21 @@ const Hero = ({ preloaderDone = false }: HeroProps) => {
         );
       }
 
-      // Name - split chars and stagger
+      // Name - split into words (no-wrap) then chars for stagger
       if (nameRef.current) {
         const text = nameRef.current.textContent || "";
         nameRef.current.innerHTML = text
-          .split("")
-          .map((c) =>
-            c === " "
-              ? '<span class="inline-block">&nbsp;</span>'
-              : `<span class="inline-block">${c}</span>`
-          )
-          .join("");
+          .split(" ")
+          .map((word) => {
+            const chars = word
+              .split("")
+              .map((c) => `<span class="inline-block char-anim">${c}</span>`)
+              .join("");
+            return `<span class="inline-block whitespace-nowrap">${chars}</span>`;
+          })
+          .join('<span class="inline-block char-anim">&nbsp;</span>');
 
-        const chars = nameRef.current.querySelectorAll("span");
+        const chars = nameRef.current.querySelectorAll(".char-anim");
         tl.fromTo(
           chars,
           { opacity: 0, y: 30 },
@@ -133,17 +135,32 @@ const Hero = ({ preloaderDone = false }: HeroProps) => {
         );
       }
 
-      // Title words
+      // Title words — preserve nested elements (like the accent span)
       if (titleRef.current) {
-        const text = titleRef.current.innerHTML;
-        // Wrap each word in a span while preserving the inner span
-        const words = text.split(/(\s+)/);
-        titleRef.current.innerHTML = words
-          .map((w) =>
-            w.trim() ? `<span class="inline-block">${w}</span>` : w
-          )
-          .join("");
-        const wordEls = titleRef.current.querySelectorAll("span:not(.text-foreground\\/80 span)");
+        const fragment = document.createDocumentFragment();
+        titleRef.current.childNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent || "";
+            text.split(/(\s+)/).forEach((part) => {
+              if (part.trim()) {
+                const span = document.createElement("span");
+                span.className = "inline-block";
+                span.textContent = part;
+                fragment.appendChild(span);
+              } else if (part) {
+                fragment.appendChild(document.createTextNode(part));
+              }
+            });
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            const wrapper = document.createElement("span");
+            wrapper.className = "inline-block";
+            wrapper.appendChild(node.cloneNode(true));
+            fragment.appendChild(wrapper);
+          }
+        });
+        titleRef.current.innerHTML = "";
+        titleRef.current.appendChild(fragment);
+        const wordEls = titleRef.current.querySelectorAll(":scope > .inline-block");
         tl.fromTo(
           wordEls,
           { opacity: 0, y: 30 },

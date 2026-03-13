@@ -62,7 +62,7 @@ const AnimatedCounter = () => {
       icon: <Briefcase className="h-5 w-5" />,
     },
     {
-      target: 5,
+      target: 4,
       suffix: "",
       label: language === "en" ? "Companies" : language === "es" ? "Empresas" : "Empresas",
       icon: <FolderOpen className="h-5 w-5" />,

@@ -117,31 +117,31 @@ const About = () => {
 
               {/* Bento Grid */}
               <div ref={bentoRef} className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300">
-                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow flex-shrink-0">
                     <Brain className="h-5 w-5 text-accent" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-1">{t.expertise}</h3>
                     <p className="text-sm text-muted-foreground">{t.expertiseDesc}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300">
-                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow flex-shrink-0">
                     <Globe className="h-5 w-5 text-accent" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-1">{t.languagesTitle}</h3>
                     <p className="text-sm text-muted-foreground">{t.languagesDesc}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 col-span-2 md:col-span-1">
-                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow">
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border/30 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 col-span-2 md:col-span-1 overflow-hidden">
+                  <div className="p-2 rounded-xl bg-accent/10 shadow-glow flex-shrink-0">
                     <Brain className="h-5 w-5 text-accent" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-1">{t.experience}</h3>
                     <p className="text-sm text-muted-foreground">{t.experienceDesc}</p>
                   </div>
