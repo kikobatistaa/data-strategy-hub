@@ -161,6 +161,26 @@ export const translations = {
           downloadDeck: "Download Report"
         }
       },
+      bid: {
+        title: "BID Currency Borrowing Strategy",
+        category: "International Finance & Parity Analysis",
+        tags: ["International Finance", "Fisher Effect", "PPP", "IRP", "Currency Risk"],
+        academicBadge: "International Finance • UC3M",
+        grade: "Final Project",
+        shortDesc: "Parity-based analysis to determine optimal borrowing currency for the Bank for International Development.",
+        caseStudy: {
+          title: "BID: Optimal Currency Borrowing Strategy",
+          challenge: "The Bank for International Development (BID) needs to determine whether to borrow in Japanese yen or US dollars, analyzing 118 monthly observations of interest rates, inflation, and exchange rates from 2006–2016.",
+          approach: "• Nominal & Real Rates: Yen rates ~95bp lower nominally, but only ~26bp cheaper in real terms.\n• Parity Testing: Evaluated Fisher Effect, PPP (fails short-run, SD 11.33%), IRP (holds well, SD 0.93%), and Forward Parity (fails, SD 11.74%).\n• Risk Assessment: PPP deviations create substantial exchange rate risk; yen appreciated ~45% over the sample period.",
+          contribution: "Co-authored the full parity condition analysis, performed real interest rate comparisons, and contributed to the strategic borrowing recommendation.",
+          recommendation: "Adopt a rules-based hedging approach with forward contracts. For the October 2015 $500M issue, borrow in US dollars at 7.95% — the yen's 20bp nominal advantage is negligible against 11–12% quarterly exchange rate volatility.",
+          credits: "Team: Marques G., Cordeiro Batista F., Onilă D., Kopecky S."
+        },
+        buttons: {
+          caseStudy: "Read Case Study",
+          downloadDeck: "Download Report"
+        }
+      },
       revenue: {
         title: "Revenue Prediction Model",
         category: "Machine Learning & Econometrics",
@@ -466,6 +486,26 @@ export const translations = {
         },
         buttons: {
           caseStudy: "Ler Análise",
+          downloadDeck: "Descarregar Relatório"
+        }
+      },
+      bid: {
+        title: "Estratégia de Financiamento Cambial do BID",
+        category: "Finanças Internacionais & Análise de Paridade",
+        tags: ["Finanças Internacionais", "Efeito Fisher", "PPP", "IRP", "Risco Cambial"],
+        academicBadge: "Finanças Internacionais • UC3M",
+        grade: "Projeto Final",
+        shortDesc: "Análise baseada em paridade para determinar a moeda ótima de financiamento do Banco para o Desenvolvimento Internacional.",
+        caseStudy: {
+          title: "BID: Estratégia Ótima de Financiamento Cambial",
+          challenge: "O Banco para o Desenvolvimento Internacional (BID) precisa determinar se deve financiar-se em iene japonês ou dólar americano, analisando 118 observações mensais de taxas de juro, inflação e taxas de câmbio de 2006–2016.",
+          approach: "• Taxas Nominais e Reais: Taxas em iene ~95pb mais baixas nominalmente, mas apenas ~26pb mais baratas em termos reais.\n• Teste de Paridade: Avaliação do Efeito Fisher, PPP (falha no curto prazo, DP 11,33%), IRP (mantém-se, DP 0,93%) e Paridade Forward (falha, DP 11,74%).\n• Avaliação de Risco: Desvios de PPP criam risco cambial substancial; o iene valorizou ~45% no período.",
+          contribution: "Co-autoria da análise completa das condições de paridade, comparações de taxas de juro reais e contribuição para a recomendação estratégica de financiamento.",
+          recommendation: "Adotar uma abordagem de cobertura baseada em regras com contratos forward. Para a emissão de outubro de 2015 de $500M, financiar em dólares a 7,95% — a vantagem nominal de 20pb do iene é negligível face à volatilidade cambial trimestral de 11–12%.",
+          credits: "Equipa: Marques G., Cordeiro Batista F., Onilă D., Kopecky S."
+        },
+        buttons: {
+          caseStudy: "Ler Case Study",
           downloadDeck: "Descarregar Relatório"
         }
       },
@@ -777,6 +817,26 @@ export const translations = {
           downloadDeck: "Baixar Relatório"
         }
       },
+      bid: {
+        title: "Estratégia de Financiamento Cambial do BID",
+        category: "Finanças Internacionais & Análise de Paridade",
+        tags: ["Finanças Internacionais", "Efeito Fisher", "PPP", "IRP", "Risco Cambial"],
+        academicBadge: "Finanças Internacionais • UC3M",
+        grade: "Projeto Final",
+        shortDesc: "Análise baseada em paridade para determinar a moeda ótima de financiamento do Banco para o Desenvolvimento Internacional.",
+        caseStudy: {
+          title: "BID: Estratégia Ótima de Financiamento Cambial",
+          challenge: "O Banco para o Desenvolvimento Internacional (BID) precisa determinar se deve se financiar em iene japonês ou dólar americano, analisando 118 observações mensais de taxas de juros, inflação e taxas de câmbio de 2006–2016.",
+          approach: "• Taxas Nominais e Reais: Taxas em iene ~95pb mais baixas nominalmente, mas apenas ~26pb mais baratas em termos reais.\n• Teste de Paridade: Avaliação do Efeito Fisher, PPP (falha no curto prazo, DP 11,33%), IRP (se mantém, DP 0,93%) e Paridade Forward (falha, DP 11,74%).\n• Avaliação de Risco: Desvios de PPP criam risco cambial substancial; o iene valorizou ~45% no período.",
+          contribution: "Co-autoria da análise completa das condições de paridade, comparações de taxas de juros reais e contribuição para a recomendação estratégica de financiamento.",
+          recommendation: "Adotar uma abordagem de hedge baseada em regras com contratos forward. Para a emissão de outubro de 2015 de $500M, financiar em dólares a 7,95% — a vantagem nominal de 20pb do iene é desprezível frente à volatilidade cambial trimestral de 11–12%.",
+          credits: "Equipe: Marques G., Cordeiro Batista F., Onilă D., Kopecky S."
+        },
+        buttons: {
+          caseStudy: "Ler Case Study",
+          downloadDeck: "Baixar Relatório"
+        }
+      },
       revenue: {
         title: "Modelo de Previsão de Receita",
         category: "Aprendizado de Máquina & Econometria",
@@ -1082,6 +1142,26 @@ export const translations = {
         },
         buttons: {
           caseStudy: "Leer Análisis",
+          downloadDeck: "Descargar Reporte"
+        }
+      },
+      bid: {
+        title: "Estrategia de Financiamiento Cambiario del BID",
+        category: "Finanzas Internacionales & Análisis de Paridad",
+        tags: ["Finanzas Internacionales", "Efecto Fisher", "PPP", "IRP", "Riesgo Cambiario"],
+        academicBadge: "Finanzas Internacionales • UC3M",
+        grade: "Proyecto Final",
+        shortDesc: "Análisis basado en paridad para determinar la moneda óptima de financiamiento del Banco para el Desarrollo Internacional.",
+        caseStudy: {
+          title: "BID: Estrategia Óptima de Financiamiento Cambiario",
+          challenge: "El Banco para el Desarrollo Internacional (BID) necesita determinar si financiarse en yenes japoneses o dólares estadounidenses, analizando 118 observaciones mensuales de tasas de interés, inflación y tipos de cambio de 2006–2016.",
+          approach: "• Tasas Nominales y Reales: Tasas en yenes ~95pb más bajas nominalmente, pero solo ~26pb más baratas en términos reales.\n• Prueba de Paridad: Evaluación del Efecto Fisher, PPP (falla a corto plazo, DE 11,33%), IRP (se mantiene, DE 0,93%) y Paridad Forward (falla, DE 11,74%).\n• Evaluación de Riesgo: Desviaciones de PPP crean riesgo cambiario sustancial; el yen se apreció ~45% en el período.",
+          contribution: "Co-autoría del análisis completo de condiciones de paridad, comparaciones de tasas de interés reales y contribución a la recomendación estratégica de financiamiento.",
+          recommendation: "Adoptar un enfoque de cobertura basado en reglas con contratos forward. Para la emisión de octubre de 2015 de $500M, financiar en dólares al 7,95% — la ventaja nominal de 20pb del yen es insignificante frente a la volatilidad cambiaria trimestral de 11–12%.",
+          credits: "Equipo: Marques G., Cordeiro Batista F., Onilă D., Kopecky S."
+        },
+        buttons: {
+          caseStudy: "Leer Case Study",
           downloadDeck: "Descargar Reporte"
         }
       },
