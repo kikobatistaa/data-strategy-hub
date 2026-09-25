@@ -1,75 +1,47 @@
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import NotebookViewer from "./pages/NotebookViewer";
 
-const queryClient = new QueryClient();
-
-const pageVariants = {
-  initial: { opacity: 0, scale: 0.98 },
-  animate: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
-  exit: { opacity: 0, scale: 0.98, transition: { duration: 0.3, ease: "easeIn" } },
+// Opacity only: a transform on the route wrapper would turn it into the
+// containing block for `position: fixed` children (the nav) during transitions.
+const pageVariants: Variants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.35, ease: "easeOut" } },
+  exit: { opacity: 0, transition: { duration: 0.2, ease: "easeIn" } },
 };
+
+const Page = ({ children }: { children: React.ReactNode }) => (
+  <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+    {children}
+  </motion.div>
+);
 
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
-              <Index />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/privacy"
-          element={
-            <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
-              <Privacy />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/projects/spark-analytics/:notebook"
-          element={
-            <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
-              <NotebookViewer />
-            </motion.div>
-          }
-        />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route
-          path="*"
-          element={
-            <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
-              <NotFound />
-            </motion.div>
-          }
-        />
+        <Route path="/" element={<Page><Index /></Page>} />
+        <Route path="/privacy" element={<Page><Privacy /></Page>} />
+        <Route path="/projects/spark-analytics/:notebook" element={<Page><NotebookViewer /></Page>} />
+        <Route path="*" element={<Page><NotFound /></Page>} />
       </Routes>
     </AnimatePresence>
   );
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AnimatedRoutes />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <TooltipProvider>
+    <Sonner />
+    <BrowserRouter>
+      <AnimatedRoutes />
+    </BrowserRouter>
+  </TooltipProvider>
 );
 
 export default App;

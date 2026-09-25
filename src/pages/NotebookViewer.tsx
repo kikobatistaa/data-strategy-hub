@@ -1,137 +1,114 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Loader2, AlertCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
 
 const NOTEBOOK_URLS = {
-  traffic: "https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/2903900417904720/2428841347580027/6154594242300663/latest.html",
-  spotify: "https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/2903900417904720/4362987474355535/6154594242300663/latest.html"
-};
+  traffic:
+    "https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/2903900417904720/2428841347580027/6154594242300663/latest.html",
+  spotify:
+    "https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/2903900417904720/4362987474355535/6154594242300663/latest.html",
+} as const;
 
-const NOTEBOOK_TITLES = {
-  traffic: {
-    en: "Traffic Prediction Analysis",
-    "pt-pt": "Análise de Previsão de Tráfego",
-    "pt-br": "Análise de Previsão de Tráfego",
-    es: "Análisis de Predicción de Tráfico"
-  },
-  spotify: {
-    en: "Spotify Playlist Analysis",
-    "pt-pt": "Análise de Playlists Spotify",
-    "pt-br": "Análise de Playlists Spotify",
-    es: "Análisis de Playlists Spotify"
-  }
-};
+type NotebookId = keyof typeof NOTEBOOK_URLS;
+
+const isNotebookId = (value: string | undefined): value is NotebookId =>
+  value === "traffic" || value === "spotify";
+
+const actionClass = "eyebrow inline-flex items-center gap-2 text-foreground transition-colors hover:text-gold";
 
 const NotebookViewer = () => {
-  const { notebook } = useParams<{ notebook: "traffic" | "spotify" }>();
+  const { notebook } = useParams<{ notebook: string }>();
   const { language } = useLanguage();
-  const t = translations[language].projects;
-  
+  const t = translations[language].notebook;
+
   const [loading, setLoading] = useState(true);
   const [iframeError, setIframeError] = useState(false);
 
-  const notebookUrl = notebook ? NOTEBOOK_URLS[notebook as keyof typeof NOTEBOOK_URLS] : null;
-  const notebookTitle = notebook ? NOTEBOOK_TITLES[notebook as keyof typeof NOTEBOOK_TITLES]?.[language] : "";
+  const notebookId = isNotebookId(notebook) ? notebook : null;
+  const notebookUrl = notebookId ? NOTEBOOK_URLS[notebookId] : null;
+  const notebookTitle = notebookId ? t.titles[notebookId] : "";
 
   useEffect(() => {
-    // Timeout fallback - if iframe doesn't load in 8 seconds, show fallback
+    // If the iframe has not loaded after 8s, show the fallback.
     const timer = setTimeout(() => {
       if (loading) {
         setIframeError(true);
         setLoading(false);
       }
     }, 8000);
-
     return () => clearTimeout(timer);
   }, [loading]);
 
-  const handleIframeLoad = () => {
-    setLoading(false);
-  };
-
-  const handleIframeError = () => {
-    setIframeError(true);
-    setLoading(false);
-  };
-
   if (!notebookUrl) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-muted-foreground">Notebook not found</p>
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <p className="eyebrow">{t.notFound}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link to="/#projects">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">{t.title}</span>
-              </Button>
+    <div className="flex min-h-screen flex-col bg-background">
+      <header className="sticky top-0 z-50 h-16 border-b border-border bg-background/80 backdrop-blur-md">
+        <div className="container flex h-full items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-6">
+            <Link to="/#projects" className={actionClass}>
+              <ArrowLeft className="h-4 w-4" aria-hidden />
+              <span className="hidden sm:inline">{t.back}</span>
             </Link>
-            <h1 className="text-lg font-semibold">{notebookTitle}</h1>
+            <h1 className="truncate font-display text-xl">{notebookTitle}</h1>
           </div>
-          <div className="flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-2"
-              onClick={() => window.open(notebookUrl, "_blank")}
-            >
-              <ExternalLink className="h-4 w-4" />
-              <span className="hidden sm:inline">Open External</span>
-            </Button>
+          <div className="flex items-center gap-6">
+            <a href={notebookUrl} target="_blank" rel="noopener noreferrer" className={actionClass}>
+              <span className="hidden sm:inline">{t.openExternal}</span>
+              <ExternalLink className="h-4 w-4" aria-hidden />
+            </a>
             <LanguageSelector />
           </div>
         </div>
       </header>
 
-      {/* Content */}
-      <main className="flex-1 relative">
+      <main className="relative flex-1">
         {loading && !iframeError && (
-          <div className="absolute inset-0 flex items-center justify-center bg-background z-10">
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-background">
             <div className="flex flex-col items-center gap-4">
-              <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-              <p className="text-muted-foreground">Loading notebook...</p>
+              <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" aria-hidden />
+              <p className="eyebrow">{t.loading}</p>
             </div>
           </div>
         )}
 
         {iframeError ? (
-          <div className="flex-1 flex items-center justify-center min-h-[60vh]">
-            <div className="text-center max-w-md px-6 space-y-6">
-              <AlertCircle className="h-16 w-16 text-muted-foreground mx-auto" />
-              <div className="space-y-2">
-                <h2 className="text-xl font-semibold">Embedded View Unavailable</h2>
-                <p className="text-muted-foreground">
-                  The notebook cannot be displayed inline due to security restrictions. 
-                  Click below to view it directly on Databricks.
-                </p>
+          <div className="flex min-h-[60vh] flex-1 items-center justify-center">
+            <div className="max-w-md space-y-6 px-6 text-center">
+              <AlertCircle className="mx-auto h-10 w-10 text-muted-foreground" aria-hidden />
+              <div className="space-y-3">
+                <h2 className="font-display text-2xl">{t.unavailableTitle}</h2>
+                <p className="text-muted-foreground">{t.unavailableText}</p>
               </div>
-              <Button
-                onClick={() => window.open(notebookUrl, "_blank")}
-                className="gap-2"
+              <a
+                href={notebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center gap-2 bg-primary px-6 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-gold"
               >
-                <ExternalLink className="h-4 w-4" />
-                Open in Databricks
-              </Button>
+                {t.openExternal}
+                <ExternalLink className="h-4 w-4" aria-hidden />
+              </a>
             </div>
           </div>
         ) : (
           <iframe
             src={notebookUrl}
-            className="w-full h-[calc(100vh-73px)] border-0"
-            onLoad={handleIframeLoad}
-            onError={handleIframeError}
+            className="h-[calc(100vh-4rem)] w-full border-0"
+            onLoad={() => setLoading(false)}
+            onError={() => {
+              setIframeError(true);
+              setLoading(false);
+            }}
             title={notebookTitle}
             sandbox="allow-scripts allow-same-origin allow-popups"
           />
