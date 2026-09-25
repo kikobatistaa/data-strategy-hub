@@ -35,7 +35,7 @@ export const es: Translation = {
   glance: {
     title: "En resumen",
     items: [
-      { value: "$5M+", label: "En discrepancias de ingresos detectadas en NetJets Europe" },
+      { value: "$5M+", label: "En discrepancias de ingresos detectadas como sales analyst" },
       { value: "10h+", label: "A la semana de conciliación manual automatizadas" },
       { value: "20/20", label: "Nota máxima en Big Data Analytics, NOVA IMS" },
       { value: "3", label: "Idiomas de trabajo: PT · ES · EN" },

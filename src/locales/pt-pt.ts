@@ -35,7 +35,7 @@ export const ptPT: Translation = {
   glance: {
     title: "Em resumo",
     items: [
-      { value: "$5M+", label: "Em discrepâncias de receita detetadas na NetJets Europe" },
+      { value: "$5M+", label: "Em discrepâncias de receita detetadas como sales analyst" },
       { value: "10h+", label: "Por semana de reconciliação manual automatizadas" },
       { value: "20/20", label: "Nota máxima em Big Data Analytics, NOVA IMS" },
       { value: "3", label: "Línguas de trabalho: PT · ES · EN" },

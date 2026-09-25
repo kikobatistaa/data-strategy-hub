@@ -42,7 +42,7 @@ export const en = {
   glance: {
     title: "At a glance",
     items: [
-      { value: "$5M+", label: "Revenue discrepancies surfaced at NetJets Europe" },
+      { value: "$5M+", label: "Revenue discrepancies surfaced as a sales analyst" },
       { value: "10h+", label: "A week of manual reconciliation automated away" },
       { value: "20/20", label: "Top mark, Big Data Analytics, NOVA IMS" },
       { value: "3", label: "Working languages: PT · ES · EN" },
