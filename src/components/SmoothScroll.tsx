@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
@@ -11,38 +11,34 @@ const SmoothScrollContext = createContext<SmoothScrollContextType>({ lenis: null
 export const useSmoothScroll = () => useContext(SmoothScrollContext);
 
 export const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
-  const lenisRef = useRef<Lenis | null>(null);
+  // Held in state (not a ref) so consumers re-render once the instance exists.
+  const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
-    const lenis = new Lenis({
+    const instance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       touchMultiplier: 2,
     });
 
-    lenisRef.current = lenis;
-
-    lenis.on("scroll", ScrollTrigger.update);
+    instance.on("scroll", ScrollTrigger.update);
 
     const raf = (time: number) => {
-      lenis.raf(time * 1000);
+      instance.raf(time * 1000);
     };
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
+    setLenis(instance);
 
     return () => {
       gsap.ticker.remove(raf);
-      lenis.destroy();
-      lenisRef.current = null;
+      instance.destroy();
+      setLenis(null);
     };
   }, []);
 
-  return (
-    <SmoothScrollContext.Provider value={{ lenis: lenisRef.current }}>
-      {children}
-    </SmoothScrollContext.Provider>
-  );
+  return <SmoothScrollContext.Provider value={{ lenis }}>{children}</SmoothScrollContext.Provider>;
 };

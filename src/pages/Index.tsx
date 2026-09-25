@@ -1,89 +1,69 @@
-import { lazy, Suspense, useState, useCallback } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import MobileMenu from "@/components/MobileMenu";
+import Glance from "@/components/Glance";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import Education from "@/components/Education";
+import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import ScrollProgressBar from "@/components/ScrollProgressBar";
-import Preloader from "@/components/Preloader";
-import { Skeleton } from "@/components/ui/skeleton";
+import { useSmoothScroll } from "@/components/SmoothScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { ScrollTrigger } from "@/lib/gsap";
+import { scrollToSection } from "@/lib/scrollTo";
 
-const Experience = lazy(() => import("@/components/Experience"));
-const Testimonials = lazy(() => import("@/components/Testimonials"));
-const Education = lazy(() => import("@/components/Education"));
-const Skills = lazy(() => import("@/components/Skills"));
-const Projects = lazy(() => import("@/components/Projects"));
-const About = lazy(() => import("@/components/About"));
+// Only the two heavy sections are lazy: the video and the reCAPTCHA library.
+const Personal = lazy(() => import("@/components/Personal"));
 const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer"));
-const JobOpportunityDrawer = lazy(() => import("@/components/JobOpportunityDrawer"));
-const Marquee = lazy(() => import("@/components/Marquee"));
-const AnimatedCounter = lazy(() => import("@/components/AnimatedCounter"));
 
-const SectionSkeleton = () => (
-  <div className="py-24 px-6">
-    <div className="max-w-4xl mx-auto space-y-6">
-      <Skeleton className="h-10 w-64 mx-auto" />
-      <Skeleton className="h-6 w-96 mx-auto" />
-      <div className="grid gap-6 mt-12">
-        <Skeleton className="h-48 w-full rounded-xl" />
-        <Skeleton className="h-48 w-full rounded-xl" />
-      </div>
-    </div>
-  </div>
-);
+const SectionFallback = () => <div className="min-h-[60vh]" aria-hidden />;
 
 const Index = () => {
-  const [preloaderDone, setPreloaderDone] = useState(false);
+  const { language } = useLanguage();
+  const { lenis } = useSmoothScroll();
+  const location = useLocation();
 
-  const handlePreloaderComplete = useCallback(() => {
-    setPreloaderDone(true);
-  }, []);
+  // Deep links such as /#projects (used by the notebook viewer's back link).
+  useEffect(() => {
+    const id = location.hash.replace("#", "");
+    if (!id) return;
+    const frame = requestAnimationFrame(() => scrollToSection(id, lenis, true));
+    return () => cancelAnimationFrame(frame);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.hash]);
+
+  // Copy length changes with the language, so trigger positions must be recomputed.
+  useEffect(() => {
+    const timer = window.setTimeout(() => ScrollTrigger.refresh(), 80);
+    return () => window.clearTimeout(timer);
+  }, [language]);
 
   return (
-    <>
-      <Preloader onComplete={handlePreloaderComplete} />
-      <div className={`min-h-screen ${preloaderDone ? "animate-fade-in" : ""}`}>
-        <ScrollProgressBar />
-        <MobileMenu />
-        <Hero preloaderDone={preloaderDone} />
-        <Suspense fallback={null}>
-          <AnimatedCounter />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Experience />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Marquee />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Testimonials />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Education />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Skills />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Marquee />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Contact />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
-        <ScrollToTopButton />
-        <Suspense fallback={null}>
-          <JobOpportunityDrawer />
-        </Suspense>
-      </div>
-    </>
+    <div className="min-h-screen">
+      <Nav />
+      <main>
+        <Hero />
+        <Glance />
+        <Experience />
+        <Projects />
+        <Testimonials />
+        <Education />
+        <div id="personal">
+          <Suspense fallback={<SectionFallback />}>
+            <Personal />
+          </Suspense>
+        </div>
+        <div id="contact">
+          <Suspense fallback={<SectionFallback />}>
+            <Contact />
+          </Suspense>
+        </div>
+      </main>
+      <Footer />
+      <ScrollToTopButton />
+    </div>
   );
 };
 

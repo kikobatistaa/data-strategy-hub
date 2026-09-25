@@ -1,66 +1,53 @@
-import { Linkedin, Github, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
+import { LINKS } from "@/lib/links";
+
+const linkClass = "eyebrow transition-colors hover:text-foreground";
 
 const Footer = () => {
   const { language } = useLanguage();
   const t = translations[language].footer;
 
   return (
-    <footer className="bg-secondary text-primary-foreground py-12 border-t border-border/50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-2 text-foreground">Francisco Cordeiro Batista</h3>
-              <p className="text-muted-foreground text-sm">
-                {t.tagline}
-              </p>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://www.linkedin.com/in/kikobatistaa/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" aria-hidden="true" />
-              </a>
-              
-              <a 
-                href="https://github.com/kikobatistaa" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
-                aria-label="GitHub Profile"
-              >
-                <Github className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" aria-hidden="true" />
-              </a>
-              
-              <a 
-                href="mailto:kiko.2205@hotmail.com"
-                className="group p-3 rounded-full bg-card/50 border border-border/50 hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 shadow-sm"
-                aria-label="Send Email"
-              >
-                <Mail className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-transform" aria-hidden="true" />
-              </a>
-            </div>
+    <footer className="border-t border-border py-12">
+      <div className="container">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-display text-2xl tracking-tight text-foreground">Francisco Cordeiro Batista</p>
+            <p className="eyebrow mt-2">{t.tagline}</p>
           </div>
-          
-          <div className="border-t border-border/50 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-muted-foreground text-sm">
-              {t.copyright}
-            </p>
-            <Link 
-              to="/privacy" 
-              className="text-muted-foreground text-sm hover:text-accent transition-colors"
-            >
-              {t.privacyPolicy}
-            </Link>
-          </div>
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <li>
+              <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                {t.linkedin} <span aria-hidden>↗</span>
+              </a>
+            </li>
+            <li>
+              <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                {t.github} <span aria-hidden>↗</span>
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${LINKS.email}`} className={linkClass}>
+                {t.email}
+              </a>
+            </li>
+            <li>
+              <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                {t.cv}
+              </a>
+            </li>
+            <li>
+              <Link to="/privacy" className={linkClass}>
+                {t.privacy}
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 font-mono text-[11px] text-muted-foreground md:flex-row md:justify-between">
+          <p>© 2026 Francisco Cordeiro Batista. {t.rights}</p>
+          <p>{t.colophon}</p>
         </div>
       </div>
     </footer>

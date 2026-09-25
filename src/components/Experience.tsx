@@ -1,144 +1,69 @@
-/* src/components/Experience.tsx */
-import { useRef, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Briefcase, Users, Code, BarChart3, GraduationCap, LucideIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/locales/translations";
-import { useTiltEffect } from "@/hooks/useTiltEffect";
-import { useMouseGlow } from "@/hooks/useMouseGlow";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
-
-interface ExperienceEntry {
-  company: string;
-  role: string;
-  period: string;
-  icon: LucideIcon;
-  achievements: string[];
-  skills: string[];
-}
-
-const ExperienceCard = ({ exp }: { exp: ExperienceEntry }) => {
-  const { ref, handleMouseMove: handleTiltMove, handleMouseLeave } = useTiltEffect(4);
-  const { onMouseMove: handleGlowMove } = useMouseGlow();
-  const Icon = exp.icon;
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    handleTiltMove(e);
-    handleGlowMove(e);
-  };
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="experience-card"
-      style={{ transition: "transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99)" }}
-    >
-      <Card className="card-mouse-glow border border-white/10 shadow-card hover:shadow-hover bg-card/50 backdrop-blur-md hover:border-accent/50 transition-all duration-500 group">
-        <CardHeader className="pb-4">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-start gap-5">
-              <div className="p-3 rounded-xl bg-accent/10 shadow-glow border border-accent/20 group-hover:bg-accent/20 transition-colors duration-300">
-                <Icon className="h-6 w-6 text-accent" />
-              </div>
-              <div>
-                <CardTitle className="text-2xl mb-2 font-bold">{exp.role}</CardTitle>
-                <CardDescription className="text-base font-medium">
-                  <span className="text-foreground">{exp.company}</span>
-                </CardDescription>
-              </div>
-            </div>
-            <Badge variant="outline" className="w-fit px-4 py-1 text-sm border-accent/30 text-accent bg-accent/10">
-              {exp.period}
-            </Badge>
-          </div>
-        </CardHeader>
-        <CardContent className="pl-20">
-          <ul className="space-y-3 mb-6">
-            {exp.achievements.map((achievement, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                <div className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
-                <span className="text-base leading-relaxed">{achievement}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-wrap gap-2">
-            {exp.skills.map((skill, idx) => (
-              <Badge
-                key={idx}
-                variant="secondary"
-                className="bg-background text-muted-foreground hover:text-foreground border border-transparent hover:border-border transition-all"
-              >
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
-};
+import { useReveal } from "@/hooks/useReveal";
+import SectionHeader from "./SectionHeader";
 
 const Experience = () => {
   const { language } = useLanguage();
   const t = translations[language].experience;
-  const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (headingRef.current) {
-        gsap.fromTo(
-          headingRef.current.children,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out",
-            scrollTrigger: { trigger: headingRef.current, start: "top 85%" },
-          }
-        );
-      }
-
-      if (cardsRef.current) {
-        const cards = cardsRef.current.querySelectorAll(".experience-card");
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 60 },
-          {
-            opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
-            scrollTrigger: { trigger: cardsRef.current, start: "top 80%" },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const experiences: ExperienceEntry[] = [
-    { company: t.brainycommerce.company, role: t.brainycommerce.role, period: t.brainycommerce.period, icon: BarChart3, achievements: t.brainycommerce.achievements, skills: t.brainycommerce.skills },
-    { company: t.netjets.company, role: t.netjets.role, period: t.netjets.period, icon: Briefcase, achievements: t.netjets.achievements, skills: t.netjets.skills },
-    { company: t.novae.company, role: t.novae.role, period: t.novae.period, icon: Users, achievements: t.novae.achievements, skills: t.novae.skills },
-    { company: t.happycode.company, role: t.happycode.role, period: t.happycode.period, icon: Code, achievements: t.happycode.achievements, skills: t.happycode.skills },
-    { company: t.colegio.company, role: t.colegio.role, period: t.colegio.period, icon: GraduationCap, achievements: t.colegio.achievements, skills: t.colegio.skills },
-  ];
+  const ref = useReveal<HTMLElement>();
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div ref={headingRef} className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">{t.title}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.subtitle}</p>
-          </div>
-          <div ref={cardsRef} className="space-y-8">
-            {experiences.map((exp, index) => (
-              <ExperienceCard key={index} exp={exp} />
+    <section id="experience" ref={ref} className="py-24 md:py-32">
+      <div className="container">
+        <SectionHeader index="01" eyebrow={t.eyebrow} title={t.title} />
+
+        <ol className="border-t border-border">
+          {t.roles.map((role, i) => (
+            <li
+              key={role.id}
+              data-reveal
+              className="grid gap-x-12 gap-y-5 border-b border-border py-10 md:grid-cols-[180px_1fr] md:py-12"
+            >
+              <div className="eyebrow flex flex-wrap items-center gap-x-4 gap-y-2 md:flex-col md:items-start md:pt-2">
+                {i === 0 && (
+                  <span className="flex items-center gap-2 text-gold">
+                    <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold" />
+                    {t.nowLabel}
+                  </span>
+                )}
+                <span className="text-foreground">{role.period}</span>
+                <span>{role.location}</span>
+              </div>
+              <div>
+                <h3 className="text-display-md">{role.role}</h3>
+                <p className="mt-2 font-mono text-sm text-gold">{role.company}</p>
+                <p className="mt-5 max-w-[64ch] text-muted-foreground">{role.summary}</p>
+                <ul className="mt-6 space-y-3">
+                  {role.bullets.map((bullet, j) => (
+                    <li key={j} className="flex gap-4 text-[15px] leading-relaxed text-foreground/85">
+                      <span aria-hidden className="mt-[11px] h-px w-4 shrink-0 bg-gold" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div data-reveal className="mt-14">
+          <p className="eyebrow mb-5">{t.earlierLabel}</p>
+          <ul className="border-t border-border">
+            {t.earlier.map((entry) => (
+              <li
+                key={entry.id}
+                className="grid gap-x-12 gap-y-1 border-b border-border py-5 md:grid-cols-[180px_1fr]"
+              >
+                <span className="eyebrow md:pt-1">{entry.period}</span>
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="font-medium text-foreground">{entry.role}</span>
+                  <span className="font-mono text-sm text-gold">{entry.company}</span>
+                  <span className="basis-full text-sm text-muted-foreground">{entry.summary}</span>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

@@ -5,102 +5,41 @@
 
 @layer base {
   :root {
-    /* Monochrome Research Aesthetic - Black & Grey */
-    --background: 0 0% 3%;
-    --foreground: 0 0% 98%;
+    /* Dark editorial palette: warm near-black, warm off-white, one champagne accent */
+    --background: 30 8% 4%;
+    --foreground: 40 22% 92%;
 
-    /* Card: Dark with transparency for glassmorphism */
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 30 7% 6%;
+    --card-foreground: 40 22% 92%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 30 7% 6%;
+    --popover-foreground: 40 22% 92%;
 
-    /* Primary: Neutral Grey (Used for buttons, rings, highlights) */
-    --primary: 0 0% 20%;
-    --primary-foreground: 0 0% 98%;
+    /* Solid button: off-white on black */
+    --primary: 40 22% 92%;
+    --primary-foreground: 30 8% 4%;
 
-    /* Secondary: Dark gray for subtle backgrounds */
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 30 6% 9%;
+    --secondary-foreground: 40 22% 92%;
 
-    /* Muted: Medium dark grays */
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 30 6% 11%;
+    --muted-foreground: 35 8% 58%;
 
-    /* Accent: Light Grey (Matching primary for consistency) */
-    --accent: 0 0% 25%;
-    --accent-foreground: 0 0% 98%;
+    /* Champagne gold, the only accent */
+    --accent: 42 45% 62%;
+    --accent-foreground: 30 8% 4%;
+    --gold: 42 45% 62%;
+    --gold-soft: 42 40% 72%;
+    --gold-dim: 42 30% 42%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 22% 92%;
 
-    --border: 0 0% 100% / 0.1; /* White with 10% opacity for dark mode borders */
-    --input: 0 0% 12%;
-    --ring: 0 0% 30%;
+    --border: 40 15% 92% / 0.1;
+    --input: 40 15% 92% / 0.14;
+    --ring: 42 45% 62%;
 
-    --radius: 0.5rem;
-
-    /* Monochrome Gradients and Shadows */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 5%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 5%) 100%);
-    
-    --shadow-card: 0 10px 40px -10px rgba(0,0,0,0.6);
-    --shadow-hover: 0 20px 60px -10px rgba(255, 255, 255, 0.1);
-    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.05);
-
-    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    /* Golden colors for academic excellence */
-    --gold: 45 93% 47%;
-    --gold-light: 45 100% 60%;
-    --gold-glow: 45 100% 50%;
-  }
-}
-
-@layer utilities {
-  .text-gold-shimmer {
-    background: linear-gradient(
-      90deg,
-      hsl(45 93% 47%) 0%,
-      hsl(45 100% 70%) 50%,
-      hsl(45 93% 47%) 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 2s ease-in-out infinite;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: 200% center; }
-    100% { background-position: -200% center; }
-  }
-
-  /* 3D card glow border on hover */
-  .card-glow-border {
-    position: relative;
-  }
-  .card-glow-border::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.06) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-    z-index: -1;
-  }
-  .card-glow-border:hover::before {
-    opacity: 1;
+    --radius: 0.125rem;
   }
 }
 
@@ -108,8 +47,39 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-padding-top: 4rem;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-normal tracking-tight;
+  }
+  ::selection {
+    background: hsl(var(--gold) / 0.35);
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground;
+  }
+  .hairline {
+    @apply border-t border-border;
+  }
+  .rule-gold {
+    width: 2.5rem;
+    height: 1px;
+    background: hsl(var(--gold));
+  }
+  .link-quiet {
+    @apply underline underline-offset-4 decoration-border transition-colors hover:decoration-foreground;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 }
 
@@ -121,91 +91,4 @@ html.lenis body {
 
 html.lenis .lenis-smooth {
   scroll-behavior: auto;
-}
-
-/* Button shine sweep effect */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.08),
-    transparent
-  );
-  transform: skewX(-20deg);
-  transition: left 0.6s ease;
-  pointer-events: none;
-}
-.btn-shine:hover::after {
-  left: 120%;
-}
-
-/* Marquee animation */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Form input animated underline */
-.input-animated {
-  position: relative;
-}
-.input-animated::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: hsl(var(--accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-.input-animated:focus-within::after {
-  transform: scaleX(1);
-}
-
-/* Mouse glow on cards */
-.card-mouse-glow {
-  position: relative;
-  overflow: hidden;
-}
-.card-mouse-glow::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.06),
-    transparent 60%
-  );
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.card-mouse-glow:hover::after {
-  opacity: 1;
-}
-
-/* Preloader styles */
-.preloader-char {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(30px);
 }

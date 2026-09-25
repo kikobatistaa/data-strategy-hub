@@ -1,78 +1,41 @@
-# Francisco Cordeiro Batista | Portfolio
+# franciscocbatista.com
 
-A professional portfolio website showcasing data science expertise, business intelligence projects, and strategic consulting experience.
+Personal site of Francisco Cordeiro Batista, Advisory Analyst at Finsolutia (Madrid). Dark editorial layout: selected work, experience, credentials, and a contact form.
 
-🌐 **Live Site**: [franciscocbatista.com](https://franciscocbatista.com)
+Live: [franciscocbatista.com](https://franciscocbatista.com)
 
-## About
+## Stack
 
-This portfolio presents my professional journey bridging Data Science and Business Strategy. It features my experience at organizations like NetJets Europe, projects in machine learning and business intelligence, and my educational background from NOVA Information Management School and Universidad Carlos III de Madrid.
+- Vite 7, React 18, TypeScript
+- Tailwind CSS 3.4 with a small token set in `src/index.css`; a few shadcn/ui primitives (`Dialog`, `Sheet`, `ScrollArea`, `Tooltip`)
+- GSAP ScrollTrigger for reveal-on-scroll, Lenis for smooth scrolling, framer-motion for route fades
+- react-router 6 (`/`, `/privacy`, `/projects/spark-analytics/:notebook`)
+- Contact form: Formspree + Google reCAPTCHA v2
 
-## Features
+## Languages
 
-- **Multi-language Support**: English, Portuguese (PT/BR), and Spanish
-- **Responsive Design**: Optimized for all devices
-- **Performance Optimized**: Lazy loading, code splitting
-- **SEO Ready**: Structured data, Open Graph, sitemap
-- **Contact Form**: Integrated with Formspree and reCAPTCHA
+English, European Portuguese and Spanish. All copy lives in `src/locales/{en,pt-pt,es}.ts`. `en.ts` defines the `Translation` type; the other two files are annotated with it, so a missing or extra key fails `npm run typecheck`. The language is picked from `?lang=`, then `localStorage`, then the browser locale.
 
-## Tech Stack
-
-- **Framework**: React 18 + TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui + Radix UI
-- **Form Handling**: Formspree + react-google-recaptcha
-- **Routing**: React Router
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
+## Scripts
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/portfolio.git
-
-# Navigate to project directory
-cd portfolio
-
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-```
-
-The app will be available at `http://localhost:8080`
-
-### Build for Production
-
-```bash
+npm run dev        # http://localhost:8080
+npm run typecheck  # tsc, no emit
+npm run lint
 npm run build
+npm run preview
 ```
 
-## Project Structure
+## Editing content
 
-```
-src/
-├── components/     # UI components (Hero, Experience, Skills, etc.)
-├── contexts/       # React contexts (Language)
-├── hooks/          # Custom hooks
-├── locales/        # Translation files
-├── pages/          # Page components
-└── lib/            # Utility functions
-```
+- Copy: `src/locales/*.ts`
+- Project reports and CV: `public/*.pdf`, referenced from `src/components/Projects.tsx` and `src/lib/links.ts`
+- Portrait and Open Graph image: `public/profile.jpg`, `public/og-image.jpg`
+- SEO tags and structured data: `index.html`
 
-## Contact
+## Deployment
 
-- **LinkedIn**: [linkedin.com/in/kikobatistaa](https://www.linkedin.com/in/kikobatistaa/)
-- **Email**: kiko.2205@hotmail.com
+Static build in `dist/`. The host must rewrite `/privacy` and `/projects/*` to `index.html` (single-page app fallback).
 
-## License
-
-© 2024 Francisco Cordeiro Batista. All rights reserved.
+© 2026 Francisco Cordeiro Batista.
