@@ -21,9 +21,8 @@ type ProjectAssets = {
   spotify?: string;
 };
 
-// Add `pdf: "/Compliance_AI_Thesis.pdf"` to `thesis` once the file is in public/.
 const ASSETS: Record<ProjectId, ProjectAssets> = {
-  thesis: {},
+  thesis: { pdf: "/Compliance_AI_Thesis.pdf" },
   bid: { pdf: "/report_BID.pdf" },
   bank: { pdf: "/Bank_Profitability_Report.pdf" },
   volkswagen: { pdf: "/Strategy_VW.pdf" },
