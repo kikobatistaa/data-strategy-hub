@@ -1,6 +1,6 @@
 # franciscocbatista.com
 
-Personal site of Francisco Cordeiro Batista, Advisory Analyst at Finsolutia (Madrid). Dark editorial layout: selected work, experience, credentials, and a contact form.
+Personal site of Francisco Cordeiro Batista, data scientist working in fintech (Madrid). Dark editorial layout, CV-style: profile, selected work, experience, credentials, and a contact form.
 
 Live: [franciscocbatista.com](https://franciscocbatista.com)
 
@@ -31,7 +31,7 @@ npm run preview
 
 - Copy: `src/locales/*.ts`
 - Project reports and CV: `public/*.pdf`, referenced from `src/components/Projects.tsx` and `src/lib/links.ts`
-- Portrait and Open Graph image: `public/profile.jpg`, `public/og-image.jpg`
+- Open Graph image: `public/og-image.jpg`
 - SEO tags and structured data: `index.html`
 
 ## Deployment

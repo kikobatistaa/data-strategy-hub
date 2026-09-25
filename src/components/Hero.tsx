@@ -21,14 +21,6 @@ const Hero = () => {
         { opacity: 0, y: 18 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.09, ease: "power3.out", delay: 0.1 }
       );
-      const portrait = el.querySelector("[data-portrait]");
-      if (portrait) {
-        gsap.fromTo(
-          portrait,
-          { clipPath: "inset(0 0 100% 0)" },
-          { clipPath: "inset(0 0 0% 0)", duration: 1.1, ease: "power3.inOut", delay: 0.25 }
-        );
-      }
     });
     return () => mm.revert();
   }, []);
@@ -41,10 +33,13 @@ const Hero = () => {
             {t.eyebrow}
           </p>
           <h1 data-hero className="text-display-xl">
-            <span className="block">{t.headline[0]}</span>
-            <span className="block italic text-gold">{t.headline[1]}</span>
+            <span className="block">{t.name[0]}</span>
+            <span className="block">{t.name[1]}</span>
           </h1>
-          <p data-hero className="mt-8 max-w-[52ch] text-lg leading-relaxed text-muted-foreground md:text-xl">
+          <p data-hero className="mt-6 font-display text-display-md italic text-gold">
+            {t.tagline}
+          </p>
+          <p data-hero className="mt-8 max-w-[56ch] text-lg leading-relaxed text-muted-foreground">
             {t.lead}
           </p>
           <div data-hero className="mt-10 flex flex-wrap items-center gap-4">
@@ -81,26 +76,20 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-          <figure className="relative mx-auto max-w-[300px] sm:max-w-[340px] lg:max-w-none">
-            <div data-portrait className="relative aspect-[4/5] overflow-hidden border border-border bg-card">
-              <img
-                src="/profile.jpg"
-                alt={t.portraitAlt}
-                width={1024}
-                height={1280}
-                loading="eager"
-                decoding="async"
-                className="h-full w-full object-cover grayscale contrast-[1.05]"
-              />
-            </div>
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-gold/50"
-            />
-            <figcaption className="eyebrow mt-7">{t.portraitCaption}</figcaption>
-          </figure>
-        </div>
+        {/* Fact sheet, CV style. */}
+        <aside data-hero className="col-span-12 lg:col-span-4 lg:col-start-9" aria-label={t.factsTitle}>
+          <p className="eyebrow mb-4">{t.factsTitle}</p>
+          <dl className="border-t border-border">
+            {t.facts.map((fact) => (
+              <div key={fact.label} className="grid grid-cols-[110px_1fr] gap-4 border-b border-border py-4">
+                <dt className="font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-muted-foreground">
+                  {fact.label}
+                </dt>
+                <dd className="text-[15px] leading-relaxed text-foreground/90">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
       </div>
     </section>
   );
