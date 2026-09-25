@@ -127,7 +127,7 @@ export const en = {
   projects: {
     eyebrow: "Selected work",
     title: "Selected work.",
-    subtitle: "Finance cases first, then the data engineering underneath.",
+    subtitle: "The master's thesis first, then finance cases and the data engineering underneath.",
     actions: {
       caseStudy: "Case study",
       report: "Report (PDF)",
@@ -144,6 +144,22 @@ export const en = {
       credits: "Team",
     },
     items: {
+      thesis: {
+        title: "Compliance.AI: a business plan for EU AI Act compliance in SMEs",
+        category: "Master's thesis · Business plan",
+        meta: "UC3M · Master in Management · June 2026",
+        mark: "8.5/10",
+        summary: "A B2B SaaS to get European SMEs through the EU AI Act. Full business plan: market entry, competitive positioning, operations, and five-year financials.",
+        tags: ["EU AI Act", "RegTech", "SaaS", "Porter", "VRIO", "Financial plan"],
+        caseStudy: {
+          title: "Compliance.AI: A Business Plan for EU AI Act Compliance in SMEs",
+          challenge: "European SMEs must comply with the EU AI Act (Regulation EU 2024/1689), with stand-alone Annex III high-risk obligations provisionally deferred to 2 December 2027 under the Digital Omnibus. Enterprise-focused compliance vendors leave a gap below them. The plan asks whether a specialist B2B SaaS can win that gap.",
+          approach: "• External: PESTEL and Porter's Five Forces on the regulatory-technology market.\n• Internal: VRIO, capability stack and SWOT; resource partitioning and organisational ecology to position a focused competitor.\n• Plan: marketing (relevant market, pricing, distribution), HR, operations, five-year financials with unit economics, scenario and sensitivity analysis, and a risk register with exit and pivot triggers.",
+          contribution: "Sole author. Supervised by Professor Samira Reis, Universidad Carlos III de Madrid, June 2026.",
+          recommendation: "Build first, sell second: sequence product, team and security so the plan funds itself, and enter as a focused SME specialist before generalists move downmarket.",
+          credits: "Master in Management, UC3M · Grade 8.5/10",
+        },
+      },
       bid: {
         title: "BID: which currency to borrow in",
         category: "International finance",
@@ -212,7 +228,7 @@ export const en = {
         degree: "Master in Management",
         period: "2025 – 2026",
         location: "Madrid",
-        note: "Focus: International Management. Thesis: Compliance.AI, a SaaS business plan for EU AI Act compliance in European SMEs.",
+        note: "Focus: International Management. Thesis: Compliance.AI, a SaaS business plan for EU AI Act compliance in European SMEs (8.5/10).",
       },
       {
         school: "NOVA Information Management School",
