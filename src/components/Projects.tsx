@@ -11,9 +11,19 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations, type ProjectId, type Translation } from "@/locales/translations";
 import { useReveal } from "@/hooks/useReveal";
+import { cn } from "@/lib/utils";
 import SectionHeader from "./SectionHeader";
 
-const ASSETS = {
+type ProjectAssets = {
+  pdf?: string;
+  github?: string;
+  traffic?: string;
+  spotify?: string;
+};
+
+// Add `pdf: "/Compliance_AI_Thesis.pdf"` to `thesis` once the file is in public/.
+const ASSETS: Record<ProjectId, ProjectAssets> = {
+  thesis: {},
   bid: { pdf: "/report_BID.pdf" },
   bank: { pdf: "/Bank_Profitability_Report.pdf" },
   volkswagen: { pdf: "/Strategy_VW.pdf" },
@@ -22,9 +32,11 @@ const ASSETS = {
     traffic: "/projects/spark-analytics/traffic",
     spotify: "/projects/spark-analytics/spotify",
   },
-} as const;
+};
 
-const ORDER: ProjectId[] = ["bid", "bank", "volkswagen", "spark"];
+const ORDER: ProjectId[] = ["thesis", "bid", "bank", "volkswagen", "spark"];
+// The thesis spans the full row; the rest sit in a two-column grid.
+const FEATURED: ProjectId = "thesis";
 
 const actionClass = "eyebrow inline-flex items-center gap-1.5 text-foreground transition-colors hover:text-gold";
 
@@ -103,44 +115,53 @@ const Projects = () => {
           {ORDER.map((id, i) => {
             const item = t.items[id];
             const assets = ASSETS[id];
+            const featured = id === FEATURED;
             return (
               <article
                 key={id}
                 data-reveal
-                className="flex flex-col bg-background p-7 transition-colors duration-300 hover:bg-card md:p-10"
+                className={cn(
+                  "flex flex-col bg-background p-7 transition-colors duration-300 hover:bg-card md:p-10",
+                  featured && "md:col-span-2"
+                )}
               >
                 <div className="flex items-baseline justify-between gap-4">
                   <span className="font-mono text-sm text-muted-foreground">0{i + 1}</span>
                   <span className="eyebrow text-gold">{item.mark}</span>
                 </div>
                 <p className="eyebrow mt-10">{item.category}</p>
-                <h3 className="mt-3 text-display-md">{item.title}</h3>
-                <p className="mt-4 max-w-[52ch] text-muted-foreground">{item.summary}</p>
+                <h3 className={cn("mt-3", featured ? "text-display-lg max-w-[22ch]" : "text-display-md")}>
+                  {item.title}
+                </h3>
+                <p className={cn("mt-4 text-muted-foreground", featured ? "max-w-[64ch] text-lg" : "max-w-[52ch]")}>
+                  {item.summary}
+                </p>
                 <p className="mt-6 font-mono text-xs leading-relaxed text-muted-foreground">
                   {item.meta}
                   <span className="mx-2 text-border">|</span>
                   {item.tags.join(" · ")}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 border-t border-border pt-6">
-                  {"pdf" in assets ? (
-                    <>
-                      <CaseStudyDialog item={item} copy={t} pdf={assets.pdf} />
-                      <a href={assets.pdf} target="_blank" rel="noopener noreferrer" className={actionClass}>
-                        {t.actions.report} <span aria-hidden>↗</span>
-                      </a>
-                    </>
-                  ) : (
-                    <>
-                      <a href={assets.github} target="_blank" rel="noopener noreferrer" className={actionClass}>
-                        {t.actions.github} <span aria-hidden>↗</span>
-                      </a>
-                      <Link to={assets.traffic} className={actionClass}>
-                        {t.actions.notebookTraffic} <span aria-hidden>→</span>
-                      </Link>
-                      <Link to={assets.spotify} className={actionClass}>
-                        {t.actions.notebookSpotify} <span aria-hidden>→</span>
-                      </Link>
-                    </>
+                  {item.caseStudy && <CaseStudyDialog item={item} copy={t} pdf={assets.pdf} />}
+                  {assets.pdf && (
+                    <a href={assets.pdf} target="_blank" rel="noopener noreferrer" className={actionClass}>
+                      {t.actions.report} <span aria-hidden>↗</span>
+                    </a>
+                  )}
+                  {assets.github && (
+                    <a href={assets.github} target="_blank" rel="noopener noreferrer" className={actionClass}>
+                      {t.actions.github} <span aria-hidden>↗</span>
+                    </a>
+                  )}
+                  {assets.traffic && (
+                    <Link to={assets.traffic} className={actionClass}>
+                      {t.actions.notebookTraffic} <span aria-hidden>→</span>
+                    </Link>
+                  )}
+                  {assets.spotify && (
+                    <Link to={assets.spotify} className={actionClass}>
+                      {t.actions.notebookSpotify} <span aria-hidden>→</span>
+                    </Link>
                   )}
                 </div>
               </article>

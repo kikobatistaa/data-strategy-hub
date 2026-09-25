@@ -120,7 +120,7 @@ export const ptPT: Translation = {
   projects: {
     eyebrow: "Trabalho selecionado",
     title: "Trabalho selecionado.",
-    subtitle: "Primeiro os casos de finanças, depois a engenharia de dados por trás.",
+    subtitle: "Primeiro a tese de mestrado, depois os casos de finanças e a engenharia de dados por trás.",
     actions: {
       caseStudy: "Case study",
       report: "Relatório (PDF)",
@@ -137,6 +137,22 @@ export const ptPT: Translation = {
       credits: "Equipa",
     },
     items: {
+      thesis: {
+        title: "Compliance.AI: um plano de negócio para a conformidade das PME com o EU AI Act",
+        category: "Tese de mestrado · Plano de negócio",
+        meta: "UC3M · Mestrado em Gestão · junho de 2026",
+        mark: "8,5/10",
+        summary: "Um SaaS B2B para levar as PME europeias a cumprir o EU AI Act. Plano de negócio completo: entrada no mercado, posicionamento competitivo, operações e financeiras a cinco anos.",
+        tags: ["EU AI Act", "RegTech", "SaaS", "Porter", "VRIO", "Plano financeiro"],
+        caseStudy: {
+          title: "Compliance.AI: um plano de negócio para a conformidade das PME com o EU AI Act",
+          challenge: "As PME europeias têm de cumprir o EU AI Act (Regulamento UE 2024/1689), com as obrigações autónomas de alto risco do Anexo III provisoriamente adiadas para 2 de dezembro de 2027 ao abrigo do Digital Omnibus. Os fornecedores de compliance focados em grandes empresas deixam um vazio abaixo deles. O plano pergunta se um SaaS B2B especializado consegue ganhar esse espaço.",
+          approach: "• Externa: PESTEL e Cinco Forças de Porter sobre o mercado de tecnologia regulatória.\n• Interna: VRIO, stack de capacidades e SWOT; resource partitioning e ecologia organizacional para posicionar um concorrente focado.\n• Plano: marketing (mercado relevante, preço, distribuição), RH, operações, financeiras a cinco anos com unit economics, análise de cenários e de sensibilidade, e registo de riscos com gatilhos de saída e de pivot.",
+          contribution: "Autor único. Orientação da Professora Samira Reis, Universidad Carlos III de Madrid, junho de 2026.",
+          recommendation: "Construir primeiro, vender depois: sequenciar produto, equipa e segurança para que o plano se financie a si próprio, e entrar como especialista focado em PME antes de os generalistas descerem de segmento.",
+          credits: "Mestrado em Gestão, UC3M · Nota 8,5/10",
+        },
+      },
       bid: {
         title: "BID: em que moeda financiar",
         category: "Finanças internacionais",
@@ -205,7 +221,7 @@ export const ptPT: Translation = {
         degree: "Mestrado em Gestão",
         period: "2025 – 2026",
         location: "Madrid",
-        note: "Foco: Gestão Internacional. Tese: Compliance.AI, um plano de negócio SaaS para conformidade com o EU AI Act em PME europeias.",
+        note: "Foco: Gestão Internacional. Tese: Compliance.AI, um plano de negócio SaaS para conformidade com o EU AI Act em PME europeias (8,5/10).",
       },
       {
         school: "NOVA Information Management School",

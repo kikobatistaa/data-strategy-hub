@@ -120,7 +120,7 @@ export const es: Translation = {
   projects: {
     eyebrow: "Trabajo seleccionado",
     title: "Trabajo seleccionado.",
-    subtitle: "Primero los casos de finanzas, después la ingeniería de datos que hay detrás.",
+    subtitle: "Primero la tesis de máster, después los casos de finanzas y la ingeniería de datos que hay detrás.",
     actions: {
       caseStudy: "Case study",
       report: "Informe (PDF)",
@@ -137,6 +137,22 @@ export const es: Translation = {
       credits: "Equipo",
     },
     items: {
+      thesis: {
+        title: "Compliance.AI: un plan de negocio para el cumplimiento del EU AI Act en pymes",
+        category: "Tesis de máster · Plan de negocio",
+        meta: "UC3M · Máster en Management · junio de 2026",
+        mark: "8,5/10",
+        summary: "Un SaaS B2B para que las pymes europeas cumplan el EU AI Act. Plan de negocio completo: entrada en el mercado, posicionamiento competitivo, operaciones y financieros a cinco años.",
+        tags: ["EU AI Act", "RegTech", "SaaS", "Porter", "VRIO", "Plan financiero"],
+        caseStudy: {
+          title: "Compliance.AI: un plan de negocio para el cumplimiento del EU AI Act en pymes",
+          challenge: "Las pymes europeas deben cumplir el EU AI Act (Reglamento UE 2024/1689), con las obligaciones autónomas de alto riesgo del Anexo III aplazadas provisionalmente al 2 de diciembre de 2027 bajo el Digital Omnibus. Los proveedores de compliance centrados en grandes empresas dejan un hueco por debajo. El plan se pregunta si un SaaS B2B especializado puede ganar ese espacio.",
+          approach: "• Externo: PESTEL y Cinco Fuerzas de Porter sobre el mercado de tecnología regulatoria.\n• Interno: VRIO, stack de capacidades y DAFO; resource partitioning y ecología organizacional para posicionar un competidor enfocado.\n• Plan: marketing (mercado relevante, precios, distribución), RR. HH., operaciones, financieros a cinco años con unit economics, análisis de escenarios y de sensibilidad, y registro de riesgos con disparadores de salida y de pivote.",
+          contribution: "Autor único. Dirigida por la profesora Samira Reis, Universidad Carlos III de Madrid, junio de 2026.",
+          recommendation: "Construir primero, vender después: secuenciar producto, equipo y seguridad para que el plan se financie solo, y entrar como especialista enfocado en pymes antes de que los generalistas bajen de segmento.",
+          credits: "Máster en Management, UC3M · Nota 8,5/10",
+        },
+      },
       bid: {
         title: "BID: en qué moneda financiarse",
         category: "Finanzas internacionales",
@@ -205,7 +221,7 @@ export const es: Translation = {
         degree: "Máster en Management",
         period: "2025 – 2026",
         location: "Madrid",
-        note: "Enfoque: Gestión Internacional. Tesis: Compliance.AI, un plan de negocio SaaS para el cumplimiento del EU AI Act en pymes europeas.",
+        note: "Enfoque: Gestión Internacional. Tesis: Compliance.AI, un plan de negocio SaaS para el cumplimiento del EU AI Act en pymes europeas (8,5/10).",
       },
       {
         school: "NOVA Information Management School",
