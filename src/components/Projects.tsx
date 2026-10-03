@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { useSmoothScroll } from "./SmoothScroll";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations, type ProjectId, type Translation } from "@/locales/translations";
 import { useReveal } from "@/hooks/useReveal";
@@ -51,29 +51,43 @@ const CaseStudyDialog = ({
   copy: ProjectsCopy;
   pdf?: string;
 }) => {
+  const { lenis } = useSmoothScroll();
   const cs = item.caseStudy;
   if (!cs) return null;
+
+  // Lenis drives page scrolling; pause it while the dialog is open so wheel
+  // and touch gestures reach the dialog's own scroll container.
+  const onOpenChange = (open: boolean) => {
+    if (open) lenis?.stop();
+    else lenis?.start();
+  };
   const blocks: [string, string][] = [
     [copy.sections.challenge, cs.challenge],
     [copy.sections.approach, cs.approach],
     [copy.sections.contribution, cs.contribution],
   ];
   return (
-    <Dialog>
+    <Dialog onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
         <button type="button" className={actionClass}>
           {copy.actions.caseStudy} <span aria-hidden>→</span>
         </button>
       </DialogTrigger>
-      <DialogContent className="flex max-h-[85vh] max-w-2xl flex-col gap-0 rounded-none border-border bg-background p-0">
-        <DialogHeader className="space-y-0 border-b border-border px-6 py-6 text-left md:px-8">
+      <DialogContent
+        data-lenis-prevent
+        className="flex max-h-[85vh] max-h-[85dvh] w-[calc(100%-2rem)] max-w-2xl flex-col gap-0 overflow-hidden rounded-none border-border bg-background p-0"
+      >
+        <DialogHeader className="shrink-0 space-y-0 border-b border-border px-6 py-6 text-left md:px-8">
           <p className="eyebrow mb-3">{item.category}</p>
           <DialogTitle className="pr-8 font-display text-2xl font-normal leading-tight md:text-3xl">
             {cs.title}
           </DialogTitle>
           <DialogDescription className="sr-only">{item.summary}</DialogDescription>
         </DialogHeader>
-        <ScrollArea className="min-h-0 flex-1">
+        <div
+          data-lenis-prevent
+          className="min-h-0 flex-1 touch-pan-y overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]"
+        >
           <div className="space-y-8 px-6 py-8 md:px-8">
             {blocks.map(([label, text]) => (
               <div key={label}>
@@ -87,9 +101,9 @@ const CaseStudyDialog = ({
             </div>
             <p className="font-mono text-xs text-muted-foreground">{cs.credits}</p>
           </div>
-        </ScrollArea>
+        </div>
         {pdf && (
-          <div className="border-t border-border px-6 py-5 md:px-8">
+          <div className="shrink-0 border-t border-border px-6 py-5 md:px-8">
             <a href={pdf} target="_blank" rel="noopener noreferrer" className={actionClass}>
               {copy.actions.report} <span aria-hidden>↗</span>
             </a>
