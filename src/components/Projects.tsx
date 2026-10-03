@@ -24,8 +24,8 @@ type ProjectAssets = {
 
 const ASSETS: Record<ProjectId, ProjectAssets> = {
   thesis: { page: "/thesis", pdf: "/Compliance_AI_Thesis.pdf" },
-  bid: { pdf: "/report_BID.pdf" },
-  bank: { pdf: "/Bank_Profitability_Report.pdf" },
+  bid: { page: "/projects/bid", pdf: "/report_BID.pdf" },
+  bank: { page: "/projects/bank", pdf: "/Bank_Profitability_Report.pdf" },
   volkswagen: { pdf: "/Strategy_VW.pdf" },
   spark: {
     github: "https://github.com/kikobatistaa/Using-Databricks-to-Predict-Traffic-and-Analyse-Spotify-Playlists",
@@ -158,7 +158,7 @@ const Projects = () => {
                 <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 border-t border-border pt-6">
                   {assets.page && (
                     <Link to={assets.page} className={actionClass}>
-                      {t.actions.thesisPage} <span aria-hidden>→</span>
+                      {id === "thesis" ? t.actions.thesisPage : t.actions.projectPage} <span aria-hidden>→</span>
                     </Link>
                   )}
                   {item.caseStudy && <CaseStudyDialog item={item} copy={t} pdf={assets.pdf} />}
