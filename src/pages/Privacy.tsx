@@ -84,6 +84,19 @@ const PrivacyContent = () => {
                   {t.recaptchaLink}
                 </a>
               </div>
+
+              <div>
+                <h3 className="text-lg font-medium text-foreground mb-2">Plausible Analytics</h3>
+                <p className="text-muted-foreground">{t.analyticsText}</p>
+                <a
+                  href="https://plausible.io/data-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:underline"
+                >
+                  {t.analyticsLink}
+                </a>
+              </div>
             </div>
           </section>
 

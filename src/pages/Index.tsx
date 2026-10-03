@@ -25,12 +25,22 @@ const Index = () => {
   const { lenis } = useSmoothScroll();
   const location = useLocation();
 
-  // Deep links such as /#projects (used by the notebook viewer's back link).
+  // Deep links such as /#projects (used by the thesis and notebook back links).
+  // The page keeps growing for a moment after mount (fonts, lazy sections, the
+  // route fade), so keep re-aligning while the height changes, briefly.
   useEffect(() => {
     const id = location.hash.replace("#", "");
     if (!id) return;
-    const frame = requestAnimationFrame(() => scrollToSection(id, lenis, true));
-    return () => cancelAnimationFrame(frame);
+    const align = () => scrollToSection(id, lenis, true);
+    const frame = requestAnimationFrame(align);
+    const observer = new ResizeObserver(align);
+    observer.observe(document.body);
+    const stop = window.setTimeout(() => observer.disconnect(), 1500);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.clearTimeout(stop);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 

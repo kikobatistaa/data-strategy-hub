@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import SectionHeader from "./SectionHeader";
 
 type ProjectAssets = {
+  page?: string;
   pdf?: string;
   github?: string;
   traffic?: string;
@@ -22,7 +23,7 @@ type ProjectAssets = {
 };
 
 const ASSETS: Record<ProjectId, ProjectAssets> = {
-  thesis: { pdf: "/Compliance_AI_Thesis.pdf" },
+  thesis: { page: "/thesis", pdf: "/Compliance_AI_Thesis.pdf" },
   bid: { pdf: "/report_BID.pdf" },
   bank: { pdf: "/Bank_Profitability_Report.pdf" },
   volkswagen: { pdf: "/Strategy_VW.pdf" },
@@ -155,6 +156,11 @@ const Projects = () => {
                   {item.tags.join(" · ")}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 border-t border-border pt-6">
+                  {assets.page && (
+                    <Link to={assets.page} className={actionClass}>
+                      {t.actions.thesisPage} <span aria-hidden>→</span>
+                    </Link>
+                  )}
                   {item.caseStudy && <CaseStudyDialog item={item} copy={t} pdf={assets.pdf} />}
                   {assets.pdf && (
                     <a href={assets.pdf} target="_blank" rel="noopener noreferrer" className={actionClass}>

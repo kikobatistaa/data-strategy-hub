@@ -16,6 +16,14 @@ export default defineConfig({
   build: {
     target: "es2020",
     rollupOptions: {
+      // One HTML entry per language (and for the thesis) so crawlers that do not run
+      // JavaScript get localised titles, descriptions and Open Graph images.
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        pt: path.resolve(__dirname, "pt/index.html"),
+        es: path.resolve(__dirname, "es/index.html"),
+        thesis: path.resolve(__dirname, "thesis/index.html"),
+      },
       output: {
         manualChunks: {
           "react-vendor": ["react", "react-dom", "react-router-dom"],

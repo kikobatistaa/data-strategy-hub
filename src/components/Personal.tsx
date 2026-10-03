@@ -45,7 +45,15 @@ const Personal = () => {
           <div data-reveal className="lg:col-span-7">
             <div ref={videoBoxRef} className="relative aspect-video overflow-hidden border border-border bg-black">
               {showVideo ? (
-                <video className="h-full w-full object-cover" controls preload="metadata" playsInline>
+                <video
+                  className="h-full w-full object-cover"
+                  controls
+                  preload="metadata"
+                  playsInline
+                  poster="/saxophone-poster.jpg"
+                >
+                  {/* VP9 first (smaller); H.264 for Safari and older devices. */}
+                  <source src="/saxophone.webm" type="video/webm" />
                   <source src="/saxophone.mp4" type="video/mp4" />
                 </video>
               ) : (

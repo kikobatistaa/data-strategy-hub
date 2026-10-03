@@ -5,6 +5,7 @@ import { AnimatePresence, motion, type Variants } from "framer-motion";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
+import Thesis from "./pages/Thesis";
 import NotebookViewer from "./pages/NotebookViewer";
 
 // Opacity only: a transform on the route wrapper would turn it into the
@@ -27,6 +28,10 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Page><Index /></Page>} />
+        {/* Language entry points: static HTML with localised meta tags (see pt/ and es/). */}
+        <Route path="/pt" element={<Page><Index /></Page>} />
+        <Route path="/es" element={<Page><Index /></Page>} />
+        <Route path="/thesis" element={<Page><Thesis /></Page>} />
         <Route path="/privacy" element={<Page><Privacy /></Page>} />
         <Route path="/projects/spark-analytics/:notebook" element={<Page><NotebookViewer /></Page>} />
         <Route path="*" element={<Page><NotFound /></Page>} />
