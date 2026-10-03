@@ -11,6 +11,11 @@ const isLanguage = (value: unknown): value is Language =>
 
 const detectLanguage = (): Language => {
   try {
+    // /pt/ and /es/ are the localised entry points (static HTML with their own meta tags).
+    const fromPath = window.location.pathname.match(/^\/(pt|es)\/?$/)?.[1];
+    if (fromPath === "pt") return "pt-pt";
+    if (fromPath === "es") return "es";
+
     const fromUrl = new URLSearchParams(window.location.search).get("lang");
     if (isLanguage(fromUrl)) return fromUrl;
 

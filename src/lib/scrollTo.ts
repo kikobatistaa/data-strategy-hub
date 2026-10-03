@@ -12,6 +12,9 @@ export function scrollToSection(id: string, lenis: Lenis | null, immediate = fal
   const el = document.getElementById(id);
   if (!el) return;
   if (lenis) {
+    // Lenis refreshes its scroll limit on a debounce; right after a route change it
+    // still holds the previous page's height and would clamp the target to it.
+    lenis.resize();
     lenis.scrollTo(el, { offset: NAV_OFFSET, immediate });
   } else {
     el.scrollIntoView({ behavior: immediate ? "auto" : "smooth", block: "start" });
