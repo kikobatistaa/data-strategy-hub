@@ -47,7 +47,7 @@ npm run preview
 - Project reports, thesis and CV: `public/*.pdf`, referenced from `src/components/Projects.tsx`, `src/pages/Thesis.tsx` and `src/lib/links.ts`
 - Open Graph images: `public/og-*.jpg` (1200×630)
 - SEO tags and structured data: `index.html`, `pt/index.html`, `es/index.html`, `thesis/index.html`
-- Saxophone clip: `public/saxophone.webm` (VP9, served first) and `public/saxophone.mp4` (H.264 fallback), poster `public/saxophone-poster.jpg`
+- Saxophone clip: `public/saxophone.mp4` (H.264, 640p, denoised, ~6 MB), poster `public/saxophone-poster.jpg`
 
 ## Deployment
 

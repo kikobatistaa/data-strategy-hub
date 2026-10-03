@@ -52,8 +52,6 @@ const Personal = () => {
                   playsInline
                   poster="/saxophone-poster.jpg"
                 >
-                  {/* VP9 first (smaller); H.264 for Safari and older devices. */}
-                  <source src="/saxophone.webm" type="video/webm" />
                   <source src="/saxophone.mp4" type="video/mp4" />
                 </video>
               ) : (
