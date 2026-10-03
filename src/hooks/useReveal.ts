@@ -12,7 +12,11 @@ export function useReveal<T extends HTMLElement = HTMLElement>() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const targets = Array.from(el.querySelectorAll<HTMLElement>("[data-reveal]"));
+    // Elements already on screen at mount stay as they are: on a prerendered page they are
+    // painted before JavaScript runs, and hiding them to fade back in would make them flash.
+    const targets = Array.from(el.querySelectorAll<HTMLElement>("[data-reveal]")).filter(
+      (target) => target.getBoundingClientRect().top > window.innerHeight
+    );
     if (targets.length === 0) return;
 
     const mm = gsap.matchMedia();

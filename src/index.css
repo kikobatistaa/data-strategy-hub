@@ -83,6 +83,30 @@
   }
 }
 
+/* Hero entrance: CSS only, so it starts at first paint on prerendered pages. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    animation: hero-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* Prerendered pages: the inline <head> script adds `pr-swap` when the visitor's
+   language differs from the prerendered one, until the app re-renders in theirs. */
+html.pr-swap #root {
+  visibility: hidden;
+}
+
 /* Lenis smooth scroll */
 html.lenis,
 html.lenis body {

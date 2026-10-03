@@ -9,7 +9,8 @@ const STORAGE_KEY = "language";
 const isLanguage = (value: unknown): value is Language =>
   typeof value === "string" && (LANGUAGES as string[]).includes(value);
 
-const detectLanguage = (): Language => {
+// Keep in sync with the inline script that scripts/prerender.mjs puts in <head>.
+export const detectLanguage = (): Language => {
   try {
     // /pt/ and /es/ are the localised entry points (static HTML with their own meta tags).
     const fromPath = window.location.pathname.match(/^\/(pt|es)\/?$/)?.[1];
@@ -39,8 +40,12 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(detectLanguage);
+export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLanguage?: Language }> = ({
+  children,
+  initialLanguage,
+}) => {
+  // initialLanguage is set when prerendering in Node, where there is no window to detect from.
+  const [language, setLanguage] = useState<Language>(() => initialLanguage ?? detectLanguage());
 
   useEffect(() => {
     try {
